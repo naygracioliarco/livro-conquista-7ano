@@ -52,6 +52,7 @@ export interface TextInputQuestion {
     question: string; // Texto da subquestão
     placeholder?: string;
     correctAnswer?: string;
+    hideTextInput?: boolean; // Se deve ocultar o campo de texto
     subItems?: Array<{
       label: string; // Rótulo da subquestão aninhada (ex: 'Situação inicial', 'Conflito', 'Desfecho')
       placeholder?: string;

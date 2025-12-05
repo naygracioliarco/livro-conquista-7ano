@@ -115,8 +115,8 @@ function QuestionTextInput({
                     })}
                   </ul>
                 ) : (
-                  // Só mostra o campo de texto se NÃO for uma questão de seleção de texto
-                  !subQ.requiresTextSelection && (
+                  // Só mostra o campo de texto se NÃO for uma questão de seleção de texto e NÃO estiver oculto
+                  !subQ.requiresTextSelection && !subQ.hideTextInput && (
                     <textarea
                       value={subUserAnswer}
                       onChange={(e) => onAnswerChange(subQuestionId, e.target.value)}

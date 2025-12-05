@@ -903,152 +903,34 @@ function Book() {
                   <TeacherButton
                     content={
                       <>
-                        <p className="mb-3">
-                          Respostas:
-                        </p>
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q1');
-                          if (question && question.type === 'table-fill') {
-                            return (
-                              <>
-                                {/* Respostas da tabela */}
-                                {question.correctAnswer && (
-                                  <>
-                                    <p className="mb-2 font-semibold">
-                                      {question.number !== undefined && (
-                                        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                      )}
-                                      Tabela:
-                                    </p>
-                                    {question.rows.map((row) => {
-                                      const correctAnswers = question.correctAnswer!;
-                                      // Obtém o primeiro campo da row (primeira coluna)
-                                      const firstColumnKey = Object.keys(row).find(key => key !== 'id') || 'paragraph';
-                                      const firstColumnValue = row[firstColumnKey] || '';
-
-                                      // Gera os fieldIds para cada coluna (exceto a primeira)
-                                      const columnAnswers = question.columns.slice(1).map((columnName, colIndex) => {
-                                        const fieldId = `${question.id}_${row.id}_col${colIndex + 1}`;
-                                        return {
-                                          columnName,
-                                          answer: correctAnswers[fieldId] || ''
-                                        };
-                                      });
-
-                                      return (
-                                        <div key={row.id} className="mb-4">
-                                          <p className="mb-2 font-semibold" style={{ color: '#0E3B5D' }}>
-                                            {question.columns[0]} {firstColumnValue}:
-                                          </p>
-                                          {columnAnswers.map((colAnswer, idx) => (
-                                            <p key={idx} className="mb-1">
-                                              <strong>{colAnswer.columnName}:</strong> {colAnswer.answer}
-                                            </p>
-                                          ))}
-                                        </div>
-                                      );
-                                    })}
-                                  </>
-                                )}
-
-                              </>
-                            );
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q2');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q3');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q4');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
+                        <TeacherAnswers
+                          questions={[
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q1')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q2')!,
+                            // chapterQuestions.chapter1.find(q => q.id === 'ch2_q10')!,
+                          ]}
+                        />
                       </>
                     }
                   />
                 </div>
                 <CaixaTexto title=''>
-                  <p className="mb-4 indent-6"></p>
+                  <p className="mb-4 indent-6">
+                  Na verdade, acho que as crianças deviam aprender a ler nos <span className="bg-[#fff225] px-1">livros do Hegel</span> e em longos tratados de <span className="bg-[#fff225] px-1">metafísica</span>. Só elas têm a visão adequada à densidade do texto, o gosto pela abstração e tempo disponível para lidar com o infinito. E na velhice, com a sabedoria acumulada numa vida de leituras, com as letras ficando progressivamente maiores à medida que nossos olhos se cansavam, estaríamos então prontos para enfrentar o conceito básico de que vovô vê a uva, e viva o vovô.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Vovô vê a uva! Toda a nossa inquietação, nossa perplexidade e nossa busca terminariam na resolução deste enigma primordial. Vovô. A uva. Eva. A visão.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Nosso último livro seria a cartilha. E a nossa última aventura intelectual, a contemplação enternecida da letra A. Ah, o A, com suas grandes pernas abertas.
+                  </p>
+                  {/* Glossário */}
+                  <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p className="text-[13px] mb-4 indent-6"><strong>livros do Hegel </strong>: obras do filósofo Georg Hegel (1770-1831) sobre razão, espírito, história e contrastes de ideias.
+                    </p>
+                    <p className="text-[13px] mb-4 indent-6"><strong>metafísica </strong>: estudo do que existe além do mundo físico.
+                    </p>
+                  </div>
                 </CaixaTexto>
                 <p
                   className="mt-2 mb-6"
@@ -1058,7 +940,7 @@ function Book() {
                     fontSize: '10px',
                   }}
                 >
-                  ESOPO. <em>A lebre e a tartaruga</em>. Domínio público. Texto adaptado para fins didáticos. (Tradução nossa).
+                  VERISSIMO, Luis Fernando. <em>Comédias para se ler na escola.</em> 2. ed. Rio de Janeiro: Objetiva, 2001.
                 </p>
                 {/* Questão intercalada no conteúdo - Tabela comparativa */}
                 <QuestionRenderer
@@ -1079,12 +961,7 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
-                <QuestionRenderer
-                  question={chapterQuestions.chapter2[3]}
-                  userAnswers={userAnswers}
-                  onAnswerChange={handleAnswerChange}
-                  showResults={showTeacherView}
-                />
+                
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
@@ -1106,79 +983,13 @@ function Book() {
                     }
                   />
                 </div>
-                <TrilhaTexto />
-                <p className="mb-4 indent-6">
-                  Agora, leia uma fábula que está organizada em versos. Apesar dessa diferença no modo de contar a história, os elementos principais do gênero continuam presentes.
-                </p>
-                <p className="mb-4 indent-6">
-                  <strong>Texto II</strong>
-                </p>
-                <CaixaTexto title='O leão e o rato' backgroundColor="white" columns={2}>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center" style={{ textAlign: 'center' }}>
-                    <div>
-                      <p className="mb-4">
-                        Saiu o rato correndo, <br />
-                        assustado e distraído, <br />
-                        e foi logo recebido <br />
-                        por um leão, sem entender. <br />
-                      </p>
-                      <p className="mb-4">
-                        Entre as garras tremeu, <br />
-                        mas foi surpreendido então. <br />
-                        O leão o protegeu <br />
-                        e poupou-lhe a punição. <br />
-                      </p>
-                      <p className="mb-4">
-                        Dias passaram ligeiros, <br />
-                        e o leão, rei altaneiro, <br />
-                        por entre folhas entrou, <br />
-                        mas a selva o enganou. <br />
-                        Preso em rede traiçoeira, <br />
-                        gritou com força certeira, <br />
-                        mas sua luta foi em vão. <br />
-                        Ficou preso, o valentão. <br />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="mb-4">
-                        O ratinho, sem demora, <br />
-                        chega e começa a agir. <br />
-                        Rói as cordas, uma hora, <br />
-                        e outra, sem desistir. <br />
-                        Fino dente, ação constante, <br />
-                        vai abrindo a prisão; <br />
-                        com esforço perseverante, <br />
-                        liberta, enfim, o leão. <br />
-                      </p>
-                      <p className="mb-4">
-                        Pagou o bem que recebera, <br />
-                        com coragem e humildade, <br />
-                        e ensinou que a vida inteira <br />
-                        vale a boa gratidão. <br />
-                        Ser gentil não custa nada, <br />
-                        e a lição dessa jornada, <br />
-                        é que até o mais singelo <br />
-                        pode ser forte e belo. <br />
-                      </p>
-                    </div>
-                  </div>
-                  {/* Imagem */}
-                  <div className="flex flex-col items-center my-6">
-                    <img src="images/leao.png" className="max-w-[60%]" />
-                    <p className="text-[10px] text-slate-600 mt-2">tada/stock.adobe.com
-                    </p>
-                  </div>
-                </CaixaTexto>
-                <p
-                  className="mt-2 mb-6"
-                  style={{
-                    fontFamily: 'Ubuntu, sans-serif',
-                    color: '#000000',
-                    fontSize: '10px',
-                  }}
-                >
-                  LA FONTAINE. O leão e o rato. Domínio público. Texto adaptado para fins didáticos. (Tradução nossa).
-                </p>
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[3]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+                
                 <Pagination currentPage={22} />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">

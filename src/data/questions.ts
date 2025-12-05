@@ -223,56 +223,46 @@ export const chapterQuestions: Record<string, Question[]> = {
   chapter2: [
     {
       id: 'ch2_q1',
-      type: 'table-fill',
+      type: 'alternative',
       number: 1,
-      question: 'Complete o quadro a seguir identificando o que acontece em cada parte da fábula.',
-      columns: ['Parte da fábula', 'O que acontece'],
-      rows: [
-        {
-          id: 'row1',
-          paragraph: 'Situação inicial',
-          text1: '',
-        },
-        {
-          id: 'row2',
-          paragraph: 'Conflito',
-          text1: '',
-        },
-        {
-          id: 'row3',
-          paragraph: 'Desfecho',
-          text1: '',
-        },
+      question: 'Qual fato cotidiano inspira o cronista a escrever o texto?',
+      options: [
+        'Uma discussão filosófica sobre o real significado das palavras.',
+        'A dificuldade de ler as letras miúdas nas bulas de remédio.',
+        'A lembrança das letras nas cartilhas de alfabetização.',
+        'Uma visita à seção de livros infantis de uma biblioteca pública.',
       ],
-      correctAnswer: {
-        'ch2_q1_row1_col1': 'A lebre zombava da tartaruga por ela ser lenta.',
-        'ch2_q1_row2_col1': 'A tartaruga propõe uma corrida e a lebre aceita. Durante a prova, a lebre dispara na frente, mas, convencida de que venceria facilmente, decide cochilar no meio do caminho.',
-        'ch2_q1_row3_col1': 'A tartaruga continua seu percurso sem parar. Quando acorda, a lebre corre, mas não consegue alcançar a tartaruga, que vence a corrida.',
-      },
+      correctAnswer: 2,
     },
     {
       id: 'ch2_q2',
-      type: 'text-input',
+      type: 'true-false',
       number: 2,
-      question: 'A fábula é construída com base em ações concluídas no passado e na progressão dos fatos ao longo do tempo. Sobre essa organização, leia novamente o texto e resolva os itens.',
-      subQuestions: [
+      question: 'Leia as afirmações sobre as ideias do autor. Assinale <strong>V</strong> para o que for verdadeiro e <strong>F</strong> para o que for falso. Depois, reescreva as frases falsas, corrigindo-as.',
+      hasCorrectionBox: true,
+      correctionPlaceholder: 'Corrija as afirmações falsas aqui...',
+      statements: [
         {
           letter: 'a',
-          question: 'Cite dois marcadores de tempo usados na fábula.',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: '“Num piscar de olhos” e “Quando despertou”.',
+          statement: 'O autor afirma que, na infância, os livros tinham letras grandes porque sua visão era ruim.',
+          correctAnswer: false,
+          correction: ' O autor afirma que, na infância, sua visão era perfeita, e que as letras grandes talvez nem fossem tão necessárias.',
         },
         {
           letter: 'b',
-          question: 'Identifique três verbos usados no texto que indicam ações realizadas no passado',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: '“Zombava”, “aceitou”, “marcou”, “alinhou”, “disparou”, “seguiu”, “dormia”.',
+          statement: 'Segundo a crônica, lemos textos com letras miúdas (jornal, bulas) justamente na fase da vida em que nossa visão já não é mais tão boa.',
+          correctAnswer: true,
         },
         {
           letter: 'c',
-          question: 'Em que momento da história a vantagem da lebre começa a desaparecer? Identifique o trechoque mostra essa mudança e explique por que isso acontece.',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: '“Mas, enquanto dormia tranquila, a Tartaruga, firme e constante, passou por ela e seguiu em frente, determinada a chegar ao fim.” A lebre perdeu sua vantagem quando decidiu descansar por excesso de confiança. Isso permitiu que a tartaruga a ultrapassasse e vencesse a corrida. ',
+          statement: 'O autor acredita que palavras como <strong>autóctone</strong> e <strong>seborreia</strong> deveriam estar presentes nas cartilhas infantis para preparar as crianças.',
+          correctAnswer: false,
+          correction: ' O autor acredita que palavras como <strong>autóctone</strong> e <strong>seborreia</strong> teriam desanimado as crianças e que as cartilhas escondiam os terrores da língua.',
+        },
+        {
+          letter: 'd',
+          statement: 'O texto apresenta dados e informações científicas sobre vários animais pequenos e seus papéis na natureza.',
+          correctAnswer: true,
         },
       ],
     },
@@ -280,9 +270,29 @@ export const chapterQuestions: Record<string, Question[]> = {
       id: 'ch2_q3',
       type: 'text-input',
       number: 3,
-      question: 'A fábula lida não apresenta uma moral explícita no fim do texto, diferentemente do que acontece em muitas histórias desse gênero. Isso significa que o leitor precisa observar as atitudes dos personagens e o que acontece com eles para identificar a mensagem que o texto transmite. Qual pode ser a moral dessa fábula?',
-      placeholder: 'Digite sua resposta aqui...',
-      correctAnswer: 'Pessoal. Os alunos devem formular a mensagem central da fábula com base nas atitudes e nas consequências vividas pelos personagens. São exemplos de respostas possíveis: a arrogância pode levar à derrota; constância e compromisso superam a pressa sem foco; quem subestima o outro pode se surpreender; vencer não é questão de velocidade, e sim de persistência. ',
+      question: 'Releia o trecho final da crônica, em que o autor reflete sobre uma inversão no ciclo da leitura ao longo da vida, e analise as afirmativas a seguir.',
+      subQuestions: [
+        {
+          letter: 'I.',
+          question: 'O autor propõe, de forma irônica e poética, que o aprendizado da leitura deveria ser invertido: textos complexos para as crianças e textos simples para os mais velhos.',
+          hideTextInput: true,
+        },
+        {
+          letter: 'II.',
+          question: 'Segundo o autor, os adultos perdem a inteligência gradualmente e, por isso, deveriam voltar a ler apenas os livros simples que liam quando eram crianças.',
+          hideTextInput: true,
+        },
+        {
+          letter: 'III.',
+          question: 'A ideia de que as crianças deveriam ler Hegel se justifica por elas terem a visão perfeita e uma mente mais aberta para temas abstratos.',
+          hideTextInput: true,
+        },
+        {
+          letter: 'IV.',
+          question: 'Voltar à cartilha quando idoso significaria um prêmio: a chance de se maravilhar com a simplicidade que a pressa da infância e da vida adulta não permite ver',
+          hideTextInput: true,
+        },
+      ],
     },
     {
       id: 'ch2_q4',

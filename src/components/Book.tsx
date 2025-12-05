@@ -457,11 +457,7 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          EF69LP06, EF69LP07, EF69LP08, EF67LP09, EF67LP10, EF67LP32, EF67LP33, EF06LP05, EF06LP06, EF06LP11, EF06LP12,
-                          EF67LP36. Antes da produção, retome com a turma os elementos essenciais da estrutura da notícia: título, linha-fina, lide,
-                          corpo e fechamento. Enfatize que o foco da atividade não é apenas repetir informações, mas selecionar, organizar e redigir
-                          uma notícia com um ponto de vista consciente e intencional, respeitando as características do gênero. A proposta favorece a construção da autonomia escritora e o desenvolvimento da habilidade de tomar decisões comunicativas, competências centrais para a formação de leitores e produtores conscientes de textos.
-
+                          EF69LP29, EF69LP30, EF69LP32, EF69LP34, EF69LP35, EF69LP36, EF69LP42, EF69LP56, EF67LP20, EF67LP25, EF67LP32, EF67LP33, EF07LP06, EF67LP36. Nesta etapa, os alunos produzem um texto autoral com base em um trecho técnico adaptado de artigo científico, transformando-o em um artigo de divulgação acessível ao público em geral. Oriente a leitura cuidadosa do texto técnico e proponha aos alunos uma discussão guiada sobre os termos mais complexos, as informações essenciais e as possíveis comparações com situações do cotidiano. A proposta fortalece a autoria, o pensamento crítico e a compreensão dos usos sociais da ciência.
                         </p>
                       </>
                     }
@@ -469,61 +465,67 @@ function Book() {
                 </div>
                 <MinhaVersao />
                 <p className="mb-4 indent-6">
-                  Você leu duas notícias diferentes sobre a inauguração do Robot Mall, na China. Agora, sua tarefa será produzir uma nova versão dessa notícia, com base nas escolhas que considerar mais importantes, interessantes ou relevantes para o leitor. Para isso, utilize os dados principais dos dois textos, as observações registradas no quadro comparativo e as análises realizadas ao longo do capítulo.
+                  Você vai transformar um trecho técnico, voltado para especialistas, em um artigo de divulgação científica. Para isso, leia o trecho a seguir com atenção.
+                </p>
+                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6">
+                    Os lepidópteros, grupo que inclui borboletas e mariposas, apresentam larvas geralmente herbívoras. Já os adultos de espécies antófilas se alimentam de flores e consomem, principalmente, néctar e, em alguns casos, pólen. De maneira geral, as borboletas são diurnas, enquanto as mariposas têm hábitos noturnos ou crepusculares.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    A maioria dos lepidópteros adultos se alimenta de néctar, que é sua principal fonte de energia para o voo. Em algumas espécies, como as borboletas do gênero <em>Heliconius</em>, a ingestão de pólen fornece nutrientes essenciais para a produção de ovos.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    A polinização ocorre quando os grãos de pólen aderem ao corpo do inseto durante a visita a uma flor e são levados para outras flores da mesma espécie. Esse processo permite que ocorra a fecundação, resultando na formação de frutos e sementes. Muitas espécies vegetais dependem desse mecanismo para completar seus ciclos de vida e vários cultivos agrícolas importantes só existem por conta da atuação de animais polinizadores, como as borboletas e mariposas.
+                  </p>
+                </CaixaTexto>
+                <p
+                  className="mt-2 mb-6"
+                  style={{
+                    fontFamily: 'Ubuntu, sans-serif',
+                    color: '#000000',
+                    fontSize: '10px',
+                  }}
+                >
+                  OLIVEIRA, Reisla; DUARTE JUNIOR, José A.; RECH, André R. R. <em>et al.</em> Polinização por lepidópteros. In: OLIVEIRA, R.;
+                  DUARTE JÚNIOR, J. A.; RECH, A. R.; <em>et. al. Biologia da polinização.</em> Vol. 2. Brasília: Editora Projeto Jardins, 2021. (Adaptado).
                 </p>
                 <p className="mb-4 indent-6"><strong>Preparação</strong></p>
-                <p className="mb-4 indent-6">Sua notícia deve conter os elementos listados a seguir.
+                <p className="mb-4 indent-6">Reflita sobre o tema que será tratado e faça pesquisas adicionais sobre ele. 
                 </p>
-                <ul className="list-disc marker:text-[#BF3154] ml-6">
-                  <li><strong>Título </strong>: chamativo e informativo, que antecipe o assunto e indique o enfoque escolhido
-                    para o texto.  </li>
-                  <li><strong>Linha-fina </strong>: complementar ao título, com um dado ou uma ideia que aprofunde o tema.  </li>
-                  <li><strong>Lide </strong>: com as informações essenciais (o que, quem, quando, onde, como e por quê).  </li>
-                  <li><strong>Corpo da notícia </strong>: detalhado, com informações adicionais, exemplos, citações (caso
-                    deseje utilizá-las), contexto e possíveis desdobramentos.  </li>
-                  <li><strong>Fechamento </strong>: conclusivo, com uma informação final que dê sentido de encerramento.  </li>
-                </ul>
                 <p className="mb-4 indent-6"><strong>Produção</strong></p>
-                <p className="mb-4 indent-6">Durante a produção, refita sobre o tipo de informação que você vai destacar e que
-                  elementos e dados das duas notícias você considera essenciais e precisa manter em
-                  sua produção.
+                <p className="mb-4 indent-6">Escolha um título que chame atenção e mostre qual é o tema principal do seu texto. Escreva uma introdução apresentando a pergunta que será respondida no artigo. No desenvolvimento, explique suas ideias com base no texto lido e nas escreva uma conclusão que mostre a importância do tema discutido.
                 </p>
                 <p className="mb-4 indent-6"><strong>Avaliação</strong></p>
-                <p className="mb-4 indent-6">Antes de finalizar a sua versão, confira o <em>checklist</em> a seguir para aprimorá-la.
+                <p className="mb-4 indent-6">Antes de concluir seu artigo, revise seu texto com base nas perguntas a seguir.
                 </p>
                 {/* Tabela de Critérios de Avaliação */}
                 <CriteriosAvaliacao
-                  instanceId="producao_texto"
+                  instanceId="producao_artigo"
                   criterios={[
                     {
-                      id: 'criterio_titulo',
-                      nome: 'TÍTULO',
-                      pergunta: 'Apresenta o assunto principal de forma atrativa?',
+                      id: 'criterio_estrutura',
+                      nome: 'Estrutura',
+                      pergunta: 'O texto apresenta título, introdução, desenvolvimento e conclusão como prevê o gênero?',
                     },
                     {
-                      id: 'criterio_linha_fina',
-                      nome: 'LINHA-FINA',
-                      pergunta: 'Complementa o título com uma informação importante ou que aprofunda o assunto?',
-                    },
-                    {
-                      id: 'criterio_lide',
-                      nome: 'LIDE',
-                      pergunta: 'Apresenta as informações essenciais (o quê, quem, quando, onde) de forma clara?',
-                    },
-                    {
-                      id: 'criterio_corpo',
-                      nome: 'CORPO DA NOTÍCIA',
-                      pergunta: 'Desenvolve o assunto de forma organizada e completa?',
+                      id: 'criterio_exemplos',
+                      nome: 'Exemplos e comparações',
+                      pergunta: 'O texto traz exemplos do cotidiano ou comparações que facilitam a compreensão do leitor?',
                     },
                     {
                       id: 'criterio_linguagem',
-                      nome: 'LINGUAGEM',
-                      pergunta: 'Utiliza linguagem objetiva e adequada ao gênero notícia?',
+                      nome: 'Linguagem',
+                      pergunta: 'O vocabulário é acessível?',
                     },
                     {
-                      id: 'criterio_foco',
-                      nome: 'FOCO',
-                      pergunta: 'Mantém o foco no fato noticiado sem expressar opinião?',
+                      id: 'criterio_cientifico',
+                      nome: 'Foco explicativo e científico',
+                      pergunta: 'O texto cumpre a função de divulgar um conteúdo científico de maneira acessível para o público leigo?',
+                    },
+                    {
+                      id: 'criterio_autoria',
+                      nome: 'Autoria',
+                      pergunta: 'Você usou seu próprio modo de explicar o conteúdo?',
                     },
                   ]}
                   userAnswers={userAnswers}

@@ -15,8 +15,6 @@ function QuestionTextInput({
   onAnswerChange,
   showResults = false,
 }: QuestionTextInputProps) {
-  const userAnswer = (userAnswers[question.id] as string) || '';
-
   // Se tiver conteúdo embutido ou pergunta de acompanhamento, usa formato especial
   if (question.embeddedContent || question.followUpQuestion) {
     return (
@@ -259,7 +257,92 @@ function QuestionTextInput({
     );
   }
 
+  // Se tiver itens de notícia, renderiza formato especial
+  if (question.newsItems && question.newsItems.length > 0) {
+    const userAnswer = (userAnswers[question.id] as string) || '';
+
+    return (
+      <div className="mb-6">
+        {/* Título principal com número */}
+        <p className="mb-4">
+          {question.number !== undefined && (
+            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+          )}
+          <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: question.question }} />
+        </p>
+
+        {/* Itens de notícia em duas colunas */}
+        <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {question.newsItems.map((item, index) => (
+            <div
+              key={index}
+              className="mb-4 p-3"
+              style={{
+                border: '1px solid #e5e7eb',
+                borderRadius: '4px',
+                backgroundColor: '#f9fafb',
+              }}
+            >
+              <h4
+                className="mb-2 font-semibold"
+                style={{ color: '#0E3B5D', fontSize: '1rem' }}
+                dangerouslySetInnerHTML={{ __html: item.headline }}
+              />
+              <p
+                className="mb-2 text-sm"
+                style={{ color: '#4b5563' }}
+                dangerouslySetInnerHTML={{ __html: item.summary }}
+              />
+              <p
+                className="text-xs italic break-words"
+                style={{ 
+                  color: '#6b7280',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'break-word',
+                }}
+                dangerouslySetInnerHTML={{ __html: item.source }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Pergunta com bullet vermelho */}
+        {question.followUpQuestionWithBullet && (
+          <div className="mb-4">
+            <ul className="mb-2 question-subitems" style={{ paddingLeft: '1.5rem', listStyleType: 'disc' }}>
+              <li style={{ color: '#BF3154' }}>
+                <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: question.followUpQuestionWithBullet }} />
+              </li>
+            </ul>
+          </div>
+        )}
+
+        {/* Campo de texto para resposta */}
+        <textarea
+          value={userAnswer}
+          onChange={(e) => onAnswerChange(question.id, e.target.value)}
+          placeholder={question.placeholder || 'Digite sua resposta aqui...'}
+          disabled={showResults}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[100px] text-black"
+          style={{
+            fontFamily: 'inherit',
+          }}
+        />
+
+        {/* Resposta esperada (visão do professor) */}
+        {showResults && question.correctAnswer && (
+          <div className="mt-4 p-3 bg-gray-100 rounded text-sm">
+            <strong>Resposta esperada:</strong>
+            <p className="mt-1" dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
+          </div>
+        )}
+      </div>
+    );
+  }
+
   // Formato simples (sem subquestões)
+  const userAnswer = (userAnswers[question.id] as string) || '';
+
   return (
     <div className="mb-6 p-4 rounded-lg">
       <p className="mb-4">

@@ -12,7 +12,7 @@ import ProducaoTexto from './ProducaoTexto';
 import ProducaoFinal from './ProducaoFinal';
 import ProducaoTextoNoticia from './ProducaoTextoNoticia';
 import ProducaoArtigo from './ProducaoArtigo';
-import ProducaoTextoFabula from './ProducaoTextoFabula';
+import ProducaoTextoCronica from './ProducaoTextoCronica';
 import CaixaTexto from './CaixaTexto';
 import QuestionRenderer from './QuestionRenderer';
 import ContinuaProximaPagina from './ContinuaProximaPagina';
@@ -310,7 +310,7 @@ function Book() {
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter1[3]]}
+                    questions={[chapterQuestions.chapter1[3], chapterQuestions.chapter1[4], chapterQuestions.chapter1[5]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 8"
                     fileName="questoes-pagina-8.pdf"
@@ -446,7 +446,7 @@ function Book() {
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter1[8], chapterQuestions.chapter1[9], chapterQuestions.chapter1[10]]}
+                    questions={[chapterQuestions.chapter1[6]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 10"
                     fileName="questoes-pagina-10.pdf"
@@ -649,7 +649,7 @@ function Book() {
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter1[8], chapterQuestions.chapter1[9], chapterQuestions.chapter1[10]]}
+                    questions={[chapterQuestions.chapter1[7], chapterQuestions.chapter1[8], chapterQuestions.chapter1[9]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 14"
                     fileName="questoes-pagina-14.pdf"
@@ -966,7 +966,7 @@ function Book() {
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[0], chapterQuestions.chapter2[1], chapterQuestions.chapter2[2], chapterQuestions.chapter2[3], chapterQuestions.chapter2[4]]}
+                    questions={[chapterQuestions.chapter2[0], chapterQuestions.chapter2[1], chapterQuestions.chapter2[2]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 21"
                     fileName="questoes-pagina-21.pdf"
@@ -1020,6 +1020,15 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
+                {/* Botão de download das questões */}
+                <div className="my-6">
+                  <DownloadQuestionsButton
+                    questions={[chapterQuestions.chapter2[3], chapterQuestions.chapter2[4], chapterQuestions.chapter2[5], chapterQuestions.chapter2[6], chapterQuestions.chapter2[7]]}
+                    userAnswers={userAnswers}
+                    title="Questões da Página 21"
+                    fileName="questoes-pagina-21.pdf"
+                  />
+                </div>
 
                 <Pagination currentPage={22} />
                 {/* Conteúdo do botão do professor */}
@@ -1133,7 +1142,7 @@ function Book() {
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[7], chapterQuestions.chapter2[8]]}
+                    questions={[chapterQuestions.chapter2[8], chapterQuestions.chapter2[9]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 23"
                     fileName="questoes-pagina-23.pdf"
@@ -1187,7 +1196,7 @@ function Book() {
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[9]]}
+                    questions={[chapterQuestions.chapter2[10], chapterQuestions.chapter2[11], chapterQuestions.chapter2[12], chapterQuestions.chapter2[13]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 24"
                     fileName="questoes-pagina-24.pdf"
@@ -1384,15 +1393,15 @@ function Book() {
                     <strong>Final</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                  E Argentina e Alemanha farão a grande final, no domingo. Todos torcendo pela América contra a Europa, nossos irmãos continentais contra os nossos <span className="bg-[#fff225] px-1">algozes</span>, nossos co-colonizados contra os senhores do mundo etc. A esta altura, só nos resta a hipocrisia.
+                    E Argentina e Alemanha farão a grande final, no domingo. Todos torcendo pela América contra a Europa, nossos irmãos continentais contra os nossos <span className="bg-[#fff225] px-1">algozes</span>, nossos co-colonizados contra os senhores do mundo etc. A esta altura, só nos resta a hipocrisia.
                   </p>
                   {/* Glossário */}
                   <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="text-[13px] mb-4 indent-6"><strong>galhofa</strong>: zombaria, escárnio,  deboche. 
+                    <p className="text-[13px] mb-4 indent-6"><strong>galhofa</strong>: zombaria, escárnio,  deboche.
                     </p>
-                    <p className="text-[13px] mb-4 indent-6"><strong>catatonia</strong>: alternância entre agitação intensa e passividade. 
+                    <p className="text-[13px] mb-4 indent-6"><strong>catatonia</strong>: alternância entre agitação intensa e passividade.
                     </p>
-                    <p className="text-[13px] mb-4 indent-6"><strong>algozes</strong>: indivíduos cruéis, insensíveis ao sofrimento alheio. 
+                    <p className="text-[13px] mb-4 indent-6"><strong>algozes</strong>: indivíduos cruéis, insensíveis ao sofrimento alheio.
                     </p>
                   </div>
                 </CaixaTexto>
@@ -1424,7 +1433,7 @@ function Book() {
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[10], chapterQuestions.chapter2[11], chapterQuestions.chapter2[12], chapterQuestions.chapter2[13], chapterQuestions.chapter2[14]]}
+                    questions={[chapterQuestions.chapter2[14], chapterQuestions.chapter2[15]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 28"
                     fileName="questoes-pagina-28.pdf"
@@ -1437,103 +1446,19 @@ function Book() {
                   <TeacherButton
                     content={
                       <>
-                        <p className="mb-3">
-                          Respostas:
-                        </p>
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q16');
-                          if (question && question.type === 'true-false' && question.statements) {
-                            return question.statements.map((stmt) => {
-                              // Se tiver correção, mostra V/F primeiro e depois a correção. Se não, mostra apenas V ou F
-                              const correctAnswerText = stmt.correctAnswer ? 'Verdadeiro (V)' : 'Falso (F)';
-                              const answerText = stmt.correction
-                                ? `${correctAnswerText}. ${stmt.correction}`
-                                : correctAnswerText;
-
-                              return (
-                                <p key={stmt.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{stmt.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: answerText }} />
-                                </p>
-                              );
-                            });
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q17');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q18');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-
+                        <TeacherAnswers
+                          questions={[
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q17')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q18')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q19')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q20')!,
+                          ]}
+                        />
                       </>
                     }
-
                   />
                 </div>
-                {/* Questão intercalada no conteúdo */}
-                <QuestionRenderer
-                  question={chapterQuestions.chapter2[15]}
-                  userAnswers={userAnswers}
-                  onAnswerChange={handleAnswerChange}
-                  showResults={showTeacherView}
-                />
+
                 {/* Questão intercalada no conteúdo */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter2[16]}
@@ -1548,10 +1473,25 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
+                {/* Questão intercalada no conteúdo */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[18]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+                {/* Questão intercalada no conteúdo */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[19]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[15], chapterQuestions.chapter2[16], chapterQuestions.chapter2[17]]}
+                    questions={[chapterQuestions.chapter2[16], chapterQuestions.chapter2[17], chapterQuestions.chapter2[18], chapterQuestions.chapter2[19]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 29"
                     fileName="questoes-pagina-29.pdf"
@@ -1559,129 +1499,160 @@ function Book() {
                 </div>
 
                 <Pagination currentPage={30} />
-                <ProducaoFinal />
-                <p className="mb-4 indent-6">
-                  Chegou o momento de criar sua própria fábula. Desenvolva uma narrativa original, curta e intencional. Os personagens devem ser animais que representem comportamentos humanos, e o enredo deve conduzir o leitor a refletir sobre um ensinamento, apresentado de maneira direta ou indireta.
-                </p>
-                <p className="mb-4 indent-6">
-                  <strong>Preparação</strong>
-                </p>
-                <p className="mb-4 indent-6">
-                  Siga os passos a seguir para organizar o seu texto.
-                </p>
-                <ol className="list-decimal marker:text-[#BF3154] ml-6 mb-4">
-                  <li><strong>Escolha a moral da sua fábula</strong>
-                  </li>
-                  <p className="mb-4 indent-6">
-                    A moral é a mensagem que a sua história vai transmitir. Por isso, ela precisa ser escolhida logo no início do planejamento. Você pode criar a sua própria moral ou escolher uma das
-                    sugestões listadas a seguir.
-                  </p>
-                  <ul className="list-disc marker:text-[#BF3154] ml-6 mb-4">
-                    <li>"Nem todo elogio é sincero."</li>
-                    <li>"A pressa é inimiga da perfeição."</li>
-                    <li>"Gentileza gera gentileza."</li>
-                    <li>"Quem pouco ouve, muito erra."</li>
-                    <li>"Só se colhe o que se planta."</li>
-                    <li>"Às vezes, o menor gesto faz a maior diferença."</li>
-                  </ul>
-                  <li><strong>Defina os personagens simbólicos</strong></li>
-                  <p className="mb-4 indent-6">
-                    Toda fábula tem personagens que simbolizam ideias, atitudes e sentimentos humanos. Esses personagens geralmente são animais, mas também podem ser objetos ou outros seres com papel secundário na história. Portanto, reflita: Qual animal vai representar cada comportamento humano na sua fábula?
-                  </p>
-                  <li><strong>Planeje o enredo da sua fábula</strong></li>
-                  <p className="mb-4 indent-6">
-                    Use o quadro abaixo para organizar o que vai acontecer no início, no meio e no fim da sua fábula. Lembre-se de que a moral precisa estar conectada ao que acontece na história. Ela pode ser escrita de maneira direta no final do texto ou apenas sugerida pelas atitudes dos personagens.
-                  </p>
-                  {/* Questão intercalada no conteúdo */}
-                  <QuestionRenderer
-                    question={chapterQuestions.chapter2[18]}
-                    userAnswers={userAnswers}
-                    onAnswerChange={handleAnswerChange}
-                    showResults={showTeacherView}
+                {/* Conteúdo do botão do professor */}
+                <div className="my-6">
+                  <TeacherButton
+                    content={
+                      <>
+                        <TeacherAnswers
+                          questions={[
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q21')!,
+                          ]}
+                        />
+                      </>
+                    }
                   />
-
-                </ol>
+                </div>
+                {/* Questão intercalada no conteúdo */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[20]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[18]]}
+                    questions={[chapterQuestions.chapter2[20]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 30"
                     fileName="questoes-pagina-30.pdf"
                   />
                 </div>
                 <Pagination currentPage={31} />
-                <p className="mb-4 indent-6">É hora de escrever sua fábula. Produza um texto original que apresente:</p>
+                {/* Conteúdo do botão do professor */}
+                <div className="my-6">
+                  <TeacherButton
+                    content={
+                      <>
+                        <p className="mb-3">
+                          EF69LP07, EF69LP08, EF69LP51, EF67LP30, EF67LP32, EF67LP33, EF67LP36. Oriente os alunos a retomar a notícia selecionada na atividade anterior como base para a construção de sua crônica. Reforce que a proposta envolve transformar fato real em uma narrativa breve, com ponto de vista pessoal, tom definido e linguagem coerente com o gênero. Estimule reflexões prévias com as perguntas da etapa de preparação, ajudando os alunos a organizar ideias, definir intencionalidade e adotar uma abordagem coerente com a escolha. Durante a escrita, relembre as características fundamentais da crônica e incentive a experimentação criativa com liberdade de estilo, sem perder de vista a coesão do texto. Finalize com a revisão orientada pelo <em>checklist</em>, enfatizando tomada de decisão autoral, clareza na estrutura e efeitos de sentido produzidos. Essa produção consolida o aprendizado do gênero ao mesmo tempo que valoriza o protagonismo e a expressão dos alunos em relação aos fatos do mundo.
+
+                        </p>
+                      </>
+                    }
+                  />
+                </div>
+                <ProducaoFinal />
+                <p className="mb-4 indent-6">Você já leu e analisou crônicas sobre memórias, acontecimentos cotidianos e fatos de relevância nacional. Também escolheu uma notícia real que, na sua opinião, pode servir como ponto de partida para escrever uma crônica.
+                </p>
+
+                <p className="mb-4 indent-6">Agora é o momento de escrever uma crônica inspirada na notícia escolhida por você. Seu texto deve apresentar uma percepção pessoal sobre o fato, com liberdade criativa para narrar, refletir, criticar ou provocar o riso.
+                </p>
+                <p className="mb-4 indent-6">Antes de começar a escrever, reflita sobre as perguntas a seguir.
+                </p>
                 <ul className="list-disc marker:text-[#BF3154] ml-6 mb-4">
-                  <li>enredo curto com começo, meio e fim;</li>
-                  <li>personagens simbólicos que se comportam como seres humanos;</li>
-                  <li>problema ou desafio que dá origem ao conflito da história;</li>
-                  <li>lição apresentada no final do texto ou sugerida pelas atitudes dos personagens.</li>
+                  <li>Que tom deseja dar à sua crônica (humorístico, sensível, reflexivo, crítico etc.)?</li>
                 </ul>
-                <p className="mb-4 indent-6">Para isso, use:</p>
-                <ul className="list-disc marker:text-[#BF3154] ml-6 mb-4">
-                  <li>verbos no passado para contar as ações concluídas;</li>
-                  <li>marcadores temporais que organizem a narrativa, como “um dia”, “então” e “enquanto isso”;</li>
-                  <li>linguagem expressiva e coerente com o gênero.</li>
-                </ul>
-                <p className="mb-4 indent-6">Represente seu texto com imagens. Você pode:</p>
-                <ul className="list-disc marker:text-[#BF3154] ml-6 mb-4">
-                  <li>fazer um desenho dos personagens principais em um momento importante da história;</li>
-                  <li>criar uma cena que destaque o conflito ou a moral da história;</li>
-                  <li>produzir uma colagem com recortes ou buscar imagens <em>on-line</em> que combinem com o que você escreveu.</li>
-                </ul>
+                
+                {/* Pergunta com bullet vermelho e opções interativas */}
+                <div className="mb-4">
+                  <ul className="mb-4 question-subitems" style={{ paddingLeft: '1.5rem', listStyleType: 'disc' }}>
+                    <li style={{ color: '#BF3154' }}>
+                      <span style={{ color: 'black' }}>Como pretende transformar esse fato em texto?</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="space-y-2 ml-6">
+                    {[
+                      { id: 'opcao1', text: 'Contando uma história fictícia que envolva o fato.' },
+                      { id: 'opcao2', text: 'Exagerando e brincando com a situação.' },
+                      { id: 'opcao3', text: 'Fazendo um comentário pessoal sobre o tema.' },
+                      { id: 'opcao4', text: 'Outra maneira:', hasInput: true },
+                    ].map((opcao) => {
+                      const answerId = `cronica_transformacao_${opcao.id}`;
+                      const isChecked = (userAnswers[answerId] as boolean) || false;
+                      const inputId = `cronica_transformacao_${opcao.id}_input`;
+                      const inputValue = (userAnswers[inputId] as string) || '';
+
+                      return (
+                        <label
+                          key={opcao.id}
+                          className="flex items-start gap-3 p-2 cursor-pointer hover:bg-gray-50 rounded"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={(e) => handleAnswerChange(answerId, e.target.checked)}
+                            className="mt-1 w-4 h-4"
+                          />
+                          <span className="flex-1" style={{ color: 'black' }}>
+                            {opcao.text}
+                            {opcao.hasInput && (
+                              <input
+                                type="text"
+                                value={inputValue}
+                                onChange={(e) => handleAnswerChange(inputId, e.target.value)}
+                                className="ml-2 px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                style={{ minWidth: '200px' }}
+                                placeholder="________"
+                              />
+                            )}
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </div>
+                <p className="mb-4 indent-6"><strong>Produção</strong></p>
+                <p className="mb-4 indent-6">Escreva sua crônica com base nos elementos da preparação. Lembre-se do que caracteriza esse gênero textual, conforme estudado no capítulo.</p>
                 <p className="mb-4 indent-6"><strong>Avaliação</strong></p>
-                <p className="mb-4 indent-6">Antes de finalizar a sua fábula, confira o <em>checklist</em> a seguir para aprimorá-la.</p>
+                <p className="mb-4 indent-6">Antes de finalizar sua crônica, confira o <em>checklist</em> para verificar o que pode ser melhorado.</p>
                 {/* Tabela de Critérios de Avaliação */}
                 <CriteriosAvaliacao
-                  instanceId="producao_final_pag31"
+                  instanceId="producao_final_pag31_7ano"
                   criterios={[
                     {
-                      id: 'criterio_titulo',
-                      nome: 'Estrutura do gênero',
-                      pergunta: 'O texto tem uma situação inicial, um conflito e um desfecho?',
+                      id: 'criterio_estrutura_cronica',
+                      nome: 'Estrutura da crônica',
+                      pergunta: 'O texto tem início, desenvolvimento e final bem definidos?',
                     },
                     {
-                      id: 'criterio_linha_fina',
-                      nome: 'Personagens simbólicos',
-                      pergunta: 'Os personagens representam atitudes ou sentimentos humanos reconhecíveis?',
+                      id: 'criterio_tema_escolhido',
+                      nome: 'Tema escolhido',
+                      pergunta: 'A crônica foi construída com base na manchete selecionada na atividade anterior?',
                     },
                     {
-                      id: 'criterio_lide',
-                      nome: 'Coerência narrativa',
-                      pergunta: 'As ações fazem sentido? A consequência final está conectada com o que veio antes?',
+                      id: 'criterio_ponto_vista',
+                      nome: 'Ponto de vista',
+                      pergunta: 'O texto apresenta um olhar pessoal ou um modo criativo de comentar o fato?',
                     },
                     {
-                      id: 'criterio_corpo',
-                      nome: 'Expressividade',
-                      pergunta: 'A história provoca reflexão ou emoção? Os pensamentos e as ações dos personagens geram sentido simbólico?',
+                      id: 'criterio_linguagem_adequada',
+                      nome: 'Linguagem adequada',
+                      pergunta: 'A linguagem é simples, mais informal e próxima da fala, conforme o gênero?',
                     },
                     {
-                      id: 'criterio_linguagem',
-                      nome: 'Linguagem e clareza',
-                      pergunta: 'O texto está bem escrito, com vocabulário e pontuação adequados?',
+                      id: 'criterio_tom_texto',
+                      nome: 'Tom do texto',
+                      pergunta: 'O tom adotado ao longo do texto (como humor, crítica, emoção etc.) é coerente?',
                     },
                     {
-                      id: 'criterio_foco',
-                      nome: 'Ilustração como parte da criação',
-                      pergunta: 'A ilustração escolhida representa os personagens ou uma cena importante da fábula?',
+                      id: 'criterio_criatividade_autoria',
+                      nome: 'Criatividade e autoria',
+                      pergunta: 'As escolhas para contar a história, dar opinião ou provocar emoções no leitor são pessoais?',
                     },
                     {
-                      id: 'autoria_criacao',
-                      nome: 'Originalidade',
-                      pergunta: 'A história tem ideias inéditas?',
-                    },
-                    {
-                      id: 'moral',
-                      nome: 'Moral',
-                      pergunta: 'A moral da história está presente, ainda que de maneira implícita',
+                      id: 'criterio_conexao_leitor',
+                      nome: 'Conexão com o leitor',
+                      pergunta: 'O texto convida o leitor a pensar, sentir ou interpretar de forma diferente o que foi noticiado?',
                     },
                   ]}
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                 />
                 <Pagination currentPage={32} />
-                <ProducaoTextoFabula />
+                <ProducaoTextoCronica />
               </>
             }
           />

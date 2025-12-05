@@ -73,6 +73,12 @@ export interface TextInputQuestion {
     columns: string[]; // Cabeçalhos das colunas
     rows: Array<Record<string, string>>; // Linhas da tabela (cada linha é um objeto com chaves correspondentes às colunas)
   };
+  newsItems?: Array<{
+    headline: string; // Título da manchete
+    summary: string; // Resumo/descrição
+    source: string; // Fonte da notícia
+  }>; // Itens de notícia/manchetes para exibir antes da pergunta
+  followUpQuestionWithBullet?: string; // Pergunta adicional com bullet vermelho (antes do campo de texto)
 }
 
 export interface TableFillQuestion {

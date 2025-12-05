@@ -42,7 +42,7 @@ function ProducaoArtigo() {
     // Adiciona título
     doc.setFontSize(18);
     doc.setFont('helvetica', 'bold');
-    doc.text('Produção de texto – Minha versão', margin, yPosition);
+    doc.text('Produção final – Artigo de divulgação científica', margin, yPosition);
     yPosition += 15;
 
     // Adiciona o texto com quebra de linha automática
@@ -64,7 +64,7 @@ function ProducaoArtigo() {
     });
 
     // Salva o PDF
-    doc.save('producao-texto-noticia.pdf');
+    doc.save('producao-texto-artigo.pdf');
   };
 
   return (

@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import jsPDF from 'jspdf';
 import DownloadButton from './DownloadButton';
 
-function ProducaoTextoFabula() {
+function ProducaoCronica() {
   const [texto, setTexto] = useState('');
 
   // Carrega o texto salvo do localStorage ao montar o componente
   useEffect(() => {
-    const textoSalvo = localStorage.getItem('producaoTextoFabula');
+    const textoSalvo = localStorage.getItem('producaoCronica');
     if (textoSalvo) {
       setTexto(textoSalvo);
     }
@@ -15,7 +15,7 @@ function ProducaoTextoFabula() {
 
   // Salva o texto no localStorage sempre que ele mudar
   useEffect(() => {
-    localStorage.setItem('producaoTextoFabula', texto);
+    localStorage.setItem('producaoCronica', texto);
   }, [texto]);
 
   const handleDownload = () => {
@@ -42,7 +42,7 @@ function ProducaoTextoFabula() {
     // Adiciona título
     doc.setFontSize(18);
     doc.setFont('helvetica', 'bold');
-    doc.text('Produção de texto – Minha versão', margin, yPosition);
+    doc.text('Produção final – Crônica', margin, yPosition);
     yPosition += 15;
 
     // Adiciona o texto com quebra de linha automática
@@ -64,7 +64,7 @@ function ProducaoTextoFabula() {
     });
 
     // Salva o PDF
-    doc.save('producao-texto-fabula.pdf');
+    doc.save('producao-texto-cronica.pdf');
   };
 
   return (
@@ -85,7 +85,7 @@ function ProducaoTextoFabula() {
             lineHeight: 'normal',
           }}
         >
-          Produção final - Fábula
+          Produção final - Crônica
         </h2>
       </div>
 
@@ -108,4 +108,4 @@ function ProducaoTextoFabula() {
   );
 }
 
-export default ProducaoTextoFabula;
+export default ProducaoCronica;

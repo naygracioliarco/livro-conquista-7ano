@@ -89,57 +89,51 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          EF69LP16, EF69LP17, EF06LP02, EF67LP06, EF06LP05. Nesta seção, os alunos ampliam sua
-                          compreensão sobre o gênero <strong>notícia</strong>, analisando a função social, a estrutura composicional e os efeitos de sentido produzidos pela linguagem. Conduza uma leitura comentada,
-                          destacando como o texto noticioso transmite pontos de vista mesmo sem emitir opinião
-                          explícita. Essa análise prepara os alunos para interpretar notícias com atenção à linguagem
-                          e reconhecer que toda notícia é uma construção orientada por escolhas.
-
+                          EF69LP29, EF69LP42. Conduza uma roda de conversa para que os alunos compartilhem onde costumam ter contato com esse tipo de texto, comentando em que suportes o gênero aparece (revistas, sites, vídeos, canais científicos digitais etc.). Explore os objetivos desse tipo de artigo e os recursos utilizados para tornar o conteúdo compreensível. Oriente os alunos na identificação das partes da estrutura apresentada (título, introdução, desenvolvimento e conclusão) e das marcas linguísticas comuns a esse gênero, como o uso do presente e a citação de especialistas.
                         </p>
                       </>
                     }
 
                   />
                 </div>
-                <h3>O que é notícia?</h3>
+                <h3>O que é um artigo de divulgação científica?</h3>
                 <p className="mb-4 indent-6">
-                  A notícia é um gênero textual do campo jornalístico e tem como principal objetivo
-                  informar o público sobre um fato que já aconteceu ou que está acontecendo. Esse fato
-                  precisa ser verdadeiro, concreto e de interesse público.
+                  O artigo de divulgação científica é um gênero textual que tem como objetivo comunicar informações, ideias e descobertas científicas para um público amplo. Sua função social é aproximar o conhecimento científico do cotidiano das pessoas e despertar o interesse por temas variados.
                 </p>
                 <p className="mb-4 indent-6">
-                  O gênero está presente em jornais, revistas, <em>sites</em> e programas de rádio ou TV e pode
-                  ser ouvido, lido ou assistido em diversos formatos. É um texto predominantemente expositivo e informativo, pois apresenta acontecimentos do mundo com base em dados, relatos
-                  e registros confiáveis.
+                  Para cumprir esse papel, o texto utiliza linguagem acessível e evita o uso excessivo de termos técnicos, ou os explica. Além disso, apresenta exemplos cotidianos e comparações que ajudam o leitor a compreender assuntos muitas vezes complexos.
                 </p>
                 <p className="mb-4 indent-6">
-                  Por ser um gênero que circula amplamente na sociedade e que influencia a opinião
-                  pública, a notícia cumpre uma função social importante: ajuda a formar a opinião das pessoas sobre diferentes assuntos. Por isso, deve ser produzida com responsabilidade, fundamentada em fontes confiáveis e organizada de modo a permitir ao leitor que compreenda
-                  plenamente os fatos e o contexto em eles que se inserem.
-                </p>
-                <p className="mb-4 indent-6">
-                  As principais características da notícia estão listadas a seguir.
+                  A estrutura desse tipo de artigo pode variar, mas geralmente inclui as seguintes partes:
                 </p>
                 <ul className="list-disc marker:text-[#BF3154] ml-6">
-                  <li><strong>Foco na objetividade</strong>: o autor não deve expressar sua opinião. </li>
-                  <li><strong>Uso da terceira pessoa</strong>: evita-se o uso de pronomes como <strong>eu</strong> ou <strong>nós</strong>. </li>
-                  <li><strong>Presença de lide</strong>: as informações mais importantes aparecem no início do texto. </li>
-                  <li><strong>Emprego predominante de verbos no passado</strong>:  os acontecimentos já ocorridos são apresentados nessa forma verbal. </li>
-                  <li><strong>Uso de linguagem informativa e estrutura em ordem direta</strong>: evita-se o uso de frases em ordem indireta ou ambíguas. </li>
-                  <li><strong>Apresentação de evidências</strong>: dados, depoimentos e registros dão credibilidade às informações. </li>
-                  <li><strong>Organização típica</strong>: o texto segue a estrutura de pirâmide invertida, com título, linha-fina, lide, corpo da notícia e fechamento, de modo que as informações essenciais são apresentadas no início e as menos essenciais, no fim do texto. </li>
+                  <li><strong>Título</strong></li>
+                  <p className="mb-4 indent-6">Deve ser curto, chamativo e instigante. Muitas vezes, envolve perguntas ou termos que
+                    despertam a atenção do leitor e antecipam o tema do texto.
+                  </p>
+                  <li><strong>Introdução</strong></li>
+                  <p className="mb-4 indent-6">Apresenta o tema principal e a questão que motivou a escrita do artigo, contextualizando o assunto e despertando o interesse do leitor.
+                  </p>
+                  <li><strong>Desenvolvimento</strong></li>
+                  <p className="mb-4 indent-6">Expõe dados, relatos de pesquisas, observações, descobertas e explicações científicas. É comum utilizar verbos no presente do indicativo para conferir objetividade às informações apresentadas.
+                  </p>
+                  <li><strong>Conclusão</strong></li>
+                  <p className="mb-4 indent-6">
+                    Retoma os principais pontos discutidos e pode trazer uma síntese, deixar uma reflexão ou enfatizar a importância social do tema.
+                  </p>
                 </ul>
                 <p className="mb-4 indent-6">
-                  Na internet, além de texto escrito e imagens, as notícias costumam apresentar outros recursos, como vídeos, mapas interativos,infográficos, áudios e hiperlinks. Esse conjunto de elementos é chamado de <strong>recursos multimodais</strong>.
-                </p>
-                <h4>A linguagem na notícia</h4>
-                <p className="mb-4 indent-6">
-                  Embora a principal intenção da notícia seja informar com objetividade, a maneira como ela é escrita envolve escolhas que podem revelar diferentes pontos de vista, mesmo que o autor não exponha sua opinião diretamente. Por exemplo, o título “Robôs trazem autonomia e segurança para idosos” destaca um benefício da tecnologia. Já o título “Robôs substituem cuidados humanos com idosos” mostra outra perspectiva em relação ao uso da tecnologia,
-                  destacando uma preocupação.
+                  Esses textos normalmente adotam uma linguagem envolvente e acessível. É comum incluírem curiosidades, dados estatísticos, perguntas instigantes, citações de especialistas, entre outros recursos que tornam a leitura mais interessante e informativa. Ainda que o conteúdo seja complexo, a redação busca facilitar a compreensão, recorrendo a exemplos do cotidiano e evitando termos técnicos não explicados.
                 </p>
                 <p className="mb-4 indent-6">
-                  A forma como o texto está escrito pode destacar uma parte do fato, causar surpresa, criar senso de urgência ou fazer o leitor se preocupar mais com um lado da história do que com outro. Isso pode revelar o posicionamento do jornal ou do site em que a notícia
-                  foi publicada.
+                  Os artigos de divulgação científica devem ser embasados em fontes confiáveis, como pesquisas universitárias, estudos de instituições reconhecidas ou entrevistas com especialistas. Isso garante a credibilidade das informações e evita a disseminação de dados incorretos.
+                </p>
+                <p className="mb-4 indent-6">
+                  O autor pode ser um jornalista, um cientista ou um profissional da comunicação. Sua função é interpretar o conteúdo técnico e apresentá-lo sem distorcer o significado original dos dados científicos.
+                </p>
+                <p className="mb-4 indent-6">O artigo de divulgação científica funciona como uma ponte entre a ciência e a sociedade, ajudando o público a entender como o conhecimento científico se relaciona com a vida cotidiana. Isso contribui para o desenvolvimento do pensamento crítico e a formação de cidadãos bem-informados e conscientes.
+                </p>
+                <p className="mb-4 indent-6">Além do texto escrito, esses artigos costumam apresentar elementos visuais, como imagens, gráficos, tabelas ou infográficos. Esses recursos facilitam a compreensão dos dados apresentados e tornam a leitura mais interessante.
                 </p>
                 <Pagination currentPage={6} />
                 <div className="my-6">

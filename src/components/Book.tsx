@@ -141,10 +141,7 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          EF69LP03, EF69LP16, EF69LP17, EF06LP01, EF67LP06, EF67LP07. Incentive a leitura atenta da notícia e oriente os alunos
-                          a localizar no texto os elementos da estrutura do gênero (título, linha-fina, lide e corpo), além de observar o uso da terceira
-                          pessoa e identificar as informações mais importantes. Retome o conteúdo trabalhado nas páginas anteriores e proponha uma conversa inicial: O que foi noticiado? Como os dados estão organizados? Que recursos a autora usou para tornar
-                          a notícia informativa e interessante?
+                          EF69LP29, EF69LP34, EF69LP42. Destaque a linguagem acessível, a presença de explicações científicas e o uso de fontes especializadas. As atividades propostas ajudam a consolidar o reconhecimento do gênero por meio da interpretação de texto, da análise de sua linguagem e da validação da informação com base em fontes confiáveis, contribuindo para o desenvolvimento do pensamento crítico e da competência leitora.
                         </p>
                       </>
                     }
@@ -153,110 +150,54 @@ function Book() {
                 </div>
                 <TrilhaTexto />
                 <p className="mb-4 indent-6">
-                  Agora que você já explorou as principais características da notícia, chegou o momento
-                  de ler um exemplo real. Fique atento à linguagem usada, à estrutura do texto e às escolhas
-                  da autora.
+                  Leia um artigo de divulgação científica que apresenta uma área de estudo diferente e, talvez, pouco conhecida.
                 </p>
                 <p className="mb-4 indent-6">
                   <strong>Texto I</strong>
                 </p>
-                <CaixaTexto title='China inaugura primeira loja que une venda, 
-                serviço e peças para robôs humanoides'>
+                <CaixaTexto title=''>
                   <p className="mb-4 indent-6">
-                    <strong>Robot Mall tem mais de 100 tipos de robôs de mais de
-                      40 marcas chinesas, como a Ubtech Robotics e a Unitree Robotics</strong>
-                  </p>
-                  <p
-                    className="mb-2 indent-6"
-                    style={{
-                      fontSize: '10px',
-                      fontStyle: 'normal',
-                      fontWeight: 400,
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    Por Thâmara Kaoru
-                  </p>
-                  <p
-                    className="mb-2 indent-6"
-                    style={{
-                      fontSize: '10px',
-                      fontStyle: 'normal',
-                      fontWeight: 400,
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    10/08/2025
+                    <strong>Lepidopterista!</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                    Se você está em busca de um <span className="bg-[#fff225] px-1">robô humanoide</span> para chamar de seu, a China pode ser o lugar
-                    ideal para sua compra. Na última sexta-feira (8), Pequim abriu as portas do <span className="bg-[#fff225] px-1">Robot Mall</span>, considerado a primeira loja de robôs inteligentes humanoides 4S do mundo.
+                    Azuis, laranjas, brancas, amarelas… já reparou na variedade de cores das borboletas? E mariposas, já notou alguma voando por aí? Além de bonito de se ver, o bater de asas de borboletas e mariposas pode nos dizer muito sobre as condições de determinados ambientes, além de dar alertas importantes sobre a conservação de espécies e da natureza em geral. Quem estuda tudo isso são profissionais chamados de lepidopteristas… ou lepidopterologistas!
                   </p>
                   <p className="mb-4 indent-6">
-                    O modelo “4S” significa que eles oferecem vendas, peças de reposição, manutenção e pesquisas —
-                    ou seja, coleta e análise de feedback dos clientes, como se fosse uma concessionária de automóveis.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    Segundo Wang Yifan, diretor do Robot Mall, a instalação de quatro andares é a primeira loja
-                    desse tipo na China, embora outras cidades também estejam construindo modelos como esse,
-                    informou a  agência de notícias AP. O Robot Mall tem mais de 100 tipos de robôs de mais de
-                    40 marcas chinesas, como a Ubtech Robotics e a Unitree Robotics, de acordo com a <span className="bg-[#fff225] px-1">Reuters</span>.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    “Se os robôs vão entrar em milhares de lares, depender apenas
-                    de empresas de robótica não é suficiente”, disse Wang, enfatizando a necessidade de soluções personalizadas para os consumidores. Ele afirma que os preços dos robôs variam de 2.000 yuans
-                    (cerca de R$ 1.510) a vários milhões de yuans.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    Entre os itens mais curiosos à venda estão cães robóticos e robôs que jogam xadrez. A loja também exibe peças de destaque,
-                    como um robô humanoide em tamanho real de Albert Einstein
-                    e um robô humanoide representando o imperador Qin Shi Huang.
+                    O nome que trava a língua vem de um ramo da entomologia (área da ciência que estuda os insetos) que se dedica especialmente à ordem Lepidoptera, composta pelas borboletas e mariposas. “Lepi” significa escama e “ptera”, asas. “As asas das borboletas e mariposas são cobertas por minúsculas escamas”, conta a lepidopterista Laura Braga, pesquisadora do Instituto Nacional da Mata Atlântica. Ela tem essa e outras informações valiosas a compartilhar sobre esses animais tão encantadores…
                   </p>
                   {/* Imagem */}
                   <div className="flex flex-col items-center my-6">
-                    <img src="images/roboHumanoide.png" className="max-w-[50%]" />
-                    <p className="text-[10px] text-slate-600 mt-2">ADEK BERRY/AFP
-                    </p>
-                    <div className="border-l-[2px] border-[#00B99D] pl-2 mb-1">
-                      <p className="text-[10px]">Robô humanoide parecido com
-                        Albert Einstein no Robot Mall.
-                      </p>
-                    </div>
-                  </div>
-                  <p className="mb-4 indent-6">
-                    Também há robôs para preparar café e distribuir medicamentos. Clientes também poderão ser atendidos por garçons robóticos e provar pratos preparados por chefs robôs.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    O espaço conta ainda com uma área de entretenimento, onde
-                    visitantes podem assistir a esportes praticados por robôs, como futebol.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    Segundo AP, o objetivo da loja é ajudar empresas de robótica a comercializar o que até agora
-                    tem sido, em grande parte, um esforço focado em pesquisa.
-                  </p>
-                  {/* Glossário */}
-                  <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="text-[13px] mb-4 indent-6"><strong>robô humanoide</strong>: robô que tem forma
-                      ou movimentos parecidos com os de
-                      uma pessoa.
-                    </p>
-                    <p className="text-[13px] mb-4 indent-6"><strong>Robot Mall</strong>: nome dado ao centro de vendas de robôs na China; <em>shopping</em> de robôs.
-                    </p>
-                    <p className="text-[13px] mb-4 indent-6"><strong>Reuters</strong>: agência que produz notícias
-                      para jornais e TVs do mundo todo.
+                    <img src="images/pag6_img1.png" className="max-w-[50%]" />
+                    <p className="text-[10px] text-slate-600 mt-2">David Arruda
                     </p>
                   </div>
+                  <p className="mb-4 indent-6">
+                    <strong>Alarme ambiental</strong>
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Borboletas e mariposas têm um papel essencial para os ecossistemas, porque são polinizadoras e fontes de alimento para outros animais. Além disso, são espécies bioindicadoras. Ou seja: elas ajudam a indicar a qualidade dos ambientes. Isso porque são muito sensíveis a alterações de habitat e mudanças climáticas. Então, a ausência desses insetos é um alarme sobre a saúde dos ecossistemas.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Não por acaso, borboletas e mariposas têm sido muito estudadas em projetos de monitoramento ambiental. “Elas respondem rapidamente a distúrbios ambientais e processos de restauração ambiental. Algumas espécies só ocorrem em ambientes bem preservados. Assim, a lepidopterologia ganhou maior relevância no cenário atual”, diz Laura Braga.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Muitos lepidopteristas pesquisam como as mudanças climáticas podem afetar as espécies de borboletas e mariposas, porque se sabe que o ciclo de vida desses animais está intimamente relacionado ao clima.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    <strong>Metamorfose e conservação</strong>
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Laura explica que cada espécie é adaptada a determinada condição e depende da oferta de alimento para suas lagartas e para a fase de adulto. As borboletas e mariposas passam por quatro estágios diferentes de vida (ovo, larva, pupa e adulto), um processo biológico chamado metamorfose. Além disso, cada espécie é adaptada a um tipo de ambiente, como, por exemplo, floresta, restinga (vegetação da beira da praia), topo de montanha… E as mudanças climáticas e a crise ambiental ameaçam a existência desses insetos.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    “Nós, lepidopteristas, trabalhamos e pesquisamos para conhecermos melhor a biologia e a ecologia das espécies, e assim traçarmos planos e estratégias para conservarmos tanto elas quanto os habitats em que vivem”, conta a pesquisadora.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Normalmente, os lepidopteristas se formam em Biologia, Agronomia ou Engenharia Florestal, e depois se especializam em entomologia e no estudo de borboletas e mariposas. Já a rotina da profissão vai depender da área de atuação escolhida.
+                  </p>
+
+                  <ContinuaProximaPagina />
                 </CaixaTexto>
-                <p
-                  className="mt-2 mb-6"
-                  style={{
-                    fontFamily: 'Ubuntu, sans-serif',
-                    color: '#000000',
-                    fontSize: '10px',
-                  }}
-                >
-                  KAORU, Thâmara. <em>China inaugura primeira loja que une venda, serviço e peças para robôs humanoides.</em> Disponível em: <a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml" target="_blank" rel="noopener noreferrer">https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml</a>. Acesso em: 23 set. 2025.
-                </p>
                 <Pagination currentPage={7} />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
@@ -272,6 +213,19 @@ function Book() {
                     }
                   />
                 </div>
+                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6"></p>
+                </CaixaTexto>
+                <p
+                  className="mt-2 mb-6"
+                  style={{
+                    fontFamily: 'Ubuntu, sans-serif',
+                    color: '#000000',
+                    fontSize: '10px',
+                  }}
+                >
+                  KAORU, Thâmara. <em>China inaugura primeira loja que une venda, serviço e peças para robôs humanoides.</em> Disponível em: <a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml" target="_blank" rel="noopener noreferrer">https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml</a>. Acesso em: 23 set. 2025.
+                </p>
                 <p className="mb-4 indent-6">
                   Depois da leitura, analise como a notícia está organizada e quais foram as escolhas da
                   autora ao apresentar as informações.

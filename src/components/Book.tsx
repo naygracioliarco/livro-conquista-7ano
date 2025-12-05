@@ -322,46 +322,10 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          Respostas:
-                        </p>
-                        {(() => {
-                          const question = chapterQuestions.chapter1.find(q => q.id === 'ch1_q5');
-                          if (question && question.type === 'true-false' && question.statements) {
-                            return question.statements.map((stmt) => {
-                              // Se tiver correção, mostra V/F primeiro e depois a correção. Se não, mostra apenas V ou F
-                              const correctAnswerText = stmt.correctAnswer ? 'Verdadeiro (V)' : 'Falso (F)';
-                              const answerText = stmt.correction
-                                ? `${correctAnswerText}. ${stmt.correction}`
-                                : correctAnswerText;
+                          EF69LP29, EF69LP30, EF69LP34, EF69LP42. Retome com a turma a proposta geral do gênero, destacando que, embora
+                          os dois textos abordem o mesmo campo temático(lepidópteros), cada um apresenta um objetivo diferente e emprega estratégias distintas para comunicar o conhecimento científico. Oriente a leitura coletiva ou em duplas, incentivando os alunos a identificar as explicações para termos técnicos, as comparações feitas com situações do cotidiano, o uso de linguagem acessível e o apoio em fonte especializada. Nas atividades que acompanham o texto, promova o contraste entre os dois rtigos, favorecendo a percepção de que, em um mesmo gênero textual, há diversidade temática, estilística e estrutural, o que auxilia no desenvolvimento da leitura crítica. Se possível, sistematize coletivamente as diferenças observadas.
 
-                              return (
-                                <p key={stmt.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{stmt.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: answerText }} />
-                                </p>
-                              );
-                            });
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter1.find(q => q.id === 'ch1_q6');
-                          if (question && question.type === 'text-input' && question.subQuestions) {
-                            return question.subQuestions.map((subQ) => (
-                              <p key={subQ.letter} className="mb-3">
-                                {question.number !== undefined && (
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                )}
-                                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                              </p>
-                            ));
-                          }
-                          return null;
-                        })()}
+                        </p>
                       </>
                     }
 
@@ -369,44 +333,20 @@ function Book() {
                 </div>
                 <TrilhaTexto />
                 <p className="mb-4 indent-6">
-                  Agora, leia outra notícia que trata da inauguração do Robot Mall. Que aspectos do mesmo fato são destacados? O que muda no vocabulário? E na estrutura?
+                Agora, leia outro artigo de divulgação científica que aborda as semelhanças e diferenças entre borboletas e mariposas.
                 </p>
                 <p className="mb-4 indent-6">
                   <strong>Texto II</strong>
                 </p>
-                <CaixaTexto title='China inaugura o primeiro “shopping de robôs” do mundo'>
+                <CaixaTexto title='Borboleta e mariposa: conheça as diferenças que tornam esses insetos tão distintos'>
                   <p className="mb-4 indent-6">
-                    <strong>País asiático se coloca como fabricante líder e busca normalizar a interação entre
-                      humanos e humanoides na vida diária</strong>
-                  </p>
-                  <p
-                    className="mb-2 indent-6"
-                    style={{
-                      fontSize: '10px',
-                      fontStyle: 'normal',
-                      fontWeight: 400,
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    Por Bruna Barone, editado por Bruno Capozzi
-                  </p>
-                  <p
-                    className="mb-2 indent-6"
-                    style={{
-                      fontSize: '10px',
-                      fontStyle: 'normal',
-                      fontWeight: 400,
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    11/08/2025
+                    <strong>Antenas finas ou plumosas, asas que estacionam abertas ou fechadas e boca que mais parece uma língua de sogra. Semelhantes e diferentes, os dois insetos são essenciais para o equilíbrio da natureza</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                    Um prédio de quatro andares no bairro E-Town, em Pequim, na China, é a sede do primeiro  “shopping de robôs” do mundo. A loja foi inspirada no modelo 4S usado em concessionárias de
-                    veículos, com peças de reposição e diversos serviços oferecidos por duzentas marcas, incluindo as chinesas Unitree Robotics e UBTech Robotics, segundo a Reuters.
+                  Como bailarinas voadoras que pousam de flor em flor, as borboletas parecem capturar o olhar quando passam à nossa volta. Sinal de boa sorte para muitos: há quem não dispense a oportunidade de fechar os olhos e fazer um pedido sempre que uma pequenina aparece.
                   </p>
                   <p className="mb-4 indent-6">
-                    A ideia do “Robot Mall” é aproximar o público geral do mundo da robótica. Pequenos robôs podem ser encontrados por 2.000 yuans (R$ 1,5 mil pela cotação atual), por exemplo. Há também cães robóticos, robôs jogadores de xadrez e máquinas dançantes à disposição.
+                  Mas o que você faz quando uma mariposa cruza o seu caminho? Diferentemente da sua “prima distante”, que flutua levemente durante o dia, muitos veem esse inseto voador como um sinal de mau agouro e até de teimosia, uma vez que é capaz de travar longas batalhas com as lâmpadas elétricas acesas durante a noite. A verdade é que tudo não passa de ilusão.
                   </p>
                   <p className="mb-4 indent-6">
                     Um dos grandes destaques é o  humanoide  do cientista  Albert Einstein  em tamanho real, vendido por 670.000 yuans (R$ 507 mil). Outras figuras históricas incluem o imperador Qin Shi

@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import SublinharButton from './SublinharButton';
 
 interface SelectableTextProps {
   text: string;
@@ -18,9 +19,10 @@ function SelectableText({
   showResults = false,
 }: SelectableTextProps) {
   const textRef = useRef<HTMLDivElement>(null);
+  const [isHighlightingActive, setIsHighlightingActive] = useState(false);
 
   const handleClick = (e: React.MouseEvent) => {
-    if (disabled || showResults || !textRef.current) return;
+    if (disabled || showResults || !textRef.current || !isHighlightingActive) return;
 
     // Obter a posição do clique no texto
     const clickPoint = e.clientX;
@@ -54,7 +56,7 @@ function SelectableText({
   };
 
   const handleMouseUp = () => {
-    if (disabled || showResults) return;
+    if (disabled || showResults || !isHighlightingActive) return;
 
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0 || !textRef.current) {
@@ -178,17 +180,19 @@ function SelectableText({
   // Renderizar com correções na visão do professor
   if (showResults && correctSelections && correctSelections.length > 0) {
     return (
-      <div className="mb-4 p-4" style={{ border: '1px solid #87CEEB', borderRadius: '4px' }}>
-        <div className="mb-2">
-          {renderText()}
-        </div>
-        <div className="mt-3 p-2 bg-gray-100 rounded text-sm">
-          <strong>Trechos esperados:</strong>
-          <ul className="mt-1 ml-4 list-disc">
-            {correctSelections.map((selection, idx) => (
-              <li key={idx} dangerouslySetInnerHTML={{ __html: `"${selection}"` }} />
-            ))}
-          </ul>
+      <div>
+        <div className="mb-4 p-4" style={{ border: '1px solid #87CEEB', borderRadius: '4px' }}>
+          <div className="mb-2">
+            {renderText()}
+          </div>
+          <div className="mt-3 p-2 bg-gray-100 rounded text-sm">
+            <strong>Trechos esperados:</strong>
+            <ul className="mt-1 ml-4 list-disc">
+              {correctSelections.map((selection, idx) => (
+                <li key={idx} dangerouslySetInnerHTML={{ __html: `"${selection}"` }} />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     );
@@ -201,14 +205,24 @@ function SelectableText({
       style={{
         border: '1px solid #87CEEB',
         borderRadius: '4px',
-        userSelect: disabled ? 'none' : 'text',
-        cursor: disabled ? 'default' : 'pointer',
+        userSelect: disabled || !isHighlightingActive ? 'none' : 'text',
+        cursor: disabled || !isHighlightingActive ? 'default' : 'text',
         fontFamily: 'inherit',
         lineHeight: '1.6',
       }}
       onClick={handleClick}
       onMouseUp={handleMouseUp}
     >
+      {/* Botão Sublinhar dentro do bloco */}
+      {!showResults && (
+        <div className="mb-3">
+          <SublinharButton
+            onClick={() => setIsHighlightingActive(!isHighlightingActive)}
+            disabled={disabled}
+          />
+        </div>
+      )}
+      
       {renderText()}
     </div>
   );

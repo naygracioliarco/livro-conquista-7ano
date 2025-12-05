@@ -27,7 +27,7 @@ function Book() {
   const { userAnswers, handleAnswerChange } = useUserAnswers();
   const { currentPage, scrollToTop } = usePagination();
   const [showTeacherView, setShowTeacherView] = useState(false);
-  
+
   // Restaura a posição de scroll salva
   useScrollPosition();
 
@@ -46,8 +46,8 @@ function Book() {
             <TeacherButton
               content={
                 <>
-                  <p className="mb-3" style={{ fontFamily: 'Ubuntu, sans-serif', color: '#000000', fontSize: '16px'}}>
-                    EF06LP01, EF06LP02. A proposta de abertura tem o objetivo de mobilizar o repertório dos alunos sobre o gênero textual notícia, conectando o conteúdo a experiências de vida e a temas atuais ligados à tecnologia. Incentive-os a comentar, complementar ou questionar as histórias, sempre com respeito e sob sua mediação. As perguntas propostas visam provocar uma reflexão sobre o que torna um fato noticiável, destacando que a definição do que vira notícia é também uma escolha ética e cultural.
+                  <p className="mb-3" style={{ fontFamily: 'Ubuntu, sans-serif', color: '#000000', fontSize: '16px' }}>
+                    EF67LP23. Após a leitura coletiva da página de abertura, promova uma roda de conversa para explorar as perguntas finais do texto. Incentive os alunos a compartilhar experiências com insetos e a refletir sobre os espaços em que a ciência está presente no cotidiano. Aproveite para reforçar que, embora o texto destaque os insetos, a ciência está em diversas áreas, como tecnologia, saúde e meio ambiente. Estimule a escuta atenta, o respeito aos turnos de fala e a formulação de perguntas relevantes.
                   </p>
                 </>
               }
@@ -58,35 +58,29 @@ function Book() {
           <Chapter
             id="chapter1"
             number={1}
-            title="Notícias"
+            title="Artigos de divulgação científica"
             content={
               <>
                 <p className="mb-4 indent-6">
-                  Marcos tem 17 anos e adora aprender coisas novas. Ele é cego e, até pouco tempo, precisava da ajuda de outras pessoas para se locomover pela cidade. Tudo mudou quando um
-                  grupo de estudantes universitários apresentou um aplicativo na escola dele. Com a câmera
-                  do celular, o <em>app</em> informa por voz o que está ao redor: placas, sinais, obstáculos e muito
-                  mais. Agora, usando fones de ouvido e o celular, Marcos se locomove com muito mais segurança e autonomia. No jornal local, lê-se a manchete: "Aplicativo criado por estudantes
-                  transforma a mobilidade de jovens com deficiência visual".
+                  Tão pequenos e ao mesmo tempo tão diversos. Os insetos exibem cores brilhantes, asas delicadas, antenas curiosas e nomes variados. Mas você já se perguntou por que as borboletas têm tantas formas? Ou como as formigas sabem exatamente para onde ir? E como é possível prever o tempo do dia seguinte?
                 </p>
                 <p className="mb-4 indent-6">
-                  Enquanto isso, em outra parte da cidade, João, de 76 anos, está internado em um hospital. Certo dia, depois do café da manhã, ele recebeu uma visita diferente: um robô com
-                  uma tela simulando um rosto e que conversa, conta piadas e pergunta como foi a noite. Esses momentos viraram os preferidos de João no hospital. Em um portal de notícias, o título
-                  destacava: “Robô interativo melhora o bem-estar de idosos em hospitais públicos”.
+                  O mundo está repleto de fenômenos curiosos. A ciência nos ajuda a entender muitos  deles, revelando detalhes invisíveis ou aparentemente inexplicáveis.
                 </p>
                 <p className="mb-4 indent-6">
-                  Essas histórias mostram como a tecnologia pode transformar a vida das pessoas e são
-                  exemplos de como alguns acontecimentos chamam a atenção de jornais, sites e telejornais.
+                  E como aprendemos essas descobertas? Isso acontece por meio dos artigos de divulgação científica, que apresentam os temas da ciência de maneira acessível e relacionada
+                  ao cotidiano.
                 </p>
                 {/* Conteúdo de lista */}
                 <ul className="list-disc marker:text-[#BF3154] ml-6">
-                  <li>Por que algumas histórias viram notícia e outras não?</li>
-                  <li>O que torna um fato interessante ou importante para ser compartilhado
-                    com milhares de pessoas?</li>
+                  <li>Você já passou por alguma situação curiosa envolvendo um inseto? Como foi?</li>
+                  <li>Para que serve a ciência? Dê um exemplo.</li>
+                  <li>Entre objetos, dispositivos e invenções que você usa todos os dias, quais deles só existem graças à ciência? Cite um exemplo.</li>
                 </ul>
                 {/* Imagem */}
                 <div className="flex flex-col items-center my-6">
-                  <img src="images/noticias.png" className="max-w-full" />
-                  <p className="text-[10px] text-slate-600 mt-2">SachiDesigns, Mykola Syvak/stock.adobe.com
+                  <img src="images/borboletas.png" className="max-w-full" />
+                  <p className="text-[10px] text-slate-600 mt-2">Ruslan Gilmanshin/Stock.adobe.com
                   </p>
                 </div>
                 <Pagination currentPage={5} />
@@ -784,7 +778,7 @@ function Book() {
                 >
                   EM ‘OLIMPÍADAS de robôs’, máquinas apostam corrida e jogam futebol. Publicado pelo canal SBT News. Disponível em:  <a href="https://www.youtube.com/watch?v=FJgXK06RHUY" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=FJgXK06RHUY</a>. Acesso em: 18 ago. 2025.
                 </p>
-                
+
                 <Pagination currentPage={14} />
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
@@ -1551,7 +1545,7 @@ function Book() {
                     fileName="questoes-pagina-22.pdf"
                   />
                 </div>
-                
+
                 <Pagination currentPage={23} />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
@@ -1662,7 +1656,7 @@ function Book() {
                 </ol>
                 <p className="mb-4 indent-6">Sua produção deve manter os personagens da fábula, mas apresentar uma nova versão do enredo que leve o leitor a refletir sobre uma lição diferente daquela da história original.
                 </p>
-                
+
                 <Pagination currentPage={24} />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
@@ -2029,7 +2023,7 @@ function Book() {
                     fileName="questoes-pagina-28.pdf"
                   />
                 </div>
-                
+
                 <Pagination currentPage={29} />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
@@ -2156,7 +2150,7 @@ function Book() {
                     fileName="questoes-pagina-29.pdf"
                   />
                 </div>
-                
+
                 <Pagination currentPage={30} />
                 <ProducaoFinal />
                 <p className="mb-4 indent-6">

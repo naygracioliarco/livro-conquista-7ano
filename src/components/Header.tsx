@@ -34,7 +34,7 @@ function Header() {
 
               }}
             >
-              6º ANO - VOLUMES 1 E 2
+              7º ANO - VOLUMES 1 E 2
             </p>
           </div>
         </div>

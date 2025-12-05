@@ -52,7 +52,7 @@ function TableOfContents() {
                   Capítulo 1:
                 </span>{' '}
                 <span>
-                  Notícias
+                Artigos de divulgação científica
                 </span>
               </button>
             </li>
@@ -77,7 +77,7 @@ function TableOfContents() {
                   Capítulo 2:
                 </span>{' '}
                 <span>
-                  Fábulas
+                Crônicas
                 </span>
               </button>
             </li>
@@ -105,7 +105,7 @@ function TableOfContents() {
             ACESSE O TUTORIAL E APRENDA A MEXER NO LIVRO DIGITAL
           </p>
           <a
-            href="https://example.com/tutorial"
+            href="https://go.plataformaconx.com.br/ujBmfd"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer self-center md:self-auto"

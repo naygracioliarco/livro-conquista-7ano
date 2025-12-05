@@ -1,4 +1,4 @@
-export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill' | 'alternative-with-excerpts';
+export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill' | 'alternative-with-excerpts' | 'ordering';
 
 export interface MultipleChoiceQuestion {
   id: string;
@@ -36,8 +36,9 @@ export interface AlternativeQuestion {
   type: 'alternative';
   question: string;
   options: string[];
-  correctAnswer: number;
+  correctAnswer: number | number[]; // Pode ser único ou múltiplo
   number?: number; // Número da questão (ex: 3, 4, 5...)
+  allowMultiple?: boolean; // Se permite múltiplas seleções (usa checkboxes)
 }
 
 export interface TextInputQuestion {
@@ -64,6 +65,10 @@ export interface TextInputQuestion {
   }>;
   embeddedContent?: string; // Conteúdo a ser exibido em uma caixa (ex: versos do poema)
   followUpQuestion?: string; // Pergunta adicional com bullet vermelho
+  instructions?: string[]; // Lista de instruções a serem exibidas (com bullets vermelhos)
+  selectableText?: string; // Texto que pode ser selecionado/sublinhado (quando não há subquestões)
+  correctSelections?: string[]; // Trechos que devem ser selecionados (resposta correta)
+  requiresTextSelection?: boolean; // Se a questão requer seleção de texto
 }
 
 export interface TableFillQuestion {
@@ -102,10 +107,22 @@ export interface AlternativeWithExcerptsQuestion {
   }>;
 }
 
-export type Question = MultipleChoiceQuestion | TrueFalseQuestion | AlternativeQuestion | TextInputQuestion | TableFillQuestion | AlternativeWithExcerptsQuestion;
+export interface OrderingQuestion {
+  id: string;
+  type: 'ordering';
+  question: string;
+  number?: number;
+  items: Array<{
+    id: string; // Identificador único do item
+    text: string; // Texto do item a ser ordenado
+    correctOrder: number; // Ordem correta (1, 2, 3, etc.)
+  }>;
+}
+
+export type Question = MultipleChoiceQuestion | TrueFalseQuestion | AlternativeQuestion | TextInputQuestion | TableFillQuestion | AlternativeWithExcerptsQuestion | OrderingQuestion;
 
 export interface UserAnswers {
-  [questionId: string]: string | number | boolean | number[];
+  [questionId: string]: string | number | boolean | number[] | Record<string, number>;
 }
 
 export interface QuestionResult {

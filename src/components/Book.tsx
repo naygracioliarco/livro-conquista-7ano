@@ -849,7 +849,7 @@ function Book() {
                 </div>
                 <TrilhaTexto />
                 <p className="mb-4 indent-6">
-                Agora que você já conhece as características da crônica, é hora de ler um exemplo e perceber como o autor transforma uma experiência pessoal em texto.
+                  Agora que você já conhece as características da crônica, é hora de ler um exemplo e perceber como o autor transforma uma experiência pessoal em texto.
                 </p>
                 <p className="mb-4 indent-6">
                   <strong>Texto I</strong>
@@ -859,28 +859,28 @@ function Book() {
                     <strong>ABC</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                  Quando a gente aprende a ler, as letras, nos livros, são grandes. Nas cartilhas – pelo menos nas cartilhas do meu tempo – as letras eram enormes. Lá estava o A, como uma grande tenda. O B, com seu grande busto e sua barriga ainda maior. O C, sempre pronto a morder a letra seguinte com a sua grande boca. O D, com seu ar próspero de grão-senhor. Etc. Até o Z, que sempre me parecia estar olhando para trás. Talvez porque não se convencesse que era a última letra do alfabeto e quisesse certificar-se de que atrás não vinha mais nenhuma.
+                    Quando a gente aprende a ler, as letras, nos livros, são grandes. Nas cartilhas – pelo menos nas cartilhas do meu tempo – as letras eram enormes. Lá estava o A, como uma grande tenda. O B, com seu grande busto e sua barriga ainda maior. O C, sempre pronto a morder a letra seguinte com a sua grande boca. O D, com seu ar próspero de grão-senhor. Etc. Até o Z, que sempre me parecia estar olhando para trás. Talvez porque não se convencesse que era a última letra do alfabeto e quisesse certificar-se de que atrás não vinha mais nenhuma.
                   </p>
                   <p className="mb-4 indent-6">
-                  As letras eram grandes, claro, para que decorássemos a sua forma. Mas não precisavam ser tão grandes. Que eu me lembre, minha visão na época era perfeita. Nunca mais foi tão boa. E no entanto os livros infantis eram impressos com letras graúdas e entrelinhas generosas. E as palavras eram curtas. Para não cansar a vista.
+                    As letras eram grandes, claro, para que decorássemos a sua forma. Mas não precisavam ser tão grandes. Que eu me lembre, minha visão na época era perfeita. Nunca mais foi tão boa. E no entanto os livros infantis eram impressos com letras graúdas e entrelinhas generosas. E as palavras eram curtas. Para não cansar a vista.
                   </p>
                   <p className="mb-4 indent-6">
-                  À medida que a gente ia crescendo, as letras iam diminuindo. E as palavras, aumentando. Quando não se tem mais uma visão de criança é que se começa, por exemplo, a ler jornal, com seus tipos miúdos e linhas apertadas que requerem uma visão de criança. Na época em que começamos a prestar atenção em coisas como notas de pé de página, bulas de remédio e subcláusulas de contrato, já não temos mais metade da visão perfeita que tínhamos na infância, e esbanjávamos nas bolas da Lulu e no corre-corre do Faísca.
+                    À medida que a gente ia crescendo, as letras iam diminuindo. E as palavras, aumentando. Quando não se tem mais uma visão de criança é que se começa, por exemplo, a ler jornal, com seus tipos miúdos e linhas apertadas que requerem uma visão de criança. Na época em que começamos a prestar atenção em coisas como notas de pé de página, bulas de remédio e subcláusulas de contrato, já não temos mais metade da visão perfeita que tínhamos na infância, e esbanjávamos nas bolas da Lulu e no corre-corre do Faísca.
                   </p>
                   <p className="mb-4 indent-6">
-                  Chegamos à idade de ler grossos volumes em corpo 6 quando só temos olhos para as letras gigantescas, coloridas e cercadas de muito branco dos livros infantis. Quanto mais cansada a vista, mais exigem dela. Alguns recorrem à lente de aumento para <span className="bg-[#fff225] px-1">seccionar</span> as grandes palavras em manejáveis monossílabos infantis. E para restituir às letras a sua individualidade soberana, como tinham na infância.
+                    Chegamos à idade de ler grossos volumes em corpo 6 quando só temos olhos para as letras gigantescas, coloridas e cercadas de muito branco dos livros infantis. Quanto mais cansada a vista, mais exigem dela. Alguns recorrem à lente de aumento para <span className="bg-[#fff225] px-1">seccionar</span> as grandes palavras em manejáveis monossílabos infantis. E para restituir às letras a sua individualidade soberana, como tinham na infância.
                   </p>
                   <p className="mb-4 indent-6">
-                  O E, que sempre parecia querer distância das outras.
+                    O E, que sempre parecia querer distância das outras.
                   </p>
                   <p className="mb-4 indent-6">
-                  O R! Todas as letras tinham pé, mas o R era o único que chutava. O V, que aparecia em várias formas: refletido na água (o X), de muletas (o M), com o irmão siamês (o W).
+                    O R! Todas as letras tinham pé, mas o R era o único que chutava. O V, que aparecia em várias formas: refletido na água (o X), de muletas (o M), com o irmão siamês (o W).
                   </p>
                   <p className="mb-4 indent-6">
-                  O Q, que era um O com a língua de fora.
+                    O Q, que era um O com a língua de fora.
                   </p>
                   <p className="mb-4 indent-6">
-                  De tanto ler palavras, nunca mais reparamos nas letras. E de tanto ler frases, nunca mais notamos as palavras, com todo o seu mistério. Por exemplo: pode haver palavra mais estranha do que “esdruxulo”? É uma palavra, sei lá. Esdrúxula. Ainda bem que nunca aparecia nas leituras da infância, senão teria nos desanimado. Eu me recusaria a aprender uma língua, se soubesse que ela continha a palavra “esdrúxulo”. Teria fechado a cartilha e ido jogar bola, para sempre. As cartilhas, com sua alegre simplicidade, serviam para dissimular os terrores que a língua nos reservava. Como <span className="bg-[#fff225] px-1">“esdrúxulo”</span>. Para não falar em <span className="bg-[#fff225] px-1">“autóctone”</span>. Ou, meu Deus, em <span className="bg-[#fff225] px-1">“seborreia”</span>!
+                    De tanto ler palavras, nunca mais reparamos nas letras. E de tanto ler frases, nunca mais notamos as palavras, com todo o seu mistério. Por exemplo: pode haver palavra mais estranha do que “esdruxulo”? É uma palavra, sei lá. Esdrúxula. Ainda bem que nunca aparecia nas leituras da infância, senão teria nos desanimado. Eu me recusaria a aprender uma língua, se soubesse que ela continha a palavra “esdrúxulo”. Teria fechado a cartilha e ido jogar bola, para sempre. As cartilhas, com sua alegre simplicidade, serviam para dissimular os terrores que a língua nos reservava. Como <span className="bg-[#fff225] px-1">“esdrúxulo”</span>. Para não falar em <span className="bg-[#fff225] px-1">“autóctone”</span>. Ou, meu Deus, em <span className="bg-[#fff225] px-1">“seborreia”</span>!
                   </p>
                   {/* Glossário */}
                   <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
@@ -892,11 +892,11 @@ function Book() {
                     </p>
                     <p className="text-[13px] mb-4 indent-6"><strong>seborreia </strong>: excesso de oleosidade na pele, com descamação.
                     </p>
-                    
+
                   </div>
                   <ContinuaProximaPagina />
                 </CaixaTexto>
-                
+
                 <Pagination currentPage={20} />
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
@@ -907,7 +907,6 @@ function Book() {
                           questions={[
                             chapterQuestions.chapter2.find(q => q.id === 'ch2_q1')!,
                             chapterQuestions.chapter2.find(q => q.id === 'ch2_q2')!,
-                            // chapterQuestions.chapter1.find(q => q.id === 'ch2_q10')!,
                           ]}
                         />
                       </>
@@ -916,13 +915,13 @@ function Book() {
                 </div>
                 <CaixaTexto title=''>
                   <p className="mb-4 indent-6">
-                  Na verdade, acho que as crianças deviam aprender a ler nos <span className="bg-[#fff225] px-1">livros do Hegel</span> e em longos tratados de <span className="bg-[#fff225] px-1">metafísica</span>. Só elas têm a visão adequada à densidade do texto, o gosto pela abstração e tempo disponível para lidar com o infinito. E na velhice, com a sabedoria acumulada numa vida de leituras, com as letras ficando progressivamente maiores à medida que nossos olhos se cansavam, estaríamos então prontos para enfrentar o conceito básico de que vovô vê a uva, e viva o vovô.
+                    Na verdade, acho que as crianças deviam aprender a ler nos <span className="bg-[#fff225] px-1">livros do Hegel</span> e em longos tratados de <span className="bg-[#fff225] px-1">metafísica</span>. Só elas têm a visão adequada à densidade do texto, o gosto pela abstração e tempo disponível para lidar com o infinito. E na velhice, com a sabedoria acumulada numa vida de leituras, com as letras ficando progressivamente maiores à medida que nossos olhos se cansavam, estaríamos então prontos para enfrentar o conceito básico de que vovô vê a uva, e viva o vovô.
                   </p>
                   <p className="mb-4 indent-6">
-                  Vovô vê a uva! Toda a nossa inquietação, nossa perplexidade e nossa busca terminariam na resolução deste enigma primordial. Vovô. A uva. Eva. A visão.
+                    Vovô vê a uva! Toda a nossa inquietação, nossa perplexidade e nossa busca terminariam na resolução deste enigma primordial. Vovô. A uva. Eva. A visão.
                   </p>
                   <p className="mb-4 indent-6">
-                  Nosso último livro seria a cartilha. E a nossa última aventura intelectual, a contemplação enternecida da letra A. Ah, o A, com suas grandes pernas abertas.
+                    Nosso último livro seria a cartilha. E a nossa última aventura intelectual, a contemplação enternecida da letra A. Ah, o A, com suas grandes pernas abertas.
                   </p>
                   {/* Glossário */}
                   <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
@@ -961,11 +960,12 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
-                
+
+
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[0], chapterQuestions.chapter2[1], chapterQuestions.chapter2[2], chapterQuestions.chapter2[3]]}
+                    questions={[chapterQuestions.chapter2[0], chapterQuestions.chapter2[1], chapterQuestions.chapter2[2], chapterQuestions.chapter2[3], chapterQuestions.chapter2[4]]}
                     userAnswers={userAnswers}
                     title="Questões da Página 21"
                     fileName="questoes-pagina-21.pdf"
@@ -976,9 +976,15 @@ function Book() {
                   <TeacherButton
                     content={
                       <>
-                        <p className="mb-3">
-                          EF69LP44, EF69LP46, EF69LP47, EF69LP49, EF69LP54, EF67LP27, EF67LP28, EF06LP05, EF67LP37, EF67LP38. Neste segundo momento da sequência didática, o objetivo é ampliar a compreensão do gênero fábula por meio da leitura de um novo texto, agora em versos. A fábula O leão e o rato mantém as características do gênero, como personagens simbólicos, estrutura narrativa concisa e mensagem final,mas adota uma linguagem poética e rítmica que convida os alunos a observar com mais atenção as intenções do autor. Ao conduzir a leitura, oriente os alunos a interpretar as ações e os comportamentos dos personagens com base nos valores humanos que representam, como gratidão, humildade e reconhecimento. As atividades propostas favorecem a análise da estrutura do gênero, o uso do tempo verbal no passado, a identificação de marcadores temporais e a construção da moral – agora explícita. Faça comparações com a fábula anterior para que os alunos reconheçam o que se mantém e o que muda entre os textos.
-                        </p>
+                        <TeacherAnswers
+                          questions={[
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q4')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q5')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q6')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q7')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q8')!,
+                          ]}
+                        />
                       </>
                     }
                   />
@@ -989,123 +995,6 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
-                
-                <Pagination currentPage={22} />
-                {/* Conteúdo do botão do professor */}
-                <div className="my-6">
-                  <TeacherButton
-                    content={
-                      <>
-                        <p className="mb-3">
-                          Respostas:
-                        </p>
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q5');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => {
-                                // Se tiver subItems, renderiza com bullets
-                                if (subQ.subItems && subQ.subItems.length > 0) {
-                                  return (
-                                    <div key={subQ.letter} className="mb-4">
-                                      <p className="mb-2">
-                                        {question.number !== undefined && (
-                                          <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                        )}
-                                        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                        <span style={{ color: 'black' }}>{subQ.question}</span>
-                                      </p>
-                                      <ul className="question-subitems" style={{ paddingLeft: '1.5rem', listStyleType: 'disc' }}>
-                                        {subQ.subItems.map((subItem, index) => (
-                                          <li key={index} className="mb-2">
-                                            <p className="mb-1">
-                                              <span style={{ color: 'black' }}>{subItem.label}: </span>
-                                              <span dangerouslySetInnerHTML={{ __html: subItem.correctAnswer || '' }} />
-                                            </p>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  );
-                                }
-                                // Se não tiver subItems, renderiza normalmente
-                                return (
-                                  <p key={subQ.letter} className="mb-3">
-                                    {question.number !== undefined && (
-                                      <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                    )}
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                    <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                  </p>
-                                );
-                              });
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q6');
-                          if (question && question.type === 'alternative' && question.options) {
-                            const correctOption = question.options[question.correctAnswer];
-                            const correctLetter = String.fromCharCode(97 + question.correctAnswer); // a, b, c, d...
-                            return (
-                              <p className="mb-3">
-                                {question.number !== undefined && (
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                )}
-                                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{correctLetter}) </span>
-                                <span dangerouslySetInnerHTML={{ __html: correctOption || '' }} />
-                              </p>
-                            );
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q7');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-                      </>
-                    }
-                  />
-                </div>
-                {/* Questão intercalada no conteúdo - Tabela comparativa */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter2[4]}
                   userAnswers={userAnswers}
@@ -1124,15 +1013,65 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
-                {/* Botão de download das questões */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[7]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+
+                <Pagination currentPage={22} />
+                {/* Conteúdo do botão do professor */}
                 <div className="my-6">
-                  <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter2[4], chapterQuestions.chapter2[5], chapterQuestions.chapter2[6]]}
-                    userAnswers={userAnswers}
-                    title="Questões da Página 22"
-                    fileName="questoes-pagina-22.pdf"
+                  <TeacherButton
+                    content={
+                      <>
+                        <p className="mb-3">
+                          EF69LP44, EF69LP46, EF69LP47, EF69LP49, EF69LP53, EF69LP54, EF67LP28, EF67LP30, EF67LP37, EF67LP38. Oriente a leitura expressiva do Texto II destacando o tom afetivo e narrativo. Incentive os alunos a identificar, ao longo da leitura, os objetos, lugares e sentimentos que constroem a memória da narradora. Durante as atividades, estimule análises que vão além da compreensão literal, como a percepção do ponto de vista da infância, o uso de linguagem informal e a presença de elementos simbólicos e emocionais ligados à vida escolar, à família e à identidade. Promova momentos de escuta ativa e compartilhamento de experiências pessoais, criando pontes entre o texto e as lembranças dos estudantes. Em seguida, conduza a comparação com o Texto I, favorecendo a percepção de diferentes modos de narrar lembranças e o reconhecimento da flexibilidade do gênero. Essa etapa amplia o repertório de leitura, aprofunda o olhar dos alunos sobre as crônicas e prepara o grupo para a produção autoral por meio da valorização das memórias individuais.
+                        </p>
+                      </>
+                    }
                   />
                 </div>
+                <TrilhaTexto />
+                <p className="mb-4 indent-6">
+                Agora, leia outra crônica que também resgata memórias da infância, desta vez sobre o primeiro dia de aula.
+                </p>
+                <p className="mb-4 indent-6">
+                  <strong>Texto II</strong>
+                </p>
+                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6">
+                    <strong>A lancheira roxa e a alegria do primeiro dia de aula</strong>
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Eu dormi abraçada com a lancheira, como em outras ocasiões de grandes presentes recebidos com muita alegria.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Os tempos em que minha família se mudou para o apartamento na Cohab 5, em Carapicuíba, coincidiram com o meu primeiro ano na escola, a primeira série.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  O apartamento era bem pequeno e na cama-beliche dormia meu irmão em cima e, embaixo, dividíamos minha sobrinha e eu, como orientava minha mãe na hora de deitar, “uma para cima outra para baixo”. A irmã, que era bem mais velha, dividia o outro quarto com o marido, e minha mãe, que a essa altura já era viúva, ficava na cama de solteiro ao lado do nosso beliche.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Uma das lembranças do quarto da irmã foi o dia em que entrei lá chorando, pedindo pra Lêla deixar eu usar a tábua e o ferro de passar roupas para tentar desamassar a folha de papel almaço com a minha lição lindinha que já estava pronta e caprichada, mas que sem querer amassou, não lembro como, e aquilo tudo me deixou muito nervosa.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Lembro tanto das camas e quartos porque a cena mais viva que tenho da lancheira roxa em minhas mãos foi sentada na cama, felicíssima, na noite anterior do primeiro dia de aula. O primeiro dia em que eu iria para a escola de verdade, pois minha mãe dizia que o prézinho não contava, era diferente, que a escola era grande, bem maior do que o sobradinho do pré-I ou a escolinha com casinha de boneca do pré-II.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  A lancheira eu tinha ganhado da outra irmã, que não morava com a gente e trabalhava no banco. Desde a lancheira, vez em quando ela ajudava minha mãe a comprar meu material escolar. Igual quando comprou a primeira caneta que eu pude usar na escola, já lá pela quarta série, uma caneta de tinta preta e por fora era estampada com flores vermelhas… era daquelas canetas de apertar um botão em cima para sair a ponta em baixo, não tinha tampa. Não me esqueço jamais daquela caneta. Foi essa minha irmã quem escolheu para mim
+                  </p>
+                  <p className="mb-4 indent-6">
+                  A lancheira, por sua vez, era de formato quase quadrado, na cor sólida roxa, de plástico, com uma alça comprida amarela, e não me recordo do desenho que a estampava. Dentro havia um compartimento com uma garrafa, larga, térmica, com tampa de rosquear que servia de caneca e um bico que abria e fechava. Era tão linda aquela garrafa! Levava suco de uva, às vezes chá-mate bem adoçado. No espaço que sobrava, minha mãe encaixava o saco dobrado com o pão de milho dentro, recheado de manteiga, que um senhor passava vendendo, de bicicleta. Ele gritava, “olha o sonho!”, e minha mãe comprava às vezes sonho, mas também o pão de milho, que era o que eu levava pra escola.
+                  </p>
+                  <p className="mb-4 indent-6">
+                  O uniforme azul-marinho, a camiseta branca passada, com o bordado circular E.E.P.S.G. Prof. Rebuá. Nome que me lembrava a palavra buááá nas revistinhas em quadrinhos, quando alguém chorava. Eu mesma, porém, nunca chorei para entrar na escola. Choraria se um dia não pudesse mais entrar lá, como minha mãe contou que aconteceu com ela, e da prova que tinha que fazer para poder continuar estudando.
+                  </p>
+                  
+                  <ContinuaProximaPagina />
+                </CaixaTexto>
+
 
                 <Pagination currentPage={23} />
                 {/* Conteúdo do botão do professor */}

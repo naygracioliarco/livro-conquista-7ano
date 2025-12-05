@@ -29,6 +29,62 @@ function QuestionTextInput({
     );
   }
 
+  // Se tiver seleção de texto direto (sem subquestões) com instruções
+  if (question.requiresTextSelection && question.selectableText && !question.subQuestions) {
+    const selectionId = `${question.id}_selections`;
+    let savedSelections: Array<{ start: number; end: number }> = [];
+    try {
+      const saved = userAnswers[selectionId];
+      if (typeof saved === 'string') {
+        savedSelections = JSON.parse(saved);
+      } else if (Array.isArray(saved) && saved.length > 0) {
+        const firstItem = saved[0];
+        if (typeof firstItem === 'object' && firstItem !== null && 'start' in firstItem && 'end' in firstItem) {
+          savedSelections = saved as unknown as Array<{ start: number; end: number }>;
+        }
+      }
+    } catch (e) {
+      savedSelections = [];
+    }
+
+    return (
+      <div className="mb-6">
+        {/* Título principal com número */}
+        <p className="mb-4">
+          {question.number !== undefined && (
+            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+          )}
+          <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: question.question }} />
+        </p>
+
+        {/* Lista de instruções (se houver) */}
+        {question.instructions && question.instructions.length > 0 && (
+          <ul className="mb-4 question-subitems" style={{ paddingLeft: '1.5rem', listStyleType: 'disc' }}>
+            {question.instructions.map((instruction, idx) => (
+              <li key={idx} className="mb-2">
+                <span style={{ color: '#000000' }} dangerouslySetInnerHTML={{ __html: instruction }} />
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Texto selecionável */}
+        <div className="mb-3">
+          <SelectableText
+            text={question.selectableText}
+            selectedRanges={savedSelections}
+            onSelectionChange={(ranges) => {
+              onAnswerChange(selectionId, JSON.stringify(ranges));
+            }}
+            disabled={showResults}
+            correctSelections={question.correctSelections}
+            showResults={showResults}
+          />
+        </div>
+      </div>
+    );
+  }
+
   // Se tiver subquestões, renderiza o formato com número e letras
   if (question.subQuestions && question.subQuestions.length > 0) {
     return (
@@ -52,8 +108,11 @@ function QuestionTextInput({
               const saved = userAnswers[selectionId];
               if (typeof saved === 'string') {
                 savedSelections = JSON.parse(saved);
-              } else if (Array.isArray(saved)) {
-                savedSelections = saved;
+              } else if (Array.isArray(saved) && saved.length > 0) {
+                const firstItem = saved[0];
+                if (typeof firstItem === 'object' && firstItem !== null && 'start' in firstItem && 'end' in firstItem) {
+                  savedSelections = saved as unknown as Array<{ start: number; end: number }>;
+                }
               }
             } catch (e) {
               savedSelections = [];

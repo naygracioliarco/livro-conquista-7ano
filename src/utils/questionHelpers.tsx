@@ -6,6 +6,36 @@ import { Question } from '../types/questions';
  */
 export function renderQuestionAnswer(question: Question): React.ReactNode {
   if (question.type === 'text-input') {
+    // Se for questão de seleção de texto direto (sem subquestões)
+    if (question.requiresTextSelection && question.correctSelections && question.correctSelections.length > 0 && !question.subQuestions) {
+      return (
+        <div className="mb-3">
+          <p>
+            {question.number !== undefined && (
+              <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+            )}
+            <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: question.question }} />
+          </p>
+          {question.instructions && question.instructions.length > 0 && (
+            <ul className="mt-2 ml-4 list-disc">
+              {question.instructions.map((instruction, idx) => (
+                <li key={idx} className="mb-1">
+                  <span style={{ color: '#BF3154' }} dangerouslySetInnerHTML={{ __html: instruction }} />
+                </li>
+              ))}
+            </ul>
+          )}
+          <ul className="mt-2 ml-4 list-disc">
+            {question.correctSelections.map((selection, idx) => (
+              <li key={idx} className="mb-1">
+                <span dangerouslySetInnerHTML={{ __html: `"${selection}"` }} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+
     // Se tiver subquestões, renderiza cada uma
     if (question.subQuestions && question.subQuestions.length > 0) {
       return question.subQuestions.map((subQ) => {
@@ -119,15 +149,22 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
   }
 
   if (question.type === 'alternative') {
-    const correctOption = question.options[question.correctAnswer];
-    const correctLetter = String.fromCharCode(97 + question.correctAnswer);
+    const correctAnswers = Array.isArray(question.correctAnswer) ? question.correctAnswer : [question.correctAnswer];
     return (
       <p className="mb-3">
         {question.number !== undefined && (
           <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
         )}
-        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{correctLetter}) </span>
-        <span dangerouslySetInnerHTML={{ __html: correctOption || '' }} />
+        {correctAnswers.map((ans, idx) => {
+          const correctLetter = String.fromCharCode(97 + ans);
+          return (
+            <span key={ans}>
+              <span style={{ color: '#00776E', fontWeight: 'bold' }}>{correctLetter}) </span>
+              <span dangerouslySetInnerHTML={{ __html: question.options[ans] || '' }} />
+              {idx < correctAnswers.length - 1 ? ', ' : ''}
+            </span>
+          );
+        })}
       </p>
     );
   }
@@ -221,6 +258,24 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
           );
         })}
       </>
+    );
+  }
+
+  if (question.type === 'ordering') {
+    return (
+      <div className="mb-3">
+        {question.number !== undefined && (
+          <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+        )}
+        {question.items
+          .sort((a, b) => a.correctOrder - b.correctOrder)
+          .map((item, idx) => (
+            <p key={item.id} className="mb-2">
+              <span style={{ color: '#00776E', fontWeight: 'bold' }}>{item.correctOrder}. </span>
+              <span dangerouslySetInnerHTML={{ __html: item.text }} />
+            </p>
+          ))}
+      </div>
     );
   }
 

@@ -5,6 +5,7 @@ import QuestionAlternative from './QuestionAlternative';
 import QuestionTextInput from './QuestionTextInput';
 import QuestionTableFill from './QuestionTableFill';
 import QuestionAlternativeWithExcerpts from './QuestionAlternativeWithExcerpts';
+import QuestionOrdering from './QuestionOrdering';
 
 interface QuestionRendererProps {
   question: Question;
@@ -73,6 +74,15 @@ function QuestionRenderer({
     case 'alternative-with-excerpts':
       return (
         <QuestionAlternativeWithExcerpts
+          question={question}
+          userAnswers={userAnswers}
+          onAnswerChange={onAnswerChange}
+          showResults={showResults}
+        />
+      );
+    case 'ordering':
+      return (
+        <QuestionOrdering
           question={question}
           userAnswers={userAnswers}
           onAnswerChange={onAnswerChange}

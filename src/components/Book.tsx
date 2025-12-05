@@ -214,7 +214,18 @@ function Book() {
                   />
                 </div>
                 <CaixaTexto title=''>
-                  <p className="mb-4 indent-6"></p>
+                  <p className="mb-4 indent-6">
+                    <strong>Delicados insetos</strong>
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Alguns profissionais se dedicam a estudar onde as borboletas e mariposas vivem, em qual época ocorrem, com quais outras espécies interagem na natureza, quais são seus inimigos naturais, quais espécies são bioindicadoras… “O dia a dia envolve uma saída de campo de no mínimo uma semana, uso de rede para captura das borboletas, armadilhas de frutas para borboletas e de luz para atrair mariposas noturnas, montagem e identificação das espécies no laboratório, análise de dados, escrita de artigos e apresentação de trabalhos”, enumera Laura Braga. 
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Outros lepidopteristas atuam diretamente no controle de espécies de pragas agrícolas (as lagartas de lavoura) ou estudam espécies de importância médica, como lagartas que queimam. Então, trabalho não falta! A pesquisadora conta que ainda há muito a se descobrir sobre esses insetos, principalmente sobre as mariposas. 
+                  </p>
+                  <p className="mb-4 indent-6">
+                  Os profissionais dessa área devem ter curiosidade, olhos atentos, boa memória… e mãos delicadas! “É uma profissão encantadora”, diz Laura, que desde criança queria ser bióloga. “Escolhi ser lepidopterista quando estava no ensino médio, pois acompanhei um ciclo de vida de uma borboleta, me encantei e quis pesquisar estes insetos”, conta. E você, se animou também?
+                  </p>
                 </CaixaTexto>
                 <p
                   className="mt-2 mb-6"
@@ -224,11 +235,7 @@ function Book() {
                     fontSize: '10px',
                   }}
                 >
-                  KAORU, Thâmara. <em>China inaugura primeira loja que une venda, serviço e peças para robôs humanoides.</em> Disponível em: <a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml" target="_blank" rel="noopener noreferrer">https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml</a>. Acesso em: 23 set. 2025.
-                </p>
-                <p className="mb-4 indent-6">
-                  Depois da leitura, analise como a notícia está organizada e quais foram as escolhas da
-                  autora ao apresentar as informações.
+                  MARTINS, Elisa. <em>Lepidopterista!</em> Disponível em: <a href="https://chc.org.br/artigo/lepidopterista/" target="_blank" rel="noopener noreferrer">https://chc.org.br/artigo/lepidopterista/</a>. Acesso em: 14 out. 2025.
                 </p>
                 {/* Questão intercalada no conteúdo */}
                 <QuestionRenderer

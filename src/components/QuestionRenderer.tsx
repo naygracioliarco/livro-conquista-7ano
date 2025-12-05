@@ -4,6 +4,7 @@ import QuestionTrueFalse from './QuestionTrueFalse';
 import QuestionAlternative from './QuestionAlternative';
 import QuestionTextInput from './QuestionTextInput';
 import QuestionTableFill from './QuestionTableFill';
+import QuestionAlternativeWithExcerpts from './QuestionAlternativeWithExcerpts';
 
 interface QuestionRendererProps {
   question: Question;
@@ -66,6 +67,15 @@ function QuestionRenderer({
           subQuestions={question.subQuestions}
           userAnswers={userAnswers}
           onAnswerChange={(questionId, fieldId, answer) => onAnswerChange(fieldId, answer)}
+          showResults={showResults}
+        />
+      );
+    case 'alternative-with-excerpts':
+      return (
+        <QuestionAlternativeWithExcerpts
+          question={question}
+          userAnswers={userAnswers}
+          onAnswerChange={onAnswerChange}
           showResults={showResults}
         />
       );

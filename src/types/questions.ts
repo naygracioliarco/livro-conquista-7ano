@@ -1,4 +1,4 @@
-export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill';
+export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill' | 'alternative-with-excerpts';
 
 export interface MultipleChoiceQuestion {
   id: string;
@@ -80,7 +80,21 @@ export interface TableFillQuestion {
   }>;
 }
 
-export type Question = MultipleChoiceQuestion | TrueFalseQuestion | AlternativeQuestion | TextInputQuestion | TableFillQuestion;
+export interface AlternativeWithExcerptsQuestion {
+  id: string;
+  type: 'alternative-with-excerpts';
+  question: string; // Instrução principal (ex: "Leia os trechos a seguir. Em seguida, resolva os itens.")
+  textExcerpts: string[]; // Array de trechos de texto a serem exibidos
+  number?: number;
+  subQuestions: Array<{
+    letter: string; // Letra da subquestão (ex: 'a', 'b', 'c')
+    question: string; // Texto da subquestão
+    options: string[]; // Opções de múltipla escolha
+    correctAnswer: number; // Índice da resposta correta
+  }>;
+}
+
+export type Question = MultipleChoiceQuestion | TrueFalseQuestion | AlternativeQuestion | TextInputQuestion | TableFillQuestion | AlternativeWithExcerptsQuestion;
 
 export interface UserAnswers {
   [questionId: string]: string | number | boolean;

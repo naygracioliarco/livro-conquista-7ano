@@ -23,6 +23,7 @@ function QuestionAlternative({
       number={question.number}
       question={question.question}
       className="p-4 rounded-lg"
+      useHTML={true}
     >
       <div className="space-y-3">
         {question.options.map((option, index) => (

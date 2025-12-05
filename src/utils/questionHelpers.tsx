@@ -172,6 +172,25 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
     );
   }
 
+  if (question.type === 'alternative-with-excerpts') {
+    return (
+      <>
+        {question.subQuestions.map((subQ) => {
+          const correctOption = subQ.options[subQ.correctAnswer];
+          return (
+            <p key={subQ.letter} className="mb-3">
+              {question.number !== undefined && (
+                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+              )}
+              <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+              <span dangerouslySetInnerHTML={{ __html: correctOption || '' }} />
+            </p>
+          );
+        })}
+      </>
+    );
+  }
+
   return null;
 }
 

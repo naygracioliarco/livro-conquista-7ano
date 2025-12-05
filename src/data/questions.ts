@@ -4,92 +4,64 @@ export const chapterQuestions: Record<string, Question[]> = {
   chapter1: [
     {
       id: 'ch1_q1',
-      type: 'text-input',
+      type: 'alternative',
       number: 1,
-      question: 'Responda a cada pergunta e indique em que parte da notícia a informação aparece.',
-      subQuestions: [
-        {
-          letter: 'a',
-          question: 'O que aconteceu?',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: 'A China inaugurou a primeira loja dedicada à venda e à manutenção de robôs humanoides. (Título)',
-        },
-        {
-          letter: 'b',
-          question: 'Onde aconteceu?',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: 'Em Pequim, na China. (Lide)',
-        },
-        {
-          letter: 'c',
-          question: 'Quando aconteceu?',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: 'Em 8 de agosto de 2025. (Lide)',
-        },
-        {
-          letter: 'd',
-          question: 'Quem esteve envolvido?',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: 'Empresas chinesas de robótica e Wang Yifan, diretor do Robot Mall. (Linha-fina e corpo da notícia)',
-        },
-        {
-          letter: 'e',
-          question: 'Que tipos de serviços são oferecidos?',
-          placeholder: 'Digite sua resposta aqui...',
-          correctAnswer: 'Venda e manutenção de robôs humanoides, fornecimento de peças e coleta de <em>feedbacks</em> dos clientes. (Título, lide e corpo da notícia) ',
-        },
+      question: 'Qual é o principal objetivo do texto <em>Lepidopterista!?</em>',
+      options: [
+        'Relatar uma situação vivida por uma pesquisadora.',
+        'Convencer o leitor a seguir uma carreira científica.',
+        'Informar o leitor sobre o trabalho de quem estuda borboletas e mariposas. ',
+        'Ensinar o leitor a cuidar de borboletas em casa.',
       ],
+      correctAnswer: 2,
     },
     {
       id: 'ch1_q2',
-      type: 'true-false',
+      type: 'alternative-with-excerpts',
       number: 2,
-      question: 'Leia as afirmações abaixo e identifique se são verdadeiras ou falsas. Depois, corrija as afirmações falsas.',
-      hasCorrectionBox: true,
-      correctionPlaceholder: 'Corrija as afirmações falsas aqui...',
-      statements: [
+      question: 'Leia os trechos a seguir. Em seguida, resolva os itens.',
+      textExcerpts: [
+        'As asas das borboletas e mariposas são cobertas por minúsculas escamas [...]',
+        'Elas ajudam a indicar a qualidade dos ambientes.',
+        'Borboletas e mariposas têm um papel essencial para os ecossistemas [...]',
+      ],
+      subQuestions: [
         {
           letter: 'a',
-          statement: 'A linha-fina é usada para expressar a opinião da autora sobre o tema da notícia.',
-          correctAnswer: false,
-          correction: 'A linha-fina não expressa opinião; ela antecipa ou destaca uma informação relevante, complementando o título.',
+          question: 'As frases estão em qual tempo verbal?',
+          options: [
+            'Passado',
+            'Presente',
+            'Futuro',
+          ],
+          correctAnswer: 1,
         },
         {
           letter: 'b',
-          statement: 'A autora da notícia usa terceira pessoa para contar o fato.',
-          correctAnswer: true,
-        },
-        {
-          letter: 'c',
-          statement: 'A notícia apresenta falas do diretor do Robot Mall como fonte.',
-          correctAnswer: true,
-        },
-        {
-          letter: 'd',
-          statement: 'Os verbos principais da notícia estão no tempo futuro, pois o evento ainda vai acontecer.',
-          correctAnswer: false,
-          correction: 'Os verbos estão no passado, porque o fato já aconteceu.',
-        },
-        {
-          letter: 'e',
-          statement: 'As informações mais importantes da notícia aparecem no final do texto.',
-          correctAnswer: false,
-          correction: 'As informações mais importantes aparecem no início da notícia, como é típico do gênero.',
+          question: 'Por que esse tempo verbal é adequado ao artigo de divulgação científica?',
+          options: [
+            'Porque o texto conta uma história que já aconteceu.',
+            'Porque o texto apresenta instruções passo a passo.',
+            'Porque o texto apresenta informações que são válidas em qualquer tempo.',
+            'Porque o texto mostra eventos que ainda vão ocorrer no futuro.',
+          ],
+          correctAnswer: 2,
         },
       ],
     },
     {
       id: 'ch1_q3',
-      type: 'alternative',
+      type: 'text-input',
       number: 3,
-      question: 'Leia as afirmativas abaixo e identifique aquela que melhor resume o tema principal da notícia.',
-      options: [
-        'A China criou um time de robôs para jogar futebol e competir em torneios internacionais.',
-        'Uma empresa de robótica chinesa desenvolveu um robô que prepara café e serve clientes.',
-        'A China inaugurou a primeira loja destinada à venda, à manutenção e à prestação de serviços para robôs humanoides. ',
-        'Robôs humanoides parecidos com pessoas famosas, como Einstein e Qin Shi Huang, estão sendo fabricados em escala industrial.',
+      question: 'O artigo de divulgação científica é escrito para pessoas que não são especialistas em um assunto. Com base nisso, resolva os itens.',
+      subQuestions: [
+        {
+          letter: 'a',
+          question: 'Encontre e transcreva um trecho do texto que mostre que a linguagem usada é acessível ao público em geral, e não voltada a cientistas.',
+          placeholder: 'Digite sua resposta aqui...',
+          correctAnswer: 'Sugestões: “O nome que trava a língua vem de um ramo da entomologia (área da ciência que estuda os insetos) […]”, “Ela tem essa e outras informações valiosas a compartilhar sobre esses animais tão encantadores…”, “Então, trabalho não falta! A pesquisadora conta que ainda há muito a se descobrir sobre esses insetos, principalmente sobre as mariposas”.',
+        },
       ],
-      correctAnswer: 2,
     },
     {
       id: 'ch1_q4',

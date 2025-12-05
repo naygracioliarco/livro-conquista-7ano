@@ -23,6 +23,7 @@ import { useUserAnswers } from '../hooks/useUserAnswers';
 import { usePagination } from '../hooks/usePagination';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import { TeacherAnswers } from './TeacherAnswers';
+import { UnlinkIcon } from 'lucide-react';
 
 function Book() {
   const { userAnswers, handleAnswerChange } = useUserAnswers();
@@ -1158,7 +1159,7 @@ function Book() {
                     }
                   />
                 </div>
-                
+
                 <QuestionRenderer
                   question={chapterQuestions.chapter2[10]}
                   userAnswers={userAnswers}
@@ -1193,60 +1194,81 @@ function Book() {
                   />
                 </div>
                 <Pagination currentPage={25} />
-                <p className="mb-4 indent-6"><strong>Produção</strong></p>
-                <p className="mb-4 indent-6">Agora é hora de escrever sua fábula. Durante a produção, preste atenção aos seguintes pontos:
+                {/* Conteúdo do botão do professor */}
+                <div className="my-6">
+                  <TeacherButton
+                    content={
+                      <>
+                        <p className="mb-3">
+                          EF69LP07, EF69LP08, EF69LP51, EF67LP30, EF67LP32, EF67LP33, EF67LP36. Retome com a turma o objeto trabalhado na atividade anterior e explique que ele será o ponto de partida para uma crônica autoral. Apresente as quatro maneiras de abordagem e incentive os alunos a escolher a que mais combina com o estilo de cada um. Durante a produção, relembre as características do gênero e incentive um olhar pessoal e criativo. Finalize com o <em>checklist</em>, guiando a revisão com foco em estrutura, linguagem e intenção do texto.
+                        </p>
+                      </>
+                    }
+                  />
+                </div>
+                <MinhaVersao />
+                <p className="mb-4 indent-6">
+                  Na atividade anterior, você escolheu um objeto que marcou sua infância ou que ainda tem um significado especial para você. Com base nessa lembrança, escreva sua crônica.
                 </p>
-                <ol className="list-decimal marker:text-[#BF3154] ml-6 mb-4">
-                  <li>Mesmo com as mudanças, sua história deve manter os três elementos principais da estrutura da fábula: situação inicial, conflito e desfecho. </li>
-                  <li>Use os mesmos personagens da história original, mas mude o que acontece com eles para construir uma nova lição de moral. </li>
-                  <li>Se estiver escrevendo em versos, lembre-se das rimas, do ritmo e da sonoridade do texto. </li>
-                  <li>Se estiver escrevendo em prosa, organize o texto em parágrafos bem estruturados. </li>
-                  <li>Use uma linguagem objetiva, expressiva e coerente com o gênero. </li>
-                  <li>Seja criativo: pense em valores importantes para você, para sua turma ou para o mundo atual. Como sua fábula pode provocar uma nova reflexão? </li>
 
-                </ol>
+                <p className="mb-4 indent-6"><strong>Preparação</strong></p>
+                <p className="mb-4 indent-6">Escolha uma das maneiras a seguir para escrever sua crônica.
+                </p>
+                <ul className="list-disc marker:text-[#BF3154] ml-6 mb-4">
+                  <li><strong>Crônica de memória pessoal</strong> </li>
+                  <p className="mb-4 indent-6">Relembre uma situação importante em que o objeto teve papel marcante. Destaque emoções, detalhes e sensações desse momento.</p>
+                  <li><strong>Crônica do ponto de vista do objeto</strong> </li>
+                  <p className="mb-4 indent-6">Imagine que o objeto pudesse contar a história. Escreva a crônica como se ele fosse o narrador, revelando o que viu, ouviu ou sentiu.</p>
+                  <li><strong>Crônica que mistura realidade e ficção</strong> </li>
+                  <p className="mb-4 indent-6">Use uma memória real como ponto de partida, mas adicione elementos inventados. </p>
+                  <li><strong>Crônica em dois tempos</strong> </li>
+                  <p className="mb-4 indent-6">Mostre como o sentido desse objeto mudou com o tempo. Compare a importância que ele tinha na infância com o que representa para você hoje.</p>
+                </ul>
 
+                <p className="mb-4 indent-6"><strong>Produção</strong></p>
+                <p className="mb-4 indent-6">Durante a produção, lembre-se de que a crônica, em geral, é escrita em primeira pessoa, inspirada em situações do cotidiano ou em lembranças pessoais. Ela costuma usar uma linguagem simples, próxima da fala, e tem um formato curto, com um final que encerra ou amplia a reflexão. Além disso, pode trazer humor, emoção, surpresa ou um olhar poético sobre o tema abordado.
+                </p>
                 <p className="mb-4 indent-6"><strong>Avaliação</strong></p>
-                <p className="mb-4 indent-6">Antes de finalizar a sua versão da fábula, confira o <em>checklist</em> a seguir para aprimorá-la.
+                <p className="mb-4 indent-6">Antes de finalizar sua crônica, confira o <em>checklist</em> para verificar o que pode ser melhorado.
                 </p>
                 {/* Tabela de Critérios de Avaliação */}
                 <CriteriosAvaliacao
-                  instanceId="minha_versao_fabulas"
+                  instanceId="minha_versao_cronica"
                   criterios={[
                     {
-                      id: 'criterio_titulo',
-                      nome: 'Forma do texto',
-                      pergunta: 'Você transformou sua fábula de prosa para verso ou de verso para prosa?',
+                      id: 'criterio_planejamento',
+                      nome: 'Planejamento e proposta',
+                      pergunta: 'Foi escolhido um objeto significativo que ajudou a lembrar de uma situação marcante?',
                     },
                     {
-                      id: 'criterio_linha_fina',
-                      nome: 'Estrutura completa',
-                      pergunta: 'Sua fábula tem situação inicial, conflito e desfecho bem definidos?',
+                      id: 'criterio_recorte',
+                      nome: 'Recorte temático',
+                      pergunta: 'O texto apresenta um recorte do cotidiano, com foco em uma situação ou memória específica?',
                     },
                     {
-                      id: 'criterio_lide',
-                      nome: 'Mudança no enredo',
-                      pergunta: 'Você alterou pelo menos um dos elementos do enredo de maneira coerente com a nova moral?',
+                      id: 'criterio_organizacao',
+                      nome: 'Organização do texto',
+                      pergunta: 'O texto tem começo, meio e fim, com progressão clara das ideias?',
                     },
                     {
-                      id: 'criterio_corpo',
-                      nome: 'Nova moral ',
-                      pergunta: 'Sua fábula tem uma moral diferente da moral original?',
+                      id: 'criterio_expressividade',
+                      nome: 'Expressividade e tom ',
+                      pergunta: 'A narrativa provoca alguma emoção, lembrança ou reflexão no leitor?',
                     },
                     {
                       id: 'criterio_linguagem',
-                      nome: 'Coerência e coesão',
+                      nome: 'Linguagem adequada',
                       pergunta: 'O texto apresenta uma sequência lógica de acontecimentos?',
                     },
                     {
-                      id: 'criterio_foco',
-                      nome: 'Expressividade',
-                      pergunta: 'As ações e os comportamentos dos personagens representam atitudes humanas e ajudam a transmitir a nova mensagem da fábula?',
+                      id: 'autoria_ponto_vista',
+                      nome: 'Ponto de vista e autoria',
+                      pergunta: 'O texto revela um olhar pessoal sobre a situação?',
                     },
                     {
-                      id: 'autoria_criacao',
-                      nome: 'Autoria e criatividade',
-                      pergunta: 'Você fez escolhas inéditas e criativas, usando sua própria forma de contar a história?',
+                      id: 'autoria_criatividade',
+                      nome: 'Criatividade',
+                      pergunta: 'Foram feitas escolhas criativas para contar a história?',
                     },
                   ]}
                   userAnswers={userAnswers}

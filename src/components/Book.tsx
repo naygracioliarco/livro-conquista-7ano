@@ -832,7 +832,7 @@ function Book() {
                   O cronista é alguém que observa com atenção os pequenos acontecimentos e interpreta o mundo ao seu redor. Essa interpretação não é neutra, pois ele escolhe o que contar, como contar e qual tom deseja dar ao texto — mais leve, crítico, nostálgico, engraçado ou reflexivo.
                 </p>
                 <p className="mb-4 indent-6">
-                Além disso, muitas crônicas estabelecem um tom de conversa com o leitor. É comum encontrar expressões como “você já reparou?” ou “talvez aconteça com você também”, criando uma proximidade intencional com quem lê.
+                  Além disso, muitas crônicas estabelecem um tom de conversa com o leitor. É comum encontrar expressões como “você já reparou?” ou “talvez aconteça com você também”, criando uma proximidade intencional com quem lê.
                 </p>
 
                 <Pagination currentPage={19} />
@@ -841,7 +841,7 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          EF69LP44, EF69LP46, EF69LP47, EF69LP49, EF67LP28, EF06LP05, EF67LP37, EF67LP38. Conduza a leitura e análise da fábula <em>A lebre e a tartaruga</em>, um texto clássico com grande potencial para interpretações que vão além da moral tradicionalmente conhecida. Ao longo da leitura guiada e das propostas interpretativas, incentive os alunos a observar como as escolhas narrativas revelam comportamentos simbólicos e constroem possíveis morais implícitas. Esse é um momento oportuno para trabalhar com rodas de conversa, trocas em duplas e valorização de diferentes pontos de vista durante as leituras e as interpretações. Após a realização das atividades, proponha uma conversa com a turma sobre como os comportamentos da lebre (confiança exagerada, falta de constância e descuido) também aparecem em situações do dia a dia. Peça aos alunos que compartilhem exemplos reais e reflitam, de maneira coletiva, sobre as consequências dessas atitudes e como evitá-las.
+                          EF69LP44, EF69LP46, EF69LP47, EF69LP49, EF69LP53, EF69LP54, EF67LP28, EF67LP30, EF67LP37, EF67LP38. Oriente uma leitura expressiva da crônica, destacando o humor e o tom reflexivo do texto. Em seguida, promova uma conversa coletiva sobre as memórias evocadas, incentivando os alunos a relacionar o conteúdo a suas próprias experiências com a linguagem na infância. Durante as atividades, valorize a escuta ativa e estimule a interpretação subjetiva, destacando recursos como a personificação, a linguagem informal e o olhar poético do cronista sobre o cotidiano. Retome os conceitos centrais do gênero e auxilie a turma a identificá-los no texto: subjetividade, brevidade, tom pessoal e conexão com a realidade. Favoreça também a análise das escolhas estilísticas do autor, levando os alunos a perceber como a forma do texto contribui para sua intenção. Essa análise fortalece a leitura crítica e prepara os alunos para reconhecer sua própria voz autoral na escrita de textos criativos.
                         </p>
                       </>
                     }
@@ -849,58 +849,54 @@ function Book() {
                 </div>
                 <TrilhaTexto />
                 <p className="mb-4 indent-6">
-                  Leia uma fábula clássica e observe como a estrutura, a linguagem e os personagens contribuem para transmitir uma mensagem.
+                Agora que você já conhece as características da crônica, é hora de ler um exemplo e perceber como o autor transforma uma experiência pessoal em texto.
                 </p>
                 <p className="mb-4 indent-6">
                   <strong>Texto I</strong>
                 </p>
-                <CaixaTexto title='A Lebre e a Tartaruga'>
+                <CaixaTexto title=''>
                   <p className="mb-4 indent-6">
-                    A Lebre vivia a rir da Tartaruga por
-                    causa de sua lentidão.
+                    <strong>ABC</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                    — Como consegues ir a algum lugar arrastando-te assim? — zombava
-                    ela, entre risos.
+                  Quando a gente aprende a ler, as letras, nos livros, são grandes. Nas cartilhas – pelo menos nas cartilhas do meu tempo – as letras eram enormes. Lá estava o A, como uma grande tenda. O B, com seu grande busto e sua barriga ainda maior. O C, sempre pronto a morder a letra seguinte com a sua grande boca. O D, com seu ar próspero de grão-senhor. Etc. Até o Z, que sempre me parecia estar olhando para trás. Talvez porque não se convencesse que era a última letra do alfabeto e quisesse certificar-se de que atrás não vinha mais nenhuma.
                   </p>
                   <p className="mb-4 indent-6">
-                    — Posso não correr, mas sei perseverar. Se quiseres, podemos apostar uma corrida. Veremos quem chega primeiro.
+                  As letras eram grandes, claro, para que decorássemos a sua forma. Mas não precisavam ser tão grandes. Que eu me lembre, minha visão na época era perfeita. Nunca mais foi tão boa. E no entanto os livros infantis eram impressos com letras graúdas e entrelinhas generosas. E as palavras eram curtas. Para não cansar a vista.
                   </p>
                   <p className="mb-4 indent-6">
-                    A Lebre, achando a ideia engraçadíssima, aceitou o desafio só para se divertir. A Raposa, respeitada por sua imparcialidade, foi chamada para ser a juíza. Ela marcou o percurso, alinhou os competidores e deu o sinal de partida.
+                  À medida que a gente ia crescendo, as letras iam diminuindo. E as palavras, aumentando. Quando não se tem mais uma visão de criança é que se começa, por exemplo, a ler jornal, com seus tipos miúdos e linhas apertadas que requerem uma visão de criança. Na época em que começamos a prestar atenção em coisas como notas de pé de página, bulas de remédio e subcláusulas de contrato, já não temos mais metade da visão perfeita que tínhamos na infância, e esbanjávamos nas bolas da Lulu e no corre-corre do Faísca.
                   </p>
                   <p className="mb-4 indent-6">
-                    Num piscar de olhos, a Lebre disparou pelo caminho e logo ficou fora de vista. Já a Tartaruga seguiu em seu ritmo, passo a passo, sem desanimar. Convencida de que venceria com facilidade, a Lebre decidiu descansar um pouco à sombra de uma árvore.
+                  Chegamos à idade de ler grossos volumes em corpo 6 quando só temos olhos para as letras gigantescas, coloridas e cercadas de muito branco dos livros infantis. Quanto mais cansada a vista, mais exigem dela. Alguns recorrem à lente de aumento para <span className="bg-[#fff225] px-1">seccionar</span> as grandes palavras em manejáveis monossílabos infantis. E para restituir às letras a sua individualidade soberana, como tinham na infância.
                   </p>
                   <p className="mb-4 indent-6">
-                    — Tenho tempo de sobra — pensou — a Tartaruga mal deve ter saído
-                    do lugar.
+                  O E, que sempre parecia querer distância das outras.
                   </p>
                   <p className="mb-4 indent-6">
-                    Mas, enquanto dormia tranquila, a Tartaruga, firme e constante, passou por ela e seguiu em frente, determinada a chegar ao fim.
+                  O R! Todas as letras tinham pé, mas o R era o único que chutava. O V, que aparecia em várias formas: refletido na água (o X), de muletas (o M), com o irmão siamês (o W).
                   </p>
                   <p className="mb-4 indent-6">
-                    Quando despertou, a Lebre levou um susto ao ver a Tartaruga quase cruzando a linha de chegada. Correu com todas as forças, mas já era tarde demais. A lenta Tartaruga venceu a corrida,
-                    para surpresa de todos.
+                  O Q, que era um O com a língua de fora.
                   </p>
-
-                  {/* Imagem */}
-                  <div className="flex flex-col items-center my-6">
-                    <img src="images/lebreTartaruga.png" className="max-w-[50%]" />
-                    <p className="text-[10px] text-slate-600 mt-2">WINTER, Milo. A lebre e a tartaruga. <em>In: AESOP. The Aesop for children. [S.l.]</em>: Project Gutenberg, 2006. Disponível em: <a href="http://www.gutenberg.org/etext/19994" target="_blank" rel="noopener noreferrer">http://www.gutenberg.org/etext/19994</a>. Acesso em: 24 set. 2025.
+                  <p className="mb-4 indent-6">
+                  De tanto ler palavras, nunca mais reparamos nas letras. E de tanto ler frases, nunca mais notamos as palavras, com todo o seu mistério. Por exemplo: pode haver palavra mais estranha do que “esdruxulo”? É uma palavra, sei lá. Esdrúxula. Ainda bem que nunca aparecia nas leituras da infância, senão teria nos desanimado. Eu me recusaria a aprender uma língua, se soubesse que ela continha a palavra “esdrúxulo”. Teria fechado a cartilha e ido jogar bola, para sempre. As cartilhas, com sua alegre simplicidade, serviam para dissimular os terrores que a língua nos reservava. Como <span className="bg-[#fff225] px-1">“esdrúxulo”</span>. Para não falar em <span className="bg-[#fff225] px-1">“autóctone”</span>. Ou, meu Deus, em <span className="bg-[#fff225] px-1">“seborreia”</span>!
+                  </p>
+                  {/* Glossário */}
+                  <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p className="text-[13px] mb-4 indent-6"><strong>seccionar </strong>: cortar, dividir em partes.
                     </p>
+                    <p className="text-[13px] mb-4 indent-6"><strong>esdrúxulo </strong>: estranho, extravagante, fora do comum ou absurdo.
+                    </p>
+                    <p className="text-[13px] mb-4 indent-6"><strong>autóctone </strong>: originário do lugar em que se encontra; nativo.
+                    </p>
+                    <p className="text-[13px] mb-4 indent-6"><strong>seborreia </strong>: excesso de oleosidade na pele, com descamação.
+                    </p>
+                    
                   </div>
+                  <ContinuaProximaPagina />
                 </CaixaTexto>
-                <p
-                  className="mt-2 mb-6"
-                  style={{
-                    fontFamily: 'Ubuntu, sans-serif',
-                    color: '#000000',
-                    fontSize: '10px',
-                  }}
-                >
-                  ESOPO. <em>A lebre e a tartaruga</em>. Domínio público. Texto adaptado para fins didáticos. (Tradução nossa).
-                </p>
+                
                 <Pagination currentPage={20} />
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
@@ -1051,6 +1047,19 @@ function Book() {
                     }
                   />
                 </div>
+                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6"></p>
+                </CaixaTexto>
+                <p
+                  className="mt-2 mb-6"
+                  style={{
+                    fontFamily: 'Ubuntu, sans-serif',
+                    color: '#000000',
+                    fontSize: '10px',
+                  }}
+                >
+                  ESOPO. <em>A lebre e a tartaruga</em>. Domínio público. Texto adaptado para fins didáticos. (Tradução nossa).
+                </p>
                 {/* Questão intercalada no conteúdo - Tabela comparativa */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter2[0]}

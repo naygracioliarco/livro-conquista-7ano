@@ -4,7 +4,7 @@ import { COLORS, FONTS } from '../constants/colors';
 interface QuestionAlternativeWithExcerptsProps {
   question: AlternativeWithExcerptsQuestion;
   userAnswers: UserAnswers;
-  onAnswerChange: (questionId: string, answer: number) => void;
+  onAnswerChange: (questionId: string, answer: number | number[]) => void;
   showResults?: boolean;
 }
 
@@ -36,7 +36,7 @@ function QuestionAlternativeWithExcerpts({
                 color: COLORS.text.primary,
               }}
             >
-              "{excerpt}"
+              "{excerpt || ''}"
             </div>
           ))}
         </div>
@@ -46,8 +46,41 @@ function QuestionAlternativeWithExcerpts({
       <div className="space-y-6">
         {question.subQuestions.map((subQ) => {
           const subQuestionId = `${question.id}_${subQ.letter}`;
-          const selectedAnswer = userAnswers[subQuestionId] as number | undefined;
-          const isCorrect = selectedAnswer === subQ.correctAnswer;
+          const isMultiple = subQ.allowMultiple || Array.isArray(subQ.correctAnswer);
+          const correctAnswers = Array.isArray(subQ.correctAnswer) ? subQ.correctAnswer : [subQ.correctAnswer];
+          
+          // Para múltipla escolha, armazena como array; para única, como número
+          const userAnswer = userAnswers[subQuestionId];
+          const selectedAnswers = isMultiple 
+            ? (Array.isArray(userAnswer) ? userAnswer : (userAnswer !== undefined ? [userAnswer] : [])) as number[]
+            : (userAnswer as number | undefined);
+          
+          const isOptionSelected = (index: number) => {
+            if (isMultiple) {
+              return (selectedAnswers as number[]).includes(index);
+            }
+            return selectedAnswers === index;
+          };
+
+          const handleOptionChange = (index: number) => {
+            if (isMultiple) {
+              const currentAnswers = (selectedAnswers as number[]) || [];
+              const newAnswers = currentAnswers.includes(index)
+                ? currentAnswers.filter(i => i !== index)
+                : [...currentAnswers, index];
+              onAnswerChange(subQuestionId, newAnswers);
+            } else {
+              onAnswerChange(subQuestionId, index);
+            }
+          };
+
+          const isOptionCorrect = (index: number) => {
+            return correctAnswers.includes(index);
+          };
+
+          const isAllCorrect = isMultiple && correctAnswers.length > 0 && 
+            correctAnswers.every(ans => (selectedAnswers as number[]).includes(ans)) &&
+            (selectedAnswers as number[]).length === correctAnswers.length;
 
           return (
             <div key={subQ.letter} className="space-y-3">
@@ -59,47 +92,73 @@ function QuestionAlternativeWithExcerpts({
 
               {/* Opções de múltipla escolha */}
               <div className="space-y-2">
-                {subQ.options.map((option, index) => (
-                  <label
-                    key={index}
-                    className={`flex items-center gap-3 p-3 rounded cursor-pointer transition-colors ${
-                      selectedAnswer === index
-                        ? 'bg-blue-100 border-l-4 border-blue-600'
-                        : 'bg-white hover:bg-blue-50'
-                    } ${
-                      showResults && selectedAnswer === index
-                        ? isCorrect
+                {subQ.options.map((option, index) => {
+                  const selected = isOptionSelected(index);
+                  const correct = isOptionCorrect(index);
+                  const showAsCorrect = showResults && selected && correct;
+                  const showAsIncorrect = showResults && selected && !correct;
+
+                  return (
+                    <label
+                      key={index}
+                      className={`flex items-center gap-3 p-3 rounded cursor-pointer transition-colors ${
+                        selected
+                          ? 'bg-blue-100 border-l-4 border-blue-600'
+                          : 'bg-white hover:bg-blue-50'
+                      } ${
+                        showAsCorrect
                           ? 'border-l-4 border-green-600 bg-green-50'
-                          : 'border-l-4 border-red-600 bg-red-50'
-                        : ''
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name={subQuestionId}
-                      value={index}
-                      checked={selectedAnswer === index}
-                      onChange={() => onAnswerChange(subQuestionId, index)}
-                      className="w-4 h-4"
-                      disabled={showResults}
-                    />
-                    <span style={{ fontFamily: FONTS.primary, color: COLORS.text.primary }} dangerouslySetInnerHTML={{ __html: option }} />
-                    {showResults && selectedAnswer === index && (
-                      <span className={`ml-auto text-sm font-semibold ${
-                        isCorrect ? 'text-green-600' : 'text-red-600'
-                      }`}>
-                        {isCorrect ? '✓ Correto' : '✗ Incorreto'}
-                      </span>
-                    )}
-                  </label>
-                ))}
+                          : showAsIncorrect
+                          ? 'border-l-4 border-red-600 bg-red-50'
+                          : ''
+                      }`}
+                    >
+                      <input
+                        type={isMultiple ? "checkbox" : "radio"}
+                        name={subQuestionId}
+                        value={index}
+                        checked={selected}
+                        onChange={() => handleOptionChange(index)}
+                        className="w-4 h-4"
+                        disabled={showResults}
+                      />
+                      <span style={{ fontFamily: FONTS.primary, color: COLORS.text.primary }} dangerouslySetInnerHTML={{ __html: option }} />
+                      {showResults && selected && (
+                        <span className={`ml-auto text-sm font-semibold ${
+                          correct ? 'text-green-600' : 'text-red-600'
+                        }`}>
+                          {correct ? '✓ Correto' : '✗ Incorreto'}
+                        </span>
+                      )}
+                    </label>
+                  );
+                })}
               </div>
 
-              {/* Mensagem de resposta correta (quando errado) */}
-              {showResults && selectedAnswer !== undefined && selectedAnswer !== subQ.correctAnswer && (
-                <p className="mt-2 text-sm text-red-600">
-                  Resposta correta: <strong dangerouslySetInnerHTML={{ __html: subQ.options[subQ.correctAnswer] }} />
-                </p>
+              {/* Mensagem de resposta correta (quando errado ou incompleto) */}
+              {showResults && (
+                (isMultiple 
+                  ? !isAllCorrect
+                  : selectedAnswers !== undefined && !correctAnswers.includes(selectedAnswers as number)
+                ) && (
+                  <p className="mt-2 text-sm text-red-600">
+                    {isMultiple ? (
+                      <>
+                        Respostas corretas:{' '}
+                        {correctAnswers.map((ans, idx) => (
+                          <span key={ans}>
+                            <strong dangerouslySetInnerHTML={{ __html: subQ.options[ans] }} />
+                            {idx < correctAnswers.length - 1 ? ', ' : ''}
+                          </span>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        Resposta correta: <strong dangerouslySetInnerHTML={{ __html: subQ.options[correctAnswers[0]] }} />
+                      </>
+                    )}
+                  </p>
+                )
               )}
             </div>
           );

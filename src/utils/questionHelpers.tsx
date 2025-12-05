@@ -33,6 +33,27 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
             </div>
           );
         }
+        // Se for questão de seleção de texto, renderiza as seleções corretas
+        if (subQ.requiresTextSelection && subQ.correctSelections && subQ.correctSelections.length > 0) {
+          return (
+            <div key={subQ.letter} className="mb-3">
+              <p>
+                {question.number !== undefined && (
+                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+                )}
+                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+                <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: subQ.question }} />
+              </p>
+              <ul className="mt-2 ml-4 list-disc">
+                {subQ.correctSelections.map((selection, idx) => (
+                  <li key={idx} className="mb-1">
+                    <span dangerouslySetInnerHTML={{ __html: `"${selection}"` }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        }
         // Se não tiver subItems, renderiza normalmente
         return (
           <p key={subQ.letter} className="mb-3">
@@ -60,18 +81,25 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
 
   if (question.type === 'true-false') {
     if (question.statements && question.statements.length > 0) {
-      return question.statements.map((stmt) => {
+      return question.statements.map((stmt, idx) => {
+        const key = stmt.letter || `stmt_${idx}`;
         const correctAnswerText = stmt.correctAnswer ? 'Verdadeiro (V)' : 'Falso (F)';
-        const answerText = stmt.correction
-          ? `${correctAnswerText}. ${stmt.correction}`
-          : correctAnswerText;
+        
+        let answerText = correctAnswerText;
+        if (stmt.correctAnswer && stmt.proof) {
+          answerText = `${correctAnswerText}. "${stmt.proof}"`;
+        } else if (!stmt.correctAnswer && stmt.correction) {
+          answerText = `${correctAnswerText}. ${stmt.correction}`;
+        }
 
         return (
-          <p key={stmt.letter} className="mb-3">
+          <p key={key} className="mb-3">
             {question.number !== undefined && (
               <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
             )}
-            <span style={{ color: '#00776E', fontWeight: 'bold' }}>{stmt.letter}) </span>
+            {stmt.letter && (
+              <span style={{ color: '#00776E', fontWeight: 'bold' }}>{stmt.letter}) </span>
+            )}
             <span dangerouslySetInnerHTML={{ __html: answerText }} />
           </p>
         );
@@ -176,14 +204,19 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
     return (
       <>
         {question.subQuestions.map((subQ) => {
-          const correctOption = subQ.options[subQ.correctAnswer];
+          const correctAnswers = Array.isArray(subQ.correctAnswer) ? subQ.correctAnswer : [subQ.correctAnswer];
           return (
             <p key={subQ.letter} className="mb-3">
               {question.number !== undefined && (
                 <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
               )}
               <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-              <span dangerouslySetInnerHTML={{ __html: correctOption || '' }} />
+              {correctAnswers.map((ans, idx) => (
+                <span key={ans}>
+                  <span dangerouslySetInnerHTML={{ __html: subQ.options[ans] || '' }} />
+                  {idx < correctAnswers.length - 1 ? ', ' : ''}
+                </span>
+              ))}
             </p>
           );
         })}

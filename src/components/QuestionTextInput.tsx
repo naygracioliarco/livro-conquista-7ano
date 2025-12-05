@@ -1,5 +1,6 @@
 import { TextInputQuestion, UserAnswers } from '../types/questions';
 import QuestionTextInputWithEmbedded from './QuestionTextInputWithEmbedded';
+import SelectableText from './SelectableText';
 
 interface QuestionTextInputProps {
   question: TextInputQuestion;
@@ -45,12 +46,40 @@ function QuestionTextInput({
           {question.subQuestions.map((subQ) => {
             const subQuestionId = `${question.id}_${subQ.letter}`;
             const subUserAnswer = (userAnswers[subQuestionId] as string) || '';
+            const selectionId = `${subQuestionId}_selections`;
+            let savedSelections: Array<{ start: number; end: number }> = [];
+            try {
+              const saved = userAnswers[selectionId];
+              if (typeof saved === 'string') {
+                savedSelections = JSON.parse(saved);
+              } else if (Array.isArray(saved)) {
+                savedSelections = saved;
+              }
+            } catch (e) {
+              savedSelections = [];
+            }
             
             return (
               <div key={subQ.letter} className="mb-4">
+                {/* Texto selecionável (se houver) - aparece ANTES da pergunta */}
+                {subQ.requiresTextSelection && subQ.selectableText && (
+                  <div className="mb-3">
+                    <SelectableText
+                      text={subQ.selectableText}
+                      selectedRanges={savedSelections}
+                      onSelectionChange={(ranges) => {
+                        onAnswerChange(selectionId, JSON.stringify(ranges));
+                      }}
+                      disabled={showResults}
+                      correctSelections={subQ.correctSelections}
+                      showResults={showResults}
+                    />
+                  </div>
+                )}
+                
                 <p className="mb-2">
                   <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                  <span style={{ color: 'black' }}>{subQ.question}</span>
+                  <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: subQ.question }} />
                 </p>
                 
                 {/* Subquestões aninhadas (com bullets) */}
@@ -86,16 +115,19 @@ function QuestionTextInput({
                     })}
                   </ul>
                 ) : (
-                  <textarea
-                    value={subUserAnswer}
-                    onChange={(e) => onAnswerChange(subQuestionId, e.target.value)}
-                    placeholder={subQ.placeholder || 'Digite sua resposta aqui...'}
-                    disabled={showResults}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[80px] text-black"
-                    style={{
-                      fontFamily: 'inherit',
-                    }}
-                  />
+                  // Só mostra o campo de texto se NÃO for uma questão de seleção de texto
+                  !subQ.requiresTextSelection && (
+                    <textarea
+                      value={subUserAnswer}
+                      onChange={(e) => onAnswerChange(subQuestionId, e.target.value)}
+                      placeholder={subQ.placeholder || 'Digite sua resposta aqui...'}
+                      disabled={showResults}
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y min-h-[80px] text-black"
+                      style={{
+                        fontFamily: 'inherit',
+                      }}
+                    />
+                  )
                 )}
                 
                 {showResults && subQ.correctAnswer && !subQ.subItems && (

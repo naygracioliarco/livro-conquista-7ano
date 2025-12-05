@@ -218,13 +218,13 @@ function Book() {
                     <strong>Delicados insetos</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                  Alguns profissionais se dedicam a estudar onde as borboletas e mariposas vivem, em qual época ocorrem, com quais outras espécies interagem na natureza, quais são seus inimigos naturais, quais espécies são bioindicadoras… “O dia a dia envolve uma saída de campo de no mínimo uma semana, uso de rede para captura das borboletas, armadilhas de frutas para borboletas e de luz para atrair mariposas noturnas, montagem e identificação das espécies no laboratório, análise de dados, escrita de artigos e apresentação de trabalhos”, enumera Laura Braga. 
+                    Alguns profissionais se dedicam a estudar onde as borboletas e mariposas vivem, em qual época ocorrem, com quais outras espécies interagem na natureza, quais são seus inimigos naturais, quais espécies são bioindicadoras… “O dia a dia envolve uma saída de campo de no mínimo uma semana, uso de rede para captura das borboletas, armadilhas de frutas para borboletas e de luz para atrair mariposas noturnas, montagem e identificação das espécies no laboratório, análise de dados, escrita de artigos e apresentação de trabalhos”, enumera Laura Braga.
                   </p>
                   <p className="mb-4 indent-6">
-                  Outros lepidopteristas atuam diretamente no controle de espécies de pragas agrícolas (as lagartas de lavoura) ou estudam espécies de importância médica, como lagartas que queimam. Então, trabalho não falta! A pesquisadora conta que ainda há muito a se descobrir sobre esses insetos, principalmente sobre as mariposas. 
+                    Outros lepidopteristas atuam diretamente no controle de espécies de pragas agrícolas (as lagartas de lavoura) ou estudam espécies de importância médica, como lagartas que queimam. Então, trabalho não falta! A pesquisadora conta que ainda há muito a se descobrir sobre esses insetos, principalmente sobre as mariposas.
                   </p>
                   <p className="mb-4 indent-6">
-                  Os profissionais dessa área devem ter curiosidade, olhos atentos, boa memória… e mãos delicadas! “É uma profissão encantadora”, diz Laura, que desde criança queria ser bióloga. “Escolhi ser lepidopterista quando estava no ensino médio, pois acompanhei um ciclo de vida de uma borboleta, me encantei e quis pesquisar estes insetos”, conta. E você, se animou também?
+                    Os profissionais dessa área devem ter curiosidade, olhos atentos, boa memória… e mãos delicadas! “É uma profissão encantadora”, diz Laura, que desde criança queria ser bióloga. “Escolhi ser lepidopterista quando estava no ensino médio, pois acompanhei um ciclo de vida de uma borboleta, me encantei e quis pesquisar estes insetos”, conta. E você, se animou também?
                   </p>
                 </CaixaTexto>
                 <p
@@ -274,17 +274,12 @@ function Book() {
                     content={
                       <>
                         <TeacherAnswers
-                          questions={chapterQuestions.chapter1.find(q => q.id === 'ch1_q4')!}
+                          questions={[
+                            chapterQuestions.chapter1.find(q => q.id === 'ch1_q4')!,
+                            chapterQuestions.chapter1.find(q => q.id === 'ch1_q5')!,
+                            chapterQuestions.chapter1.find(q => q.id === 'ch1_q6')!,
+                          ]}
                         />
-                        <p>Na trilha do texto: EF69LP03, EF69LP16, EF69LP17, EF06LP01, EF67LP03, EF67LP06, EF67LP37. Estimule uma leitura comparativa desde
-                          o início do trabalho com o Texto II, mesmo que as atividades de contraste direto apareçam mais adiante no capítulo.
-                          A sequência de atividades propostas após a leitura do segundo texto conduz os alunos à observação da estrutura, das
-                          escolhas de vocabulário e do ponto de vista da autora, culminando em uma comparação mais sistematizada entre os dois textos. O quadro comparativo contribui para tornar visível a variação na
-                          organização dos parágrafos, nos temas priorizados e nos efeitos de sentido
-                          produzidos por cada texto. Na atividade final, os alunos devem relacionar
-                          essas diferenças aos perfis editoriais dos portais, o que promove a formação
-                          de leitores mais críticos e conscientes da influência dos meios de comunicação na construção de notícias.
-                        </p>
                       </>
                     }
                   />
@@ -292,6 +287,20 @@ function Book() {
                 {/* Questão intercalada no conteúdo */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter1[3]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+                {/* Questão intercalada no conteúdo */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter1[4]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+                {/* Questão intercalada no conteúdo */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter1[5]}
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
@@ -305,53 +314,7 @@ function Book() {
                     fileName="questoes-pagina-8.pdf"
                   />
                 </div>
-                <TrilhaTexto />
-                <p className="mb-4 indent-6">
-                  Agora, leia outra notícia que trata da inauguração do Robot Mall. Que aspectos do mesmo fato são destacados? O que muda no vocabulário? E na estrutura?
-                </p>
-                <p className="mb-4 indent-6">
-                  <strong>Texto II</strong>
-                </p>
-                <CaixaTexto title='China inaugura o primeiro “shopping de robôs” do mundo'>
-                  <p className="mb-4 indent-6">
-                    <strong>País asiático se coloca como fabricante líder e busca normalizar a interação entre
-                      humanos e humanoides na vida diária</strong>
-                  </p>
-                  <p
-                    className="mb-2 indent-6"
-                    style={{
-                      fontSize: '10px',
-                      fontStyle: 'normal',
-                      fontWeight: 400,
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    Por Bruna Barone, editado por Bruno Capozzi
-                  </p>
-                  <p
-                    className="mb-2 indent-6"
-                    style={{
-                      fontSize: '10px',
-                      fontStyle: 'normal',
-                      fontWeight: 400,
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    11/08/2025
-                  </p>
-                  <p className="mb-4 indent-6">
-                    Um prédio de quatro andares no bairro E-Town, em Pequim, na China, é a sede do primeiro  “shopping de robôs” do mundo. A loja foi inspirada no modelo 4S usado em concessionárias de
-                    veículos, com peças de reposição e diversos serviços oferecidos por duzentas marcas, incluindo as chinesas Unitree Robotics e UBTech Robotics, segundo a Reuters.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    A ideia do “Robot Mall” é aproximar o público geral do mundo da robótica. Pequenos robôs podem ser encontrados por 2.000 yuans (R$ 1,5 mil pela cotação atual), por exemplo. Há também cães robóticos, robôs jogadores de xadrez e máquinas dançantes à disposição.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    Um dos grandes destaques é o  humanoide  do cientista  Albert Einstein  em tamanho real, vendido por 670.000 yuans (R$ 507 mil). Outras figuras históricas incluem o imperador Qin Shi
-                    Huang, o físico Isaac Newton e o renomado poeta chinês Li Bai.
-                  </p>
-                  <ContinuaProximaPagina />
-                </CaixaTexto>
+
                 <Pagination currentPage={9} />
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
@@ -404,38 +367,54 @@ function Book() {
 
                   />
                 </div>
-                <CaixaTexto title=''>
-                  <p className="mb-4 indent-6"><strong>Robôs para a vida</strong></p>
-                  <p className="mb-4 indent-6">
-                    As marcas também vão levar opções de robôs que ajudam no dia a dia (ou simplesmente fazem companhia), como aqueles que cozinham, fazem café, distribuem medicamentos, pintam e jogam basquete, por exemplo.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    No “Robot Mall”, os visitantes podem acessar uma área de entretenimento para assistir esportes robóticos, incluindo futebol e eventos de atletismo. Vale lembrar que a China foi o primeiro país do mundo a criar torneios esportivos para robôs, como a World Robot Soccer League, relatada pelo Olhar Digital.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    O formato da nova loja cria uma experiência de “playground de tecnologia”, bem longe do showroom tradicional: aqui, o público é encorajado a interagir com os produtos. No restaurante do shopping, aliás, garçons robôs servem pratos preparados por… chefs robóticos.
-                  </p>
-                  <p className="mb-4 indent-6"><strong>O poder da China</strong></p>
-                  <p className="mb-4 indent-6">
-                    Com esse projeto, a China tira o foco de novidades futuristas e busca normalizar a interação entre humanos e robôs na vida diária [...]. É uma estratégia que posiciona o país não só como fabricante líder, mas também na integração com estilos de vida.
-                  </p>
-                  <p className="mb-4 indent-6">
-                    E isso vem com apoio financeiro. No ano passado, o governo chinês liberou mais de US$ 20 bilhões (R$ 108 bilhões) em subsídios para ajudar startups de inteligência artificial e robótica – e planeja ampliar o fundo para US$ 137 bilhões (R$ 744 bilhões).
-                  </p>
-                  <p className="mb-4 indent-6">
-                    O shopping foi inaugurado na mesma semana em que é realizada a Conferência Mundial de Robôs de 2025, precedendo também os primeiros Jogos Mundiais de Robôs Humanoides, marcados para o período entre 14 e 17 de agosto.
-                  </p>
-                </CaixaTexto>
-                <p
-                  className="mt-2 mb-6"
-                  style={{
-                    fontFamily: 'Ubuntu, sans-serif',
-                    color: '#000000',
-                    fontSize: '10px',
-                  }}
-                >
-                  BARONE, Bruna. <em>China inaugura o primeiro "shopping de robôs" do mundo.</em> Disponível em: <a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml" target="_blank" rel="noopener noreferrer">https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml</a>. Acesso em: 23 set. 2025.
+                <TrilhaTexto />
+                <p className="mb-4 indent-6">
+                  Agora, leia outra notícia que trata da inauguração do Robot Mall. Que aspectos do mesmo fato são destacados? O que muda no vocabulário? E na estrutura?
                 </p>
+                <p className="mb-4 indent-6">
+                  <strong>Texto II</strong>
+                </p>
+                <CaixaTexto title='China inaugura o primeiro “shopping de robôs” do mundo'>
+                  <p className="mb-4 indent-6">
+                    <strong>País asiático se coloca como fabricante líder e busca normalizar a interação entre
+                      humanos e humanoides na vida diária</strong>
+                  </p>
+                  <p
+                    className="mb-2 indent-6"
+                    style={{
+                      fontSize: '10px',
+                      fontStyle: 'normal',
+                      fontWeight: 400,
+                      lineHeight: 'normal',
+                    }}
+                  >
+                    Por Bruna Barone, editado por Bruno Capozzi
+                  </p>
+                  <p
+                    className="mb-2 indent-6"
+                    style={{
+                      fontSize: '10px',
+                      fontStyle: 'normal',
+                      fontWeight: 400,
+                      lineHeight: 'normal',
+                    }}
+                  >
+                    11/08/2025
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Um prédio de quatro andares no bairro E-Town, em Pequim, na China, é a sede do primeiro  “shopping de robôs” do mundo. A loja foi inspirada no modelo 4S usado em concessionárias de
+                    veículos, com peças de reposição e diversos serviços oferecidos por duzentas marcas, incluindo as chinesas Unitree Robotics e UBTech Robotics, segundo a Reuters.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    A ideia do “Robot Mall” é aproximar o público geral do mundo da robótica. Pequenos robôs podem ser encontrados por 2.000 yuans (R$ 1,5 mil pela cotação atual), por exemplo. Há também cães robóticos, robôs jogadores de xadrez e máquinas dançantes à disposição.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Um dos grandes destaques é o  humanoide  do cientista  Albert Einstein  em tamanho real, vendido por 670.000 yuans (R$ 507 mil). Outras figuras históricas incluem o imperador Qin Shi
+                    Huang, o físico Isaac Newton e o renomado poeta chinês Li Bai.
+                  </p>
+                  <ContinuaProximaPagina />
+                </CaixaTexto>
+
                 {/* Questão intercalada no conteúdo */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter1[4]}
@@ -562,6 +541,38 @@ function Book() {
                     }
                   />
                 </div>
+                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6"><strong>Robôs para a vida</strong></p>
+                  <p className="mb-4 indent-6">
+                    As marcas também vão levar opções de robôs que ajudam no dia a dia (ou simplesmente fazem companhia), como aqueles que cozinham, fazem café, distribuem medicamentos, pintam e jogam basquete, por exemplo.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    No “Robot Mall”, os visitantes podem acessar uma área de entretenimento para assistir esportes robóticos, incluindo futebol e eventos de atletismo. Vale lembrar que a China foi o primeiro país do mundo a criar torneios esportivos para robôs, como a World Robot Soccer League, relatada pelo Olhar Digital.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    O formato da nova loja cria uma experiência de “playground de tecnologia”, bem longe do showroom tradicional: aqui, o público é encorajado a interagir com os produtos. No restaurante do shopping, aliás, garçons robôs servem pratos preparados por… chefs robóticos.
+                  </p>
+                  <p className="mb-4 indent-6"><strong>O poder da China</strong></p>
+                  <p className="mb-4 indent-6">
+                    Com esse projeto, a China tira o foco de novidades futuristas e busca normalizar a interação entre humanos e robôs na vida diária [...]. É uma estratégia que posiciona o país não só como fabricante líder, mas também na integração com estilos de vida.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    E isso vem com apoio financeiro. No ano passado, o governo chinês liberou mais de US$ 20 bilhões (R$ 108 bilhões) em subsídios para ajudar startups de inteligência artificial e robótica – e planeja ampliar o fundo para US$ 137 bilhões (R$ 744 bilhões).
+                  </p>
+                  <p className="mb-4 indent-6">
+                    O shopping foi inaugurado na mesma semana em que é realizada a Conferência Mundial de Robôs de 2025, precedendo também os primeiros Jogos Mundiais de Robôs Humanoides, marcados para o período entre 14 e 17 de agosto.
+                  </p>
+                </CaixaTexto>
+                <p
+                  className="mt-2 mb-6"
+                  style={{
+                    fontFamily: 'Ubuntu, sans-serif',
+                    color: '#000000',
+                    fontSize: '10px',
+                  }}
+                >
+                  BARONE, Bruna. <em>China inaugura o primeiro "shopping de robôs" do mundo.</em> Disponível em: <a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml" target="_blank" rel="noopener noreferrer">https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml</a>. Acesso em: 23 set. 2025.
+                </p>
                 {/* Questão intercalada no conteúdo - Tabela comparativa */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter1[6]}

@@ -490,7 +490,7 @@ function Book() {
                   DUARTE JÚNIOR, J. A.; RECH, A. R.; <em>et. al. Biologia da polinização.</em> Vol. 2. Brasília: Editora Projeto Jardins, 2021. (Adaptado).
                 </p>
                 <p className="mb-4 indent-6"><strong>Preparação</strong></p>
-                <p className="mb-4 indent-6">Reflita sobre o tema que será tratado e faça pesquisas adicionais sobre ele. 
+                <p className="mb-4 indent-6">Reflita sobre o tema que será tratado e faça pesquisas adicionais sobre ele.
                 </p>
                 <p className="mb-4 indent-6"><strong>Produção</strong></p>
                 <p className="mb-4 indent-6">Escolha um título que chame atenção e mostre qual é o tema principal do seu texto. Escreva uma introdução apresentando a pergunta que será respondida no artigo. No desenvolvimento, explique suas ideias com base no texto lido e nas escreva uma conclusão que mostre a importância do tema discutido.
@@ -540,66 +540,46 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          EF69LP16, EF69LP17, EF69LP19, EF06LP01, EF67LP03. Nesta seção, os alunos ampliam sua compreensão sobre o gênero notícia ao explorar como ele é adaptado para veículos audiovisuais, como a televisão. O objetivo é reconhecer as mudanças que ocorrem no texto quando ele é planejado para ser falado e assistido, e não apenas lido.
+                          EF69LP29, EF69LP30, EF69LP42. Oriente a leitura do Texto III de modo coletivo ou em duplas, destacando a linguagem envolvente, a organização em tópicos temáticos e a presença de dados curiosos e confiáveis. Incentive os alunos a identificar os recursos explicativos utilizados para tornar o conteúdo científico acessível ao público geral. No trabalho com as atividades, aprofunde a análise de estrutura, linguagem e uso de fontes, retomando os critérios estudados nas páginas iniciais do capítulo. A proposta da atividade final da sequência prepara os alunos para a etapa de autoria, já mobilizando seleção e organização de informações de interesse.
                         </p>
-                        <p className="mb-3">
-                          EF69LP16, EF69LP17, EF69LP19, EF06LP01, EF67LP03. Apresente a adaptação da notícia para o telejornal, destacando
-                          elementos como entonação, uso de linguagem mais simples, comentários expressivos e sequenciamento mais natural. Oriente os alunos a ler o texto em voz alta para que percebam as marcas de oralidade e a maneira como os temas
-                          discutidos anteriormente são apresentados nesse formato. As atividades propostas permitem identificar informações principais (como em uma notícia convencional); reconhecer marcas da linguagem oral e recursos do suporte audiovisual; comparar a estrutura da notícia falada com a da notícia escrita; e refletir sobre os efeitos de sentido criados por
-                          cada forma de apresentação.
-                        </p>
+
                       </>
                     }
                   />
                 </div>
-                <h4>Quando a notícia vai para a TV</h4>
-                <p className="mb-4 indent-6">A notícia é um texto que informa um fato, com estrutura organizada e linguagem objetiva. Essa estrutura geralmente segue o modelo de pirâmide invertida: primeiro aparecem as informações mais importantes e, depois, os detalhes no corpo da notícia.
-                </p>
-                <p className="mb-4 indent-6">Mas, quando a notícia é adaptada para outras mídias, como a televisão, o rádio ou os <em>podcasts</em>, alguns elementos mudam.
-                </p>
-                <ul className="list-disc marker:text-[#BF3154] ml-6">
-                  <li>O título e o lide são falados por quem apresenta a notícia.  </li>
-                  <li>O tom oral e o ritmo das frases marcam a narração, com pausas naturais e repetições.  </li>
-                  <li>O corpo da notícia e seu desfecho são frequentemente desenvolvidos de forma multimodal, incorporando recursos linguísticos expressivos, como emoção, jogos de palavras e comentários de efeito, característicos desse tipo de cobertura, e elementos visuais e audiovisuais, como imagens, vídeos do ocorrido ou do local dos fatos, gráficos, infográficos, ilustrações, entre outros.
-                  </li>
 
-                </ul>
                 <TrilhaTexto />
                 <p className="mb-4 indent-6">
-                  Leia, a seguir, a transcrição de duas notícias exibidas em telejornais. Atente à escolha das palavras e às diferenças desse formato em relação às notícias lidas anteriormente.
+                  É hora de ampliar ainda mais seu conhecimento sobre os pequenos seres vivos que desempenham papéis fundamentais no equilíbrio do planeta. No próximo texto, você vai descobrir como formigas e outros insetos, crustáceos e minhocas ajudam a transformar o mundo.
                 </p>
                 <p className="mb-4 indent-6"><strong>Texto III</strong></p>
-                <CaixaTexto title=''>
+                <CaixaTexto title='Pequenos animais que movem o mundo'>
                   <p className="mb-4 indent-6">
-                    Em Pequim, robôs humanoides disputam um campeonato nada convencional. Futebol, boxe, atletismo… Em vez de atletas de carne e osso, quem brigou foram as máquinas com cara e corpo de gente. Pequim sediou a Olimpíada dos Robôs Humanoides. Na cerimônia de abertura, breakdance, artes marciais e música ao vivo. Mas, na hora da competição, a coisa era séria. Na partida de futebol, teve goleada e comemoração exagerada, com direito a queda dramática que precisou de socorro humano para sair de campo. O evento testa inteligência artificial, coordenação motora e resistência das máquinas, que ainda tropeçam, mas já dão um show. Engenheiros aproveitaram cada segundo para anotar as categorias e preparar os robôs para a próxima edição do campeonato.
+                    Um dos biólogos mais famosos do mundo, o norte-americano Edward Wilson, uma vez falou que insetos, caranguejos, minhocas e uma infinidade de pequenos animais movem o mundo. Ele estava chamando a nossa atenção para o valioso papel desses seres miúdos, que mal percebemos, mas que estão o tempo todo polinizando as plantas para que produzam frutos, movendo o solo e ajudando a transformar restos de animais e plantas em adubo. Eles são pequenos no tamanho, mas grandes em importância para a dinâmica da natureza. […]
                   </p>
-                </CaixaTexto>
-                <p
-                  className="mt-2 mb-6"
-                  style={{
-                    fontFamily: 'Ubuntu, sans-serif',
-                    color: '#000000',
-                    fontSize: '10px',
-                  }}
-                >
-                  OLIMPÍADAS de robôs humanoides na China. Publicado pelo canal Band Jornalismo. 1 vídeo (1 min 05 s). Disponível em:  <a href="https://www.youtube.com/shorts/UHpLpQPrkrw" target="_blank" rel="noopener noreferrer">https://www.youtube.com/shorts/UHpLpQPrkrw</a>. Acesso em: 24 set. 2025.
-                </p>
-                <p className="mb-4 indent-6"><strong>Texto IV</strong></p>
-                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6"><strong>Minhocas terrestres</strong></p>
                   <p className="mb-4 indent-6">
-                    Vou trazer uma notícia agora que envolve tecnologia. Foi realizada a primeira edição dos Jogos Mundiais dos Robôs. Pois é, o evento durou 4 dias e atraiu mais de 280 equipes de 16 países diferentes. Os robôs, que têm forma de humanos, como a gente está vendo, correram, alguns jogaram futebol e outros participaram de competições com obstáculos. Olha só os jogadores aí. Todos eles ali disputando a bola. Realmente chama muita atenção. Esse evento foi realizado na China. E tem um detalhe, foi a primeira edição, mas já tem data marcada para a segunda edição, que será em 2026.
+                    Você pensa que minhoca é tudo igual? Não! Essas que vemos nas hortas e jardins formam um grupo de nome bonito, Crassiclitellata, com mais de 6 mil espécies, quase todas terrestres. Só no Brasil são mais de 300 espécies de minhocas diferentes!
                   </p>
+                  <p className="mb-4 indent-6">
+                    Além da merecida fama de adubar os solos, minhocas são consideradas engenheiras de ecossistemas: escavam túneis, reviram, ventilam a terra e constroem montinhos acima do nível da
+                    água, evitando o alagamento da sua morada. Tudo isso é uma baita ajuda para a agricultura!
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Em um quadrado de pouco mais de um metro de lado, cerca de 1.200 minhocas-vermelhas-da-Califórnia conseguem transformar 90  quilos de esterco bovino em 50 quilos de húmus em apenas dois meses, no verão (quando são mais ativas). O húmus é um fertilizante natural superimportante para a natureza.
+                  </p>
+                  <p className="mb-4 indent-6"><strong>Crustáceos</strong></p>
+                  <p className="mb-4 indent-6">
+                    Se os 86 tipos de eufausídeos (conhecidos como “camarãozinho krill”) fossem extintos, os oceanos entrariam em colapso por falta de alimentos e muitos peixes, lulas, focas, pinguins e baleias também desapareceriam. Para se ter uma ideia, a biomassa – a matéria que forma os seres vivos – do krill antártico deve pesar mais de 500 milhões de toneladas – isso corresponde a quase o dobro da biomassa de todos os seres humanos. […]
+                  </p>
+                  <p className="mb-4 indent-6"><strong>Formigas</strong></p>
+                  <p className="mb-4 indent-6">
+                    As formigas merecem destaque! Apesar de pequenas, elas são tão numerosas que, para cada quatro quilos dos animais que há no mundo, aproximadamente um quilo é de formigas. Os cientistas estimam que haja 21 mil espécies de formigas no mundo. Se fôssemos ver uma foto dessas por dia, levaríamos quase 50 anos para ver todas. Elas são o principal alimento para centenas de animais. Só no Brasil há 45 aves diferentes – chamadas papa-formigas, formigueiro ou papa-taoca (do tupi taóka, formiga-correição) – que sobrevivem comendo formigas. Lagarto-de-chifres-do-Texas e o pangolim também vivem de comer formigas! Já o tamanduá-bandeira pode consumir mais de 30 mil formigas por dia – além de cupins, que ele adora! [...]
+                  </p>
+                  <ContinuaProximaPagina />
                 </CaixaTexto>
-                <p
-                  className="mt-2 mb-6"
-                  style={{
-                    fontFamily: 'Ubuntu, sans-serif',
-                    color: '#000000',
-                    fontSize: '10px',
-                  }}
-                >
-                  EM ‘OLIMPÍADAS de robôs’, máquinas apostam corrida e jogam futebol. Publicado pelo canal SBT News. Disponível em:  <a href="https://www.youtube.com/watch?v=FJgXK06RHUY" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=FJgXK06RHUY</a>. Acesso em: 18 ago. 2025.
-                </p>
+
+
 
                 <Pagination currentPage={14} />
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
@@ -695,6 +675,20 @@ function Book() {
                     }
                   />
                 </div>
+                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6"></p>
+                  <p className="mb-4 indent-6"></p>
+                </CaixaTexto>
+                <p
+                  className="mt-2 mb-6"
+                  style={{
+                    fontFamily: 'Ubuntu, sans-serif',
+                    color: '#000000',
+                    fontSize: '10px',
+                  }}
+                >
+                  OLIMPÍADAS de robôs humanoides na China. Publicado pelo canal Band Jornalismo. 1 vídeo (1 min 05 s). Disponível em:  <a href="https://www.youtube.com/shorts/UHpLpQPrkrw" target="_blank" rel="noopener noreferrer">https://www.youtube.com/shorts/UHpLpQPrkrw</a>. Acesso em: 24 set. 2025.
+                </p>
                 {/* Questão intercalada no conteúdo - Tabela comparativa */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter1[8]}

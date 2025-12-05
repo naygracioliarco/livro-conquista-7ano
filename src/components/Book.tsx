@@ -11,6 +11,7 @@ import MinhaVersao from './MinhaVersao';
 import ProducaoTexto from './ProducaoTexto';
 import ProducaoFinal from './ProducaoFinal';
 import ProducaoTextoNoticia from './ProducaoTextoNoticia';
+import ProducaoArtigo from './ProducaoArtigo';
 import ProducaoTextoFabula from './ProducaoTextoFabula';
 import CaixaTexto from './CaixaTexto';
 import QuestionRenderer from './QuestionRenderer';
@@ -735,7 +736,7 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                 />
                 <Pagination currentPage={16} />
-                <ProducaoTextoNoticia />
+                <ProducaoArtigo />
               </>
             }
           />

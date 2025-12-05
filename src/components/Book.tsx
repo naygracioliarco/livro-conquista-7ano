@@ -660,7 +660,10 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          EF69LP06, EF69LP07, EF69LP08, EF67LP09, EF67LP10, EF67LP32, EF67LP33, EF06LP06, EF06LP11, EF06LP12. O objetivo da produção final é consolidar os conhecimentos desenvolvidos ao longo da sequência didática por meio de uma escrita autoral, na qual os alunos devem demonstrar domínio da estrutura, da linguagem e do foco do gênero notícia. A proposta de preparação para a escrita incentiva a busca ativa por informações complementares sobre o evento, favorecendo o protagonismo e a autoria. Adote estratégias de mediação diferenciadas conforme o perfil da turma, como construção coletiva de um texto-modelo na lousa, <em>brainstorming</em> de títulos e enfoques possíveis ou revisão em duplas com apoio do <em>checklist</em> final.
+                          EF69LP32, EF69LP34, EF69LP35, EF69LP36, EF69LP43, EF69LP56, EF67LP20, EF67LP21, EF67LP32, EF67LP33, EF07LP06,
+                          EF67LP36. Nesta etapa, os alunos devem escrever um artigo de divulgação científica autoral com base em uma curiosidade
+                          sobre um dos animais apresentados no Texto III. Antes da escrita, oriente-os na pesquisa, ajudando a identificar o foco ático e a selecionar informações confiáveis. Incentive o uso de linguagem clara e envolvente, comparações com o cotidiano e menção a instituições científicas, reforçando a função social do gênero. É importante retomar os elementos estruturais do artigo (título, introdução, desenvolvimento e conclusão), assim como os recursos que tornam o texto compreensível ao público geral. Apoie os alunos na etapa de planejamento, revisão e reescrita por meio do checklist avaliativo, promovendo a metacognição e fortalecendo a autonomia
+                          escritora.
                         </p>
                       </>
                     }
@@ -668,59 +671,64 @@ function Book() {
                 </div>
                 <ProducaoFinal />
                 <p className="mb-4 indent-6">
-                  Agora, é hora de mostrar tudo o que você aprendeu! Você vai escrever uma notícia completa com base nos textos III e IV, que foram veiculados como notícias oralizadas em telejornais. Sua tarefa será transformar essas versões em uma notícia escrita, pensada para ser publicada em um jornal impresso ou em um <em>site</em> de notícias.
+                  Você já leu e analisou artigos de divulgação científica sobre diversas curiosidades do mundo animal. No último texto do capítulo, conheceu as contribuições de alguns pequenos seres vivos para a natureza e a vida humana. Agora, é hora de transformar esse conhecimento em um texto autoral e informativo
                 </p>
+                <p className="mb-4 indent-6">Sua tarefa será escrever um artigo de divulgação científica inédito com base em uma das curiosidades sobre o animal que você escolheu na atividade anterior.</p>
                 <p className="mb-4 indent-6"><strong>Preparação</strong></p>
-                <ol className="list-decimal marker:text-[#BF3154] ml-6 mb-4">
-                  <li>Antes de começar a escrever sua notícia, aprofunde-se mais no tema. Faça uma pesquisa na internet sobre as Olimpíadas de Robôs e descubra as informações principais sobre o evento: Como e quando surgiu? Onde foi realizado? Quem participou? Quais modalidades foram disputadas? </li>
-                  <li>Em seguida, pense nas decisões que você vai tomar como autor. Qual será o foco da sua notícia: o impacto do evento, os melhores resultados nas competições, os incentivos financeiros do governo ou outro aspecto? Qual será o tom do seu texto: mais técnico e informativo ou mais leve e descritivo?   </li>
-                </ol>
+                <p className="mb-4 indent-6">Aprofunde sua pesquisa sobre o animal escolhido. Para isso, busque informações confiáveis que não estejam no texto lido. Você pode usar vídeos, revistas científicas, siteseducativos, museus digitais ou conteúdos sugeridos pelo professor.
+                </p>
                 <p className="mb-4 indent-6"><strong>Produção</strong></p>
-                <p className="mb-4 indent-6">Produza um texto completo seguindo a estrutura do gênero <strong>notícia</strong>. Organize suas ideias em parágrafos e pense nas suas escolhas como autor. O que incluir? O que não incluir? Como apresentar o conteúdo ao leitor?
+                <p className="mb-4 indent-6">Use uma linguagem acessível e crie um texto que seja informativo, curioso e envolvente para o leitor. Organize o seu texto de acordo com a estrutura a seguir.
                 </p>
-                <p className="mb-4 indent-6">Sua notícia deve conter título, linha-fina, lide e corpo. Lembre-se das características próprias do gênero e atente à linguagem, aos tempos verbais e à organização dos parágrafos.
-                </p>
+                {/* Conteúdo de lista */}
+                <ul className="list-disc marker:text-[#BF3154] ml-6">
+                  <li>Título: é instigante e relacionado ao tema.</li>
+                  <li>Introdução: apresenta o animal escolhido e a curiosidade que você vai explicar.</li>
+                  <li>Desenvolvimento: traz explicações, dados, exemplos, comparações com o cotidiano e linguagem acessível.</li>
+                  <li>Conclusão: retoma a importância do animal ou deixa uma reflexão final.</li>
+                </ul>
+
                 <p className="mb-4 indent-6"><strong>Avaliação</strong></p>
-                <p className="mb-4 indent-6">Antes de finalizar a sua versão, confira o <em>checklist</em> a seguir para aprimorá-la.
+                <p className="mb-4 indent-6">Antes de finalizar, revise seu texto com base no <em>checklist</em> a seguir.
                 </p>
                 {/* Tabela de Critérios de Avaliação */}
                 <CriteriosAvaliacao
-                  instanceId="producao_final"
+                  instanceId="producao_texto_pagina_15"
                   criterios={[
                     {
                       id: 'criterio_titulo',
                       nome: 'TÍTULO',
-                      pergunta: 'Apresenta o assunto principal de forma atrativa?',
+                      pergunta: 'O título destaca o assunto principal de forma atrativa?',
                     },
                     {
-                      id: 'criterio_linha_fina',
-                      nome: 'LINHA-FINA',
-                      pergunta: 'Complementa o título com uma informação importante ou que aprofunda o assunto?',
+                      id: 'criterio_introducao',
+                      nome: 'Introdução',
+                      pergunta: 'A introdução apresenta o animal e a curiosidade científica escolhida?',
                     },
                     {
-                      id: 'criterio_lide',
-                      nome: 'LIDE',
-                      pergunta: 'Responde às perguntas essenciais sobre o fato?',
+                      id: 'criterio_fontes',
+                      nome: 'Fontes confiáveis',
+                      pergunta: 'Você citou pelo menos uma fonte confiável usada na sua pesquisa?',
                     },
                     {
-                      id: 'criterio_corpo',
-                      nome: 'CORPO DA NOTÍCIA',
-                      pergunta: 'Desenvolve os detalhes em uma sequência lógica?',
+                      id: 'criterio_desenvolvimento',
+                      nome: 'Desenvolvimento',
+                      pergunta: 'As explicações estão organizadas, com linguagem acessível, dados e comparações relevantes?',
+                    },
+                    {
+                      id: 'criterio_conclusao',
+                      nome: 'Conclusão',
+                      pergunta: 'A conclusão valoriza o tema ou apresenta uma boa reflexão?',
                     },
                     {
                       id: 'criterio_linguagem',
-                      nome: 'LINGUAGEM',
-                      pergunta: 'O texto está na terceira pessoa, com verbos no passado e sem expressar opinião pessoal?',
-                    },
-                    {
-                      id: 'criterio_foco',
-                      nome: 'FOCO INFORMATIVO',
-                      pergunta: 'Você escolheu o que queria destacar na notícia e manteve esse foco até o fim?',
+                      nome: 'Linguagem e estilo',
+                      pergunta: 'A linguagem facilita a compreensão da ciência, sem usar termos técnicos não explicados?',
                     },
                     {
                       id: 'autoria_criacao',
                       nome: 'AUTORIA E CRIAÇÃO PESSOAL',
-                      pergunta: 'Você fez escolhas próprias sobre como escrever a notícia, com base no que leu e no que decidiu destacar?',
+                      pergunta: 'Você escreveu com suas próprias palavras, sem copiar trechos?',
                     },
                   ]}
                   userAnswers={userAnswers}

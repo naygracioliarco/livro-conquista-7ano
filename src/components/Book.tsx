@@ -1570,9 +1570,10 @@ function Book() {
                       { id: 'opcao3', text: 'Fazendo um comentário pessoal sobre o tema.' },
                       { id: 'opcao4', text: 'Outra maneira:', hasInput: true },
                     ].map((opcao) => {
-                      const answerId = `cronica_transformacao_${opcao.id}`;
+                      // IDs únicos para esta seção específica de crônica
+                      const answerId = `cronica_7ano_transformacao_${opcao.id}`;
                       const isChecked = (userAnswers[answerId] as boolean) || false;
-                      const inputId = `cronica_transformacao_${opcao.id}_input`;
+                      const inputId = `cronica_7ano_transformacao_${opcao.id}_input`;
                       const inputValue = (userAnswers[inputId] as string) || '';
 
                       return (

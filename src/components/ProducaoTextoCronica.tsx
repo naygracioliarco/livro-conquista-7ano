@@ -6,8 +6,11 @@ function ProducaoCronica() {
   const [texto, setTexto] = useState('');
 
   // Carrega o texto salvo do localStorage ao montar o componente
+  // ID único para 7º ano para evitar conflitos com outras séries
+  const storageKey = 'producaoCronica_7ano';
+  
   useEffect(() => {
-    const textoSalvo = localStorage.getItem('producaoCronica');
+    const textoSalvo = localStorage.getItem(storageKey);
     if (textoSalvo) {
       setTexto(textoSalvo);
     }
@@ -15,7 +18,7 @@ function ProducaoCronica() {
 
   // Salva o texto no localStorage sempre que ele mudar
   useEffect(() => {
-    localStorage.setItem('producaoCronica', texto);
+    localStorage.setItem(storageKey, texto);
   }, [texto]);
 
   const handleDownload = () => {

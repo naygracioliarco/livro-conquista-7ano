@@ -333,7 +333,7 @@ function Book() {
                 </div>
                 <TrilhaTexto />
                 <p className="mb-4 indent-6">
-                Agora, leia outro artigo de divulgação científica que aborda as semelhanças e diferenças entre borboletas e mariposas.
+                  Agora, leia outro artigo de divulgação científica que aborda as semelhanças e diferenças entre borboletas e mariposas.
                 </p>
                 <p className="mb-4 indent-6">
                   <strong>Texto II</strong>
@@ -343,41 +343,31 @@ function Book() {
                     <strong>Antenas finas ou plumosas, asas que estacionam abertas ou fechadas e boca que mais parece uma língua de sogra. Semelhantes e diferentes, os dois insetos são essenciais para o equilíbrio da natureza</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                  Como bailarinas voadoras que pousam de flor em flor, as borboletas parecem capturar o olhar quando passam à nossa volta. Sinal de boa sorte para muitos: há quem não dispense a oportunidade de fechar os olhos e fazer um pedido sempre que uma pequenina aparece.
+                    Como bailarinas voadoras que pousam de flor em flor, as borboletas parecem capturar o olhar quando passam à nossa volta. Sinal de boa sorte para muitos: há quem não dispense a oportunidade de fechar os olhos e fazer um pedido sempre que uma pequenina aparece.
                   </p>
                   <p className="mb-4 indent-6">
-                  Mas o que você faz quando uma mariposa cruza o seu caminho? Diferentemente da sua “prima distante”, que flutua levemente durante o dia, muitos veem esse inseto voador como um sinal de mau agouro e até de teimosia, uma vez que é capaz de travar longas batalhas com as lâmpadas elétricas acesas durante a noite. A verdade é que tudo não passa de ilusão.
+                    Mas o que você faz quando uma mariposa cruza o seu caminho? Diferentemente da sua “prima distante”, que flutua levemente durante o dia, muitos veem esse inseto voador como um sinal de mau agouro e até de teimosia, uma vez que é capaz de travar longas batalhas com as lâmpadas elétricas acesas durante a noite. A verdade é que tudo não passa de ilusão.
                   </p>
                   <p className="mb-4 indent-6">
-                    Um dos grandes destaques é o  humanoide  do cientista  Albert Einstein  em tamanho real, vendido por 670.000 yuans (R$ 507 mil). Outras figuras históricas incluem o imperador Qin Shi
-                    Huang, o físico Isaac Newton e o renomado poeta chinês Li Bai.
+                    “Tanto as borboletas como as mariposas são muito importantes para o equilíbrio da natureza por serem polinizadoras”, conta a bióloga e técnica no Laboratório de Coleções Zoológicas do Butantan, Natália Batista Khatourian. Isso significa que, ao se alimentar do néctar das flores, tanto uma como a outra carregam grãozinhos de pólen por aí, e quando esse tipo de “pó mágico” cai sobre outras flores acaba formando frutos – afinal, dentro do pólen há sempre uma semente, o que garante a reprodução de muitas das plantas existentes no planeta.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Assim como parentes distantes que compartilham o mesmo sobrenome, borboletas e mariposas são chamadas de lepidópteros. O nome indica aqueles insetos que têm o corpo dividido entre cabeça, tórax e abdômen, possuem um par de antenas, olhos compostos, aparelho bucal sugador e dois pares de asas membranosas compostas por escamas. Além disso, têm seu ciclo de vida dividido em quatro etapas: ovo, larva ou lagarta, pupa ou crisálida e adulta. Estima-se que existam mais de 500 mil espécies de lepidópteros no mundo todo! No Brasil, mais de 25 mil já foram classificadas e ainda há outras 60 mil para serem descobertas.
+                  </p>
+                  {/* Imagem */}
+                  <div className="flex flex-col items-center my-6">
+                    <img src="images/pag9_img1.png" className="max-w-[50%]" />
+                    <p className="text-[10px] text-slate-600 mt-2">Instituto Butantan
+                    </p>
+                  </div>
+                  <p className="mb-4 indent-6"><strong>Nem tudo são semelhanças</strong></p>
+                  <p className="mb-4 indent-6">
+                    Uma das diferenças entre mariposas e borboletas aparece logo no estágio pré-metamorfose, quando a lagarta fica toda enroladinha até virar um ser adulto. “Em algumas espécies de mariposas, a pupa fica protegida por um casulo que se fixa em uma folha ou até mesmo no chão. Já as borboletas não têm essa proteção, elas se envolvem na própria seda e ficam penduradas por um fiozinho. Nesta etapa, elas são chamadas de crisálida”, explica Natália.
                   </p>
                   <ContinuaProximaPagina />
                 </CaixaTexto>
 
-                {/* Questão intercalada no conteúdo */}
-                <QuestionRenderer
-                  question={chapterQuestions.chapter1[4]}
-                  userAnswers={userAnswers}
-                  onAnswerChange={handleAnswerChange}
-                  showResults={showTeacherView}
-                />
-                {/* Questão intercalada no conteúdo */}
-                <QuestionRenderer
-                  question={chapterQuestions.chapter1[5]}
-                  userAnswers={userAnswers}
-                  onAnswerChange={handleAnswerChange}
-                  showResults={showTeacherView}
-                />
-                {/* Botão de download das questões */}
-                <div className="my-6">
-                  <DownloadQuestionsButton
-                    questions={[chapterQuestions.chapter1[4], chapterQuestions.chapter1[5]]}
-                    userAnswers={userAnswers}
-                    title="Questões da Página 9"
-                    fileName="questoes-pagina-9.pdf"
-                  />
-                </div>
+
                 <Pagination currentPage={10} />
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
@@ -389,67 +379,6 @@ function Book() {
                         </p>
                         {(() => {
                           const question = chapterQuestions.chapter1.find(q => q.id === 'ch1_q7');
-                          if (question && question.type === 'table-fill') {
-                            return (
-                              <>
-                                {/* Respostas da tabela */}
-                                {question.correctAnswer && (
-                                  <>
-                                    <p className="mb-2 font-semibold">
-                                      {question.number !== undefined && (
-                                        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                      )}
-                                      Tabela:
-                                    </p>
-                                    {question.rows.map((row) => {
-                                      const correctAnswers = question.correctAnswer!;
-                                      // Obtém o primeiro campo da row (primeira coluna)
-                                      const firstColumnKey = Object.keys(row).find(key => key !== 'id') || 'paragraph';
-                                      const firstColumnValue = row[firstColumnKey] || '';
-
-                                      // Gera os fieldIds para cada coluna (exceto a primeira)
-                                      const columnAnswers = question.columns.slice(1).map((columnName, colIndex) => {
-                                        const fieldId = `${question.id}_${row.id}_col${colIndex + 1}`;
-                                        return {
-                                          columnName,
-                                          answer: correctAnswers[fieldId] || ''
-                                        };
-                                      });
-
-                                      return (
-                                        <div key={row.id} className="mb-4">
-                                          <p className="mb-2 font-semibold" style={{ color: '#0E3B5D' }}>
-                                            {question.columns[0]} {firstColumnValue}:
-                                          </p>
-                                          {columnAnswers.map((colAnswer, idx) => (
-                                            <p key={idx} className="mb-1">
-                                              <strong>{colAnswer.columnName}:</strong> {colAnswer.answer}
-                                            </p>
-                                          ))}
-                                        </div>
-                                      );
-                                    })}
-                                  </>
-                                )}
-                                {/* Respostas das subquestões */}
-                                {question.subQuestions && question.subQuestions.length > 0 && (
-                                  <>
-                                    <p className="mb-2 mt-4 font-semibold">Subquestões:</p>
-                                    {question.subQuestions.map((subQ) => (
-                                      <p key={subQ.letter} className="mb-3">
-                                        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                        <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                      </p>
-                                    ))}
-                                  </>
-                                )}
-                              </>
-                            );
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter1.find(q => q.id === 'ch1_q8');
                           if (question && question.type === 'text-input') {
                             // Se tiver subquestões, renderiza cada uma
                             if (question.subQuestions && question.subQuestions.length > 0) {
@@ -482,25 +411,17 @@ function Book() {
                   />
                 </div>
                 <CaixaTexto title=''>
-                  <p className="mb-4 indent-6"><strong>Robôs para a vida</strong></p>
                   <p className="mb-4 indent-6">
-                    As marcas também vão levar opções de robôs que ajudam no dia a dia (ou simplesmente fazem companhia), como aqueles que cozinham, fazem café, distribuem medicamentos, pintam e jogam basquete, por exemplo.
+                    Mas é quando essa espécie de pacotinho se abre e a mariposa ou borboleta estica as asas que as diferenças entre os dois insetos se tornam mais evidentes – mesmo que, em muitos casos, seja preciso olhar de pertinho. Enquanto as borboletas gostam de voar durante o dia, o negócio das mariposas é bater perna – ou melhor, asas – à noite. O hábito influencia na coloração de cada uma. É por isso que as primeiras tendem a ser coloridas e as outras mais escuras. Também é pensando em se “disfarçar” melhor na natureza que as borboletas pousam com as asas levantadas e fechadas na vertical, enquanto as mariposas param com o seu par de asas aberto na horizontal ou sobre o abdômen. “Assim elas se camuflam e enganam seus predadores. É fácil ver uma mariposa quando ela pousa em uma parede branca, mas no tronco de uma árvore é muito difícil”, brinca a bióloga.
                   </p>
                   <p className="mb-4 indent-6">
-                    No “Robot Mall”, os visitantes podem acessar uma área de entretenimento para assistir esportes robóticos, incluindo futebol e eventos de atletismo. Vale lembrar que a China foi o primeiro país do mundo a criar torneios esportivos para robôs, como a World Robot Soccer League, relatada pelo Olhar Digital.
+                    Enquanto as borboletas têm abdômen afinado e antenas que lembram as pontas da haste de um óculos (clavadas), as mariposas possuem corpo mais avantajado e dois tipos de antenas: finas como um fio (filiforme), no caso das fêmeas, e plumosas, quando são machos. Já o aparelho bucal das duas é formado por uma espirotromba. O órgão lembra uma língua de sogra, que se desenrola para sugar o néctar das flores e dos frutos.
                   </p>
                   <p className="mb-4 indent-6">
-                    O formato da nova loja cria uma experiência de “playground de tecnologia”, bem longe do showroom tradicional: aqui, o público é encorajado a interagir com os produtos. No restaurante do shopping, aliás, garçons robôs servem pratos preparados por… chefs robóticos.
-                  </p>
-                  <p className="mb-4 indent-6"><strong>O poder da China</strong></p>
-                  <p className="mb-4 indent-6">
-                    Com esse projeto, a China tira o foco de novidades futuristas e busca normalizar a interação entre humanos e robôs na vida diária [...]. É uma estratégia que posiciona o país não só como fabricante líder, mas também na integração com estilos de vida.
+                    “Algumas mariposas têm esse aparelho bucal atrofiado e não se alimentam na fase adulta. Portanto, elas comem ferozmente quando lagartas para reter toda a energia necessária para passarem pela metamorfose”, afirma Natália. Depois disso, elas vivem pouco, entre sete e dez dias. O ciclo de vida completo das mariposas e borboletas é curto em relação aos outros animais, podendo durar de um a seis meses, dependendo da espécie.
                   </p>
                   <p className="mb-4 indent-6">
-                    E isso vem com apoio financeiro. No ano passado, o governo chinês liberou mais de US$ 20 bilhões (R$ 108 bilhões) em subsídios para ajudar startups de inteligência artificial e robótica – e planeja ampliar o fundo para US$ 137 bilhões (R$ 744 bilhões).
-                  </p>
-                  <p className="mb-4 indent-6">
-                    O shopping foi inaugurado na mesma semana em que é realizada a Conferência Mundial de Robôs de 2025, precedendo também os primeiros Jogos Mundiais de Robôs Humanoides, marcados para o período entre 14 e 17 de agosto.
+                    Apesar de existirem algumas mariposas capazes de provocar coceira e alergia quando lagarta ou adulta, como a Hylesia, no geral os lepidópteros são inofensivos para nós, humanos, mas muito importantes para a manutenção da vida na Terra. Então, nada de tentar espantá-los com uma vassoura ou coisa parecida! No máximo, abra a janela e apague a luz do ambiente. E, no caso das mariposas, que tal também fazer um pedido da próxima vez que encontrar uma voando ou paradinha por aí?
                   </p>
                 </CaixaTexto>
                 <p
@@ -511,18 +432,11 @@ function Book() {
                     fontSize: '10px',
                   }}
                 >
-                  BARONE, Bruna. <em>China inaugura o primeiro "shopping de robôs" do mundo.</em> Disponível em: <a href="https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml" target="_blank" rel="noopener noreferrer">https://epocanegocios.globo.com/tecnologia/noticia/2025/08/china-inaugura-primeira-loja-que-une-venda-servico-e-pecas-para-robos-humanoides.ghtml</a>. Acesso em: 23 set. 2025.
+                  PINELLI, Natasha. <em>Borboleta e mariposa:</em> conheça as diferenças que tornam esses insetos tão distintos. Disponível em: <a href="https://butantan.gov.br/bubutantan/borboleta-e-mariposa-conheca-as-diferencas-que-tornam-esses-insetos-tao-distintos" target="_blank" rel="noopener noreferrer">https://butantan.gov.br/bubutantan/borboleta-e-mariposa-conheca-as-diferencas-que-tornam-esses-insetos-tao-distintos</a>. Acesso em: 24 set. 2025.
                 </p>
                 {/* Questão intercalada no conteúdo - Tabela comparativa */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter1[6]}
-                  userAnswers={userAnswers}
-                  onAnswerChange={handleAnswerChange}
-                  showResults={showTeacherView}
-                />
-                {/* Questão intercalada no conteúdo */}
-                <QuestionRenderer
-                  question={chapterQuestions.chapter1[7]}
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}

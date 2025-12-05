@@ -1035,7 +1035,7 @@ function Book() {
                 </div>
                 <TrilhaTexto />
                 <p className="mb-4 indent-6">
-                Agora, leia outra crônica que também resgata memórias da infância, desta vez sobre o primeiro dia de aula.
+                  Agora, leia outra crônica que também resgata memórias da infância, desta vez sobre o primeiro dia de aula.
                 </p>
                 <p className="mb-4 indent-6">
                   <strong>Texto II</strong>
@@ -1045,30 +1045,30 @@ function Book() {
                     <strong>A lancheira roxa e a alegria do primeiro dia de aula</strong>
                   </p>
                   <p className="mb-4 indent-6">
-                  Eu dormi abraçada com a lancheira, como em outras ocasiões de grandes presentes recebidos com muita alegria.
+                    Eu dormi abraçada com a lancheira, como em outras ocasiões de grandes presentes recebidos com muita alegria.
                   </p>
                   <p className="mb-4 indent-6">
-                  Os tempos em que minha família se mudou para o apartamento na Cohab 5, em Carapicuíba, coincidiram com o meu primeiro ano na escola, a primeira série.
+                    Os tempos em que minha família se mudou para o apartamento na Cohab 5, em Carapicuíba, coincidiram com o meu primeiro ano na escola, a primeira série.
                   </p>
                   <p className="mb-4 indent-6">
-                  O apartamento era bem pequeno e na cama-beliche dormia meu irmão em cima e, embaixo, dividíamos minha sobrinha e eu, como orientava minha mãe na hora de deitar, “uma para cima outra para baixo”. A irmã, que era bem mais velha, dividia o outro quarto com o marido, e minha mãe, que a essa altura já era viúva, ficava na cama de solteiro ao lado do nosso beliche.
+                    O apartamento era bem pequeno e na cama-beliche dormia meu irmão em cima e, embaixo, dividíamos minha sobrinha e eu, como orientava minha mãe na hora de deitar, “uma para cima outra para baixo”. A irmã, que era bem mais velha, dividia o outro quarto com o marido, e minha mãe, que a essa altura já era viúva, ficava na cama de solteiro ao lado do nosso beliche.
                   </p>
                   <p className="mb-4 indent-6">
-                  Uma das lembranças do quarto da irmã foi o dia em que entrei lá chorando, pedindo pra Lêla deixar eu usar a tábua e o ferro de passar roupas para tentar desamassar a folha de papel almaço com a minha lição lindinha que já estava pronta e caprichada, mas que sem querer amassou, não lembro como, e aquilo tudo me deixou muito nervosa.
+                    Uma das lembranças do quarto da irmã foi o dia em que entrei lá chorando, pedindo pra Lêla deixar eu usar a tábua e o ferro de passar roupas para tentar desamassar a folha de papel almaço com a minha lição lindinha que já estava pronta e caprichada, mas que sem querer amassou, não lembro como, e aquilo tudo me deixou muito nervosa.
                   </p>
                   <p className="mb-4 indent-6">
-                  Lembro tanto das camas e quartos porque a cena mais viva que tenho da lancheira roxa em minhas mãos foi sentada na cama, felicíssima, na noite anterior do primeiro dia de aula. O primeiro dia em que eu iria para a escola de verdade, pois minha mãe dizia que o prézinho não contava, era diferente, que a escola era grande, bem maior do que o sobradinho do pré-I ou a escolinha com casinha de boneca do pré-II.
+                    Lembro tanto das camas e quartos porque a cena mais viva que tenho da lancheira roxa em minhas mãos foi sentada na cama, felicíssima, na noite anterior do primeiro dia de aula. O primeiro dia em que eu iria para a escola de verdade, pois minha mãe dizia que o prézinho não contava, era diferente, que a escola era grande, bem maior do que o sobradinho do pré-I ou a escolinha com casinha de boneca do pré-II.
                   </p>
                   <p className="mb-4 indent-6">
-                  A lancheira eu tinha ganhado da outra irmã, que não morava com a gente e trabalhava no banco. Desde a lancheira, vez em quando ela ajudava minha mãe a comprar meu material escolar. Igual quando comprou a primeira caneta que eu pude usar na escola, já lá pela quarta série, uma caneta de tinta preta e por fora era estampada com flores vermelhas… era daquelas canetas de apertar um botão em cima para sair a ponta em baixo, não tinha tampa. Não me esqueço jamais daquela caneta. Foi essa minha irmã quem escolheu para mim
+                    A lancheira eu tinha ganhado da outra irmã, que não morava com a gente e trabalhava no banco. Desde a lancheira, vez em quando ela ajudava minha mãe a comprar meu material escolar. Igual quando comprou a primeira caneta que eu pude usar na escola, já lá pela quarta série, uma caneta de tinta preta e por fora era estampada com flores vermelhas… era daquelas canetas de apertar um botão em cima para sair a ponta em baixo, não tinha tampa. Não me esqueço jamais daquela caneta. Foi essa minha irmã quem escolheu para mim
                   </p>
                   <p className="mb-4 indent-6">
-                  A lancheira, por sua vez, era de formato quase quadrado, na cor sólida roxa, de plástico, com uma alça comprida amarela, e não me recordo do desenho que a estampava. Dentro havia um compartimento com uma garrafa, larga, térmica, com tampa de rosquear que servia de caneca e um bico que abria e fechava. Era tão linda aquela garrafa! Levava suco de uva, às vezes chá-mate bem adoçado. No espaço que sobrava, minha mãe encaixava o saco dobrado com o pão de milho dentro, recheado de manteiga, que um senhor passava vendendo, de bicicleta. Ele gritava, “olha o sonho!”, e minha mãe comprava às vezes sonho, mas também o pão de milho, que era o que eu levava pra escola.
+                    A lancheira, por sua vez, era de formato quase quadrado, na cor sólida roxa, de plástico, com uma alça comprida amarela, e não me recordo do desenho que a estampava. Dentro havia um compartimento com uma garrafa, larga, térmica, com tampa de rosquear que servia de caneca e um bico que abria e fechava. Era tão linda aquela garrafa! Levava suco de uva, às vezes chá-mate bem adoçado. No espaço que sobrava, minha mãe encaixava o saco dobrado com o pão de milho dentro, recheado de manteiga, que um senhor passava vendendo, de bicicleta. Ele gritava, “olha o sonho!”, e minha mãe comprava às vezes sonho, mas também o pão de milho, que era o que eu levava pra escola.
                   </p>
                   <p className="mb-4 indent-6">
-                  O uniforme azul-marinho, a camiseta branca passada, com o bordado circular E.E.P.S.G. Prof. Rebuá. Nome que me lembrava a palavra buááá nas revistinhas em quadrinhos, quando alguém chorava. Eu mesma, porém, nunca chorei para entrar na escola. Choraria se um dia não pudesse mais entrar lá, como minha mãe contou que aconteceu com ela, e da prova que tinha que fazer para poder continuar estudando.
+                    O uniforme azul-marinho, a camiseta branca passada, com o bordado circular E.E.P.S.G. Prof. Rebuá. Nome que me lembrava a palavra buááá nas revistinhas em quadrinhos, quando alguém chorava. Eu mesma, porém, nunca chorei para entrar na escola. Choraria se um dia não pudesse mais entrar lá, como minha mãe contou que aconteceu com ela, e da prova que tinha que fazer para poder continuar estudando.
                   </p>
-                  
+
                   <ContinuaProximaPagina />
                 </CaixaTexto>
 
@@ -1079,87 +1079,52 @@ function Book() {
                   <TeacherButton
                     content={
                       <>
-                        <p className="mb-3">
-                          Respostas:
-                        </p>
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q8');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter2.find(q => q.id === 'ch2_q9');
-                          if (question && question.type === 'text-input') {
-                            // Se tiver subquestões, renderiza cada uma
-                            if (question.subQuestions && question.subQuestions.length > 0) {
-                              return question.subQuestions.map((subQ) => (
-                                <p key={subQ.letter} className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                  <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                                </p>
-                              ));
-                            }
-                            // Se não tiver subquestões, renderiza a resposta direta
-                            if (question.correctAnswer) {
-                              return (
-                                <p className="mb-3">
-                                  {question.number !== undefined && (
-                                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                  )}
-                                  <span dangerouslySetInnerHTML={{ __html: question.correctAnswer }} />
-                                </p>
-                              );
-                            }
-                          }
-                          return null;
-                        })()}
-                        <p className="mb-4 indent-6" style={{ textAlign: 'left' }}>
-                          Esta atividade tem como objetivo consolidar o conhecimento sobre o gênero <strong>fábula</strong> e avançar na autonomia autoral dos alunos. Ao propor a mudança de forma (de prosa para verso ou de verso para prosa) e a modificação de pelo menos um dos elementos estruturais do enredo (situação inicial, conflito ou desfecho), a atividade convida os alunos a refletir criticamente sobre as escolhas narrativas e a relação entre estrutura e mensagem. O foco não está apenas em recontar, mas em recriar com intenção, construindo uma nova moral baseada nos personagens e em novos caminhos de ação.
-                        </p>
-                        <p className="mb-4 indent-6" style={{ textAlign: 'left' }}>
-                          Minha versão: É importante orientar os alunos a manter os elementos essenciais do gênero, como personagens simbólicos e sequência narrativa, mesmo ao optar por mudanças criativas. A etapa de preparação pode ser realizada individualmente ou em dupla. Atue como mediador, oferecendo exemplos, esclarecendo dúvidas sobre o uso de versos ou a organização de parágrafos e estimulando discussões sobre diferentes valores possíveis. A atividade proporciona um espaço de autoria seguro, permitindo que alunos com diferentes níveis de proficiência se envolvam no processo criativo.
-
-                        </p>
+                        <TeacherAnswers
+                          questions={[
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q9')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q10')!,
+                          ]}
+                        />
                       </>
                     }
                   />
                 </div>
-                {/* Questão intercalada no conteúdo - Tabela comparativa */}
+                <CaixaTexto title=''>
+                  <p className="mb-4 indent-6">
+                    A Lêla cortou meus cabelos no domingo antes do início das aulas, e eu detestei, pois achei muito curto, parecendo uma tigela. Mas dizia que era melhor assim, para eu não pegar piolhos na escola.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    A ansiedade por estrear a lancheira, a alegria por estar finalmente indo para a escola, me fizeram deixar tudo em ordem para a manhã seguinte, e decidi que o melhor lugar para guardar a lancheira roxa era ali mesmo perto de mim, aos pés da cama, em cima do colchão.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Eu dormi abraçada com a lancheira, como acabei escutando os adultos dizerem, não só nessa, mas também em outras ocasiões de grandes presentes recebidos com muita alegria.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Do dia seguinte mesmo, o primeiro dia de aula… nada me lembro, além da imagem viva daquela linda professora negra de cabelos bem curtos e batom vermelho; se chamava Berenice e era um doce de pessoa. Cantava musiquinhas que falavam dos formatos das letras do alfabeto, como a da letra M: “O M tem três pernas, quantas pernas ele tem?”. Sim, me lembro, foi quando escrevemos juntos, na lousa e no caderno, a palavra mamãe.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    E no trabalhinho da data comemorativa de maio, pintamos no sulfite janelas em formato das bandas de um coração, e colamos sobre o papel laminado vermelho que aparecia reluzente quando se abriam as janelinhas, que colori de amarelo, e escrevi em cima aquela que é uma das primeiras palavras que aprendemos a falar, com a letrinha de três pernas, escrevendo com letra de mão.
+                  </p>
+                </CaixaTexto>
+                <p
+                  className="mt-2 mb-6"
+                  style={{
+                    fontFamily: 'Ubuntu, sans-serif',
+                    color: '#000000',
+                    fontSize: '10px',
+                  }}
+                >
+                  OLIVEIRA, Elaine. <em>A lancheira roxa e a alegria do primeiro dia de aula.</em> Disponível em: <a href="https://revistaursula.com.br/educacao/a-lancheira-roxa-e-a-alegria-do-primeiro-dia-de-aula/" target="_blank" rel="noopener noreferrer">https://revistaursula.com.br/educacao/a-lancheira-roxa-e-a-alegria-do-primeiro-dia-de-aula/</a>. Acesso em: 26 set. 2025.
+                </p>
+                {/* Questão intercalada no conteúdo */}
                 <QuestionRenderer
-                  question={chapterQuestions.chapter2[7]}
+                  question={chapterQuestions.chapter2[8]}
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
                 <QuestionRenderer
-                  question={chapterQuestions.chapter2[8]}
+                  question={chapterQuestions.chapter2[9]}
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
@@ -1173,16 +1138,7 @@ function Book() {
                     fileName="questoes-pagina-23.pdf"
                   />
                 </div>
-                <MinhaVersao />
-                <p className="mb-4 indent-6">Você já leu e analisou duas fábulas clássicas: A lebre e a tartaruga e O leão e o rato. Agora, sua tarefa será fazer uma reescrita criativa de uma dessas histórias, mas você terá dois desafios.</p>
-                <ol className="list-decimal marker:text-[#BF3154] ml-6 mb-4">
-                  <li><strong>Mude a forma do texto</strong>: se a fábula escolhida era em prosa, será reescrita em versos; se era em versos, será reescrita em prosa.
-                  </li>
-                  <li><strong>Modifique algum elemento da narrativa</strong> (a situação inicial, o conflito ou o desfecho): com o objetivo de alterar a moral da história.
-                  </li>
-                </ol>
-                <p className="mb-4 indent-6">Sua produção deve manter os personagens da fábula, mas apresentar uma nova versão do enredo que leve o leitor a refletir sobre uma lição diferente daquela da história original.
-                </p>
+
 
                 <Pagination currentPage={24} />
                 {/* Conteúdo do botão do professor */}

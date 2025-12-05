@@ -96,6 +96,62 @@ function QuestionTextInput({
           )}
           <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: question.question }} />
         </p>
+
+        {/* Tabela (se houver) */}
+        {question.table && (
+          <div className="mb-6 overflow-x-auto -mx-4 md:mx-0">
+            <div className="min-w-full inline-block">
+              <table
+                className="w-full border-collapse"
+                style={{
+                  border: '3px solid #0E3B5D',
+                  minWidth: '100%',
+                }}
+              >
+                <thead>
+                  <tr>
+                    {question.table.columns.map((column, index) => (
+                      <th
+                        key={index}
+                        className="p-2 md:p-3 text-center font-semibold text-xs md:text-base"
+                        style={{
+                          border: '1px solid #0E3B5D',
+                          color: '#0E3B5D',
+                          fontFamily: 'Ubuntu, sans-serif',
+                          whiteSpace: 'normal',
+                          wordBreak: 'break-word',
+                        }}
+                      >
+                        {column}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {question.table.rows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {question.table!.columns.map((column, colIndex) => (
+                        <td
+                          key={colIndex}
+                          className="p-2 md:p-3"
+                          style={{
+                            border: '1px solid #0E3B5D',
+                            backgroundColor: 'white',
+                            fontFamily: 'Ubuntu, sans-serif',
+                            whiteSpace: 'normal',
+                            wordBreak: 'break-word',
+                          }}
+                        >
+                          {row[column] || ''}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
         
         {/* Subquestões */}
         <div className="space-y-4">

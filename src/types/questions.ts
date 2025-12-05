@@ -69,6 +69,10 @@ export interface TextInputQuestion {
   selectableText?: string; // Texto que pode ser selecionado/sublinhado (quando não há subquestões)
   correctSelections?: string[]; // Trechos que devem ser selecionados (resposta correta)
   requiresTextSelection?: boolean; // Se a questão requer seleção de texto
+  table?: {
+    columns: string[]; // Cabeçalhos das colunas
+    rows: Array<Record<string, string>>; // Linhas da tabela (cada linha é um objeto com chaves correspondentes às colunas)
+  };
 }
 
 export interface TableFillQuestion {

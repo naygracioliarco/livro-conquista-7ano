@@ -375,49 +375,51 @@ export const chapterQuestions: Record<string, Question[]> = {
     {
       id: 'ch2_q9',
       type: 'text-input',
-      number: 5,
-      question: 'Agora, releia o trecho final da fábula <em>A lebre e a tartaruga</em>.',
-      embeddedContent: 'Quando despertou, a Lebre levou um susto ao ver a Tartaruga quase cruzando a linha de chegada. Correu com todas as forças, mas já era tarde demais. A lenta Tartaruga venceu a corrida, para surpresa de todos.',
-      followUpQuestion: 'Nesse trecho, há alguma frase que resuma de maneira explícita a moral da história? Justifique sua resposta. ',
-      placeholder: 'Digite sua resposta aqui...',
-      correctAnswer: 'Não. Nesse texto, a moral não aparece de forma direta. Ela deve ser inferida com base no que acontece na história e no comportamento dos personagens.',
+      number: 1,
+      question: 'No texto, a narradora lembra objetos que marcaram momentos especiais da infância. Observe o quadro com os objetos e as memórias associadas a eles. Depois, responda às perguntas.',
+      table: {
+        columns: ['Objeto', 'Memória associada'],
+        rows: [
+          {
+            'Objeto': 'Lancheira roxa',
+            'Memória associada': 'Presente da irmã, símbolo da alegria e da expectativa para o primeiro dia na escola.',
+          },
+          {
+            'Objeto': 'Papel almaço',
+            'Memória associada': 'A lição caprichada que amassou e a deixou nervosa, mostrando seu cuidado com os estudos.',
+          },
+          {
+            'Objeto': 'Caneta com flores',
+            'Memória associada': 'Primeira caneta "de apertar" que pôde usar; também presente da irmã, marcando uma conquista escolar.',
+          },
+        ],
+      },
+      subQuestions: [
+        {
+          letter: 'a',
+          question: 'O que esses três objetos têm em comum na história da narradora? Explique com suas palavras.',
+          placeholder: 'Digite sua resposta aqui...',
+          correctAnswer: 'Todos expressam momentos marcantes e afetivos da vida escolar da narradora. Mais do que objetos, eles representam o apoio da família — especialmente das irmãs — em sua trajetória de aprendizado.',
+        },
+        {
+          letter: 'b',
+          question: 'Esses objetos também podem dizer algo sobre o interesse que a própria narradora tem pelos estudos? Justifique sua resposta com base no texto. ',
+          placeholder: 'Digite sua resposta aqui...',
+          correctAnswer: 'Sim. A narradora demonstra envolvimento e afeto com cada item: ela dorme abraçada com a lancheira, fica nervosa quando amassa a lição, sente orgulho da caneta. Isso mostra que ela valorizava muito sua própria experiência de estudar.',
+        },
+      ],
     },
     {
       id: 'ch2_q10',
-      type: 'table-fill',
-      number: 1,
-      question: 'Complete o quadro a seguir identificando o que acontece em cada parte da fábula.',
-      columns: ['Elemento', 'Fábula original', 'Minha nova versão'],
-      rows: [
+      type: 'text-input',
+      number: 2,
+      question: 'O texto da crônica apresenta lembranças pessoais marcadas por diferentes sentimentos. Releia e identifique um trecho bem-humorado e outro que revele sensibilidade. Depois, explique sua escolha.',
+      subQuestions: [
         {
-          id: 'row1',
-          paragraph: 'Forma',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row2',
-          paragraph: 'Situação inicial',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row3',
-          paragraph: 'Conflito',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row4',
-          paragraph: 'Desfecho',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row5',
-          paragraph: 'Moral',
-          text1: '',
-          text2: '',
+          letter: 'a',
+          question: 'Trecho com humor.',
+          placeholder: 'Digite sua resposta aqui...',
+          correctAnswer: 'Pessoal. Sugestão: “[…] achei muito curto, parecendo uma tigela”. Explicação: O humor vem da comparação exagerada e da imagem cômica de um cabelo que parece uma tigela, algo típico do descontentamento infantil.',
         },
       ],
     },

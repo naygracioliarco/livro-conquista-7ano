@@ -219,57 +219,6 @@ export const chapterQuestions: Record<string, Question[]> = {
       placeholder: 'Digite sua resposta aqui...',
       correctAnswer: 'Pessoal.',
     },
-    {
-      id: 'ch1_q11',
-      type: 'table-fill',
-      number: 3,
-      question: 'Indique, na tabela a seguir, se os elementos da notícia estão presentes nos textos III e IV e como cada um deles é apresentado.',
-      columns: ['Elemento', 'Está presentenos textos?', 'Como aparece?'],
-      rows: [
-        {
-          id: 'row1',
-          paragraph: 'Título',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row2',
-          paragraph: 'Linha-fina',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row3',
-          paragraph: 'Lide',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row4',
-          paragraph: 'Corpo da notícia',
-          text1: '',
-          text2: '',
-        },
-        {
-          id: 'row5',
-          paragraph: 'Fechamento',
-          text1: '',
-          text2: '',
-        },
-      ],
-      correctAnswer: {
-        'ch1_q11_row1_col1': 'Não',
-        'ch1_q11_row1_col2': 'Não há título lido pelo apresentador. O tema é apresentado diretamente no início da notícia. ',
-        'ch1_q11_row2_col1': 'Não',
-        'ch1_q11_row2_col2': 'Não há linha-fina como ocorre na notícia impressa. ',
-        'ch1_q11_row3_col1': 'Sim',
-        'ch1_q11_row3_col2': 'Está presente, com as informações mais importantes no início da notícia.',
-        'ch1_q11_row4_col1': 'Sim',
-        'ch1_q11_row4_col2': 'Organizado como narração, com apoio visual no telejornal.',
-        'ch1_q11_row5_col1': 'Sim',
-        'ch1_q11_row5_col2': 'Marcado por um comentário final e por dados sobre projeções futuras.',
-      },
-    },
   ],
   chapter2: [
     {

@@ -747,7 +747,7 @@ function Book() {
               content={
                 <>
                   <p className="mb-3">
-                    EF69LP44. Promova uma escuta atenta e engajada, incentivando os alunos a estabelecer relações entre os comportamentos humanos e as situações representadas nas fábulas. O texto de abertura oferece subsídios para que reconheçam, problematizem e discutam valores sociais, culturais e humanos presentes nesse gênero textual. Inicie com uma conversa que recupere experiências anteriores de leitura de fábulas e convide os alunos a compartilhar situações cotidianas que remetam aos provérbios mencionados como “devagar se vai ao longe”. As perguntas sugeridas buscam estimular a troca de pontos de vista e o amadurecimento da escuta argumentativa. Utilize a imagem do lobo em pele de cordeiro como ponto de partida visual para construir hipóteses com a turma sobre aparências, intenções e disfarces.
+                    EF69LP44, EF69LP49, EF67LP28. Acompanhe a leitura do texto de abertura e incentive os alunos a observar como cenas simples do dia a dia podem virar tema de uma crônica. Em seguida, promova uma conversa mediada com base nas perguntas propostas, valorizando relatos, lembranças e pontos de vista pessoais. Esse momento inicial ajuda a ampliar o olhar sobre o cotidiano e a antecipar o papel do cronista, que transforma observações sobre a vida e o mundo em texto.
                   </p>
                 </>
               }
@@ -758,31 +758,28 @@ function Book() {
           <Chapter
             id="chapter2"
             number={2}
-            title="Fábulas"
+            title="Crônicas"
             content={
               <>
                 <p className="mb-4 indent-6">
-                  Desde os tempos antigos, as pessoas criam histórias em que animais se comportam como seres humanos, capazes de pensar, falar e tomar decisões. Essas histórias divertem, fazem pensar e ensinam sobre como viver em sociedade.
+                  Era só uma ida comum à padaria, mas algo na maneira como o padeiro empacotava os pães chamou a atenção. Rápido, preciso, como se seguisse uma coreografia. No fundo, o rádio falava de política. No caixa, uma senhora puxava conversa. Do lado de fora, alguém ensaiava passos de dança sob a sombra de uma árvore.
                 </p>
                 <p className="mb-4 indent-6">
-                  Além de entreter, as fábulas convidam à reflexão sobre a convivência com os outros e sobre valores importantes para todos. Isso acontece por meio de situações simbólicas vividas por personagens como raposas astutas, tartarugas persistentes, lobos em pele de cordeiro ou leões orgulhosos.
+                  Cenas como essas acontecem todos os dias e, muitas vezes, passam despercebidas. Mas, para quem escreve crônicas, são justamente essas situações que viram tema de textos. Às vezes, basta um detalhe: uma lancheira da infância, uma frase ouvida por acaso ou um cachorro dormindo no sofá. Não é preciso apresentar grandes acontecimentos.
                 </p>
                 <p className="mb-4 indent-6">
-                  São histórias curiosas, breves e que quase sempre terminam com uma moral, como “devagar se vai ao longe” ou “mais vale prevenir do que remediar”. Esses dizeres nos ajudam a pensar sobre comportamentos e dilemas comuns do dia a dia.
-                </p>
-                <p className="mb-4 indent-6">
-                  Porém, a moral não precisa ser aceita como verdade absoluta. É possível refletir sobre ela de diferentes maneiras. Dessa forma, as fábulas deixam de ser apenas histórias com lições prontas e passam a ser um convite à crítica, à reflexão e ao diálogo.
+                  A crônica é um jeito de transformar o cotidiano em texto. O cronista observa o mundo, faz conexões entre fatos e ideias e compartilha o que percebe para fazer o leitor rir, lembrar-se de alguma coisa ou parar para refletir.
                 </p>
                 {/* Conteúdo de lista */}
                 <ul className="list-disc marker:text-[#BF3154] ml-6">
-                  <li>Todas as histórias precisam terminar com uma lição explícita?</li>
-                  <li>O que torna uma atitude boa ou ruim? Isso depende da intenção?</li>
-                  <li>Todos os comportamentos têm consequências? Por quê?</li>
+                  <li>Qual foi a coisa mais engraçada, interessante ou curiosa que aconteceu com você nesta semana?</li>
+                  <li>Qual lembrança da sua infância faz você sorrir só de pensar nela?</li>
+                  <li>Quais são os pequenos detalhes do seu dia a dia em que você costuma prestar atenção?</li>
                 </ul>
                 {/* Imagem */}
                 <div className="flex flex-col items-center my-6">
-                  <img src="images/lobo.png" className='max-w-[50%]' />
-                  <p className="text-[10px] text-slate-600 mt-2" >Hennadii H/Shutterstock
+                  <img src="images/pag17_img1.png" className='max-w-[100%]' />
+                  <p className="text-[10px] text-slate-600 mt-2" >David Arruda; WinWin/stock.adobe.com
                   </p>
                 </div>
                 <Pagination currentPage={18} />
@@ -791,7 +788,8 @@ function Book() {
                     content={
                       <>
                         <p className="mb-3">
-                          EEF69LP44, EF69LP47, EF69LP49, EF69LP54. Esta seção tem como objetivo ampliar a compreensão dos alunos sobre o gênero <strong>fábula</strong>, articulando repertório histórico, dimensão simbólica e leitura crítica. Essa leitura inicial não visa à memorização de conceitos, mas ao desenvolvimento de repertório analítico que será usado na leitura dos textos e na produção autoral. Ao final da seção, retome com os alunos a estrutura da fábula como narrativa curta e intencionalmente construída, preparando-os para identificar esses elementos nos textos da sequência
+                          EF69LP44, EF69LP49, EF67LP28. Durante a leitura, faça pausas estratégicas para levantar hipóteses sobre o gênero, retomando elementos prévios da abertura do capítulo. Incentive a identificação das principais ideias: origem da crônica, tipos possíveis, uso da primeira pessoa, relação com o tempo presente e liberdade criativa. Finalize esse momento com uma conversa orientada sobre o papel do cronista, a diferença entre contar e interpretar fatos e a importância do ponto de vista na escolha do que narrar e de como narrar. Esse percurso prepara a turma para reconhecer marcações estilísticas e estruturais nas crônicas que serão analisadas a seguir.
+
 
                         </p>
                       </>
@@ -799,35 +797,44 @@ function Book() {
 
                   />
                 </div>
-                <h3>O que é fábula?</h3>
+                <h3>O que é crônica?</h3>
                 <p className="mb-4 indent-6">
-                  As fábulas são histórias curtas, simbólicas e protagonizadas por animais que agem como humanos. Essas narrativas existem há milhares de anos e surgiram da tradição oral de povos antigos, mas ainda hoje fazem sentido porque abordam valores humanos importantes em qualquer época, como honestidade, esperteza e respeito.
+                  A crônica é um texto curto que parte de fatos do cotidiano para compartilhar observações, lembranças e comentários sobre a vida. O cronista pode se inspirar em uma cena vista na rua, uma memória de infância, uma conversa, um fato noticiado ou até no comportamento de um animal de estimação.
                 </p>
                 <p className="mb-4 indent-6">
-                  Esses textos comunicam ideias sobre o mundo e sobre o comportamento das pessoas de maneira indireta. O autor de uma fábula escolhe personagens, situações e desfechos para representar maneiras humanas de agir, pensar e se relacionar.
+                  O objetivo não é contar o que aconteceu como em uma notícia. O cronista escolhe um detalhe do cotidiano e organiza o texto com base em seu ponto de vista, destacando o que considera mais interessante ou digno de reflexão. Por isso, é comum que a crônica seja escrita em primeira pessoa, com linguagem simples e próxima da fala do dia a dia, o que aproxima o leitor da experiência contada.
                 </p>
                 <p className="mb-4 indent-6">
-                  Mais do que ensinar uma lição, a fábula apresenta uma maneira de interpretar a vida por meio de metáforas. Isso significa que o autor não precisa escrever “acho que vaidade é um defeito” ou “as aparências enganam”. Em vez disso, ele cria uma situação simbólica em que essas ideias aparecem nas ações dos personagens.
+                  Apesar da estrutura flexível, muitas crônicas seguem um caminho parecido:
                 </p>
-                <p className="mb-4 indent-6">
-                  Em muitas fábulas, a moral é apresentada de maneira direta, ao final do texto, por meio de uma frase curta que resume o ensinamento da história. No entanto, nem todas seguem esse formato. Em algumas versões, o ensinamento está apenas sugerido, aparecendo nas escolhas dos personagens, nas ações que eles realizam e nas consequências que enfrentam. Ou seja, nesses casos, o ensinamento fica subentendido.
-                </p>
-                <p className="mb-4 indent-6">
-                  Ao longo do tempo, uma mesma fábula pode ser contada de diferentes maneiras, com finais alternativos e mensagens transformadas. Em uma versão, um personagem é criticado. Em outra, pode ser valorizado. E isso muda completamente a interpretação da história.
-                </p>
-                <h4>Uma história curta com construção precisa</h4>
-                <p className="mb-4 indent-6">
-                  Como são textos curtos, as fábulas exigem uma construção narrativa intencional. O tempo é marcado sem descrições longas, a linguagem é direta e carregada de intenção e os desfechos são rápidos e, muitas vezes, surpreendentes. O autor precisa selecionar com cuidado cada elemento da narrativa para transmitir uma mensagem em poucos parágrafos. Normalmente, as fábulas se organizam em três partes principais.
-                </p>
-                <ul className="list-disc marker:text-[#BF3154] ml-6">
-                  <li><strong>Situação inicial</strong>:  apresenta o cenário e os personagens, sugerindo o comportamento de cada um. </li>
-                  <li><strong>Conflito</strong>: contém um desafio, uma escolha ou uma situação crítica que leva os personagens a agir. </li>
-                  <li><strong>Desfecho</strong>: mostra a consequência direta das ações dos personagens, geralmente com uma surpresa ou inversão de expectativa. </li>
 
+                <ul className="list-disc marker:text-[#BF3154] ml-6">
+                  <li>começam com um detalhe comum, como um objeto, uma cena ou um diálogo;</li>
+                  <li>desenvolvem uma ideia, uma lembrança ou uma crítica;</li>
+                  <li>terminam com uma reflexão, uma surpresa ou um comentário leve, que pode fazer o leitor rir, pensar ou lembrar algo vivido.</li>
                 </ul>
                 <p className="mb-4 indent-6">
-                  Os verbos são usados no passado, indicando ações concluídas, e os marcadores temporais, como <strong>certo dia, naquela manhã</strong> e <strong>enquanto isso</strong>, ajudam o leitor a acompanhar o avanço da narrativa com agilidade.
+                  A palavra <strong>crônica</strong> vem do grego e significa <strong>tempo</strong>. E foi justamente esse sentido que deu origem a esse gênero: a crônica surgiu nos jornais, como um tipo de texto que registrava acontecimentos do dia a dia, com uma linguagem mais informal e pessoal do que a das notícias.
                 </p>
+                <p className="mb-4 indent-6">
+                  Com o tempo, passou a circular também em revistas, livros, blogs, redes sociais e outros meios, unindo elementos da realidade com imaginação e estilo. Atualmente, muitas crônicas transitam entre o jornalismo e a literatura, e são lidas tanto para informar quanto para entreter ou provocar reflexões.
+                </p>
+                <p className="mb-4 indent-6">
+                  As crônicas refletem o tempo em que foram escritas. Elas costumam tratar de temas atuais e mostram como o autor percebe o mundo, os comportamentos das pessoas e os acontecimentos do presente. Embora possam combinar diferentes formas de abordagem, é possível identificar alguns tipos mais comuns:
+                </p>
+                <ul className="list-disc marker:text-[#BF3154] ml-6">
+                  <li><strong>Crônica jornalística</strong>:  comenta fatos da atualidade, sem compromisso com a neutralidade. Pode ter tom crítico, reflexivo ou afetivo;  </li>
+                  <li><strong>Crônica lírica ou literária</strong>: foca sentimentos, memórias e observações sensíveis, com linguagem mais subjetiva e poética;  </li>
+                  <li><strong>Crônica humorística</strong>: apresenta situações engraçadas, absurdas ou inesperadas, provocando riso ou surpresa; </li>
+                  <li><strong>Crônica-ensaio</strong>: parte de um fato ou uma situação para desenvolver uma ideia mais profunda ou filosófica. </li>
+                </ul>
+                <p className="mb-4 indent-6">
+                  O cronista é alguém que observa com atenção os pequenos acontecimentos e interpreta o mundo ao seu redor. Essa interpretação não é neutra, pois ele escolhe o que contar, como contar e qual tom deseja dar ao texto — mais leve, crítico, nostálgico, engraçado ou reflexivo.
+                </p>
+                <p className="mb-4 indent-6">
+                Além disso, muitas crônicas estabelecem um tom de conversa com o leitor. É comum encontrar expressões como “você já reparou?” ou “talvez aconteça com você também”, criando uma proximidade intencional com quem lê.
+                </p>
+
                 <Pagination currentPage={19} />
                 <div className="my-6">
                   <TeacherButton

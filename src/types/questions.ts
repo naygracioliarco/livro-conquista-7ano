@@ -1,4 +1,4 @@
-export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill' | 'alternative-with-excerpts' | 'ordering';
+export type QuestionType = 'multiple-choice' | 'true-false' | 'alternative' | 'text-input' | 'table-fill' | 'alternative-with-excerpts' | 'ordering' | 'matching';
 
 export interface MultipleChoiceQuestion {
   id: string;
@@ -123,7 +123,23 @@ export interface OrderingQuestion {
   }>;
 }
 
-export type Question = MultipleChoiceQuestion | TrueFalseQuestion | AlternativeQuestion | TextInputQuestion | TableFillQuestion | AlternativeWithExcerptsQuestion | OrderingQuestion;
+export interface MatchingQuestion {
+  id: string;
+  type: 'matching';
+  question: string;
+  number?: number;
+  characteristics: Array<{
+    letter: string; // Letra da característica (ex: 'A', 'B', 'C', 'D')
+    text: string; // Texto da característica
+  }>;
+  excerpts: Array<{
+    id: string; // ID único do trecho
+    text: string; // Texto do trecho
+    correctAnswer: string; // Letra da característica correta (ex: 'A', 'B', 'C', 'D')
+  }>;
+}
+
+export type Question = MultipleChoiceQuestion | TrueFalseQuestion | AlternativeQuestion | TextInputQuestion | TableFillQuestion | AlternativeWithExcerptsQuestion | OrderingQuestion | MatchingQuestion;
 
 export interface UserAnswers {
   [questionId: string]: string | number | boolean | number[] | Record<string, number>;

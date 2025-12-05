@@ -1146,26 +1146,39 @@ function Book() {
                   <TeacherButton
                     content={
                       <>
-                        <p className="mb-3">
-                          Respostas:
-                        </p>
-                        <p className="mb-4 indent-6" style={{ textAlign: 'left' }}>
-                          Pessoal.
-                        </p>
+                        <TeacherAnswers
+                          questions={[
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q11')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q12')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q13')!,
+                            chapterQuestions.chapter2.find(q => q.id === 'ch2_q14')!,
+                          ]}
+                        />
                       </>
                     }
                   />
                 </div>
-                <p className="mb-4 indent-6"><strong>Preparação</strong></p>
-                <p className="mb-4 indent-6">Antes de escrever, siga os passos abaixo para planejar sua nova versão da fábula.</p>
-                <ol className="list-decimal marker:text-[#BF3154] ml-6 mb-4">
-                  <li><strong>Mude a forma do texto</strong>: se a fábula escolhida era em prosa, será reescrita em versos; se era em versos, será reescrita em prosa.
-                  </li>
-                  <li><strong>Modifique algum elemento da narrativa</strong> (a situação inicial, o conflito ou o desfecho): com o objetivo de alterar a moral da história.
-                  </li>
-                </ol>
+                
                 <QuestionRenderer
-                  question={chapterQuestions.chapter2[9]}
+                  question={chapterQuestions.chapter2[10]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[11]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[12]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[13]}
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}

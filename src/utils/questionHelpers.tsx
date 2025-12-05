@@ -279,6 +279,24 @@ export function renderQuestionAnswer(question: Question): React.ReactNode {
     );
   }
 
+  if (question.type === 'matching') {
+    return (
+      <div className="mb-3">
+        {question.number !== undefined && (
+          <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
+        )}
+        <div className="space-y-2">
+          {question.excerpts.map((excerpt) => (
+            <p key={excerpt.id} className="mb-2">
+              <span dangerouslySetInnerHTML={{ __html: excerpt.text }} />
+              <span style={{ color: '#00776E', fontWeight: 'bold' }}> → ({excerpt.correctAnswer})</span>
+            </p>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return null;
 }
 

@@ -6,6 +6,7 @@ import QuestionTextInput from './QuestionTextInput';
 import QuestionTableFill from './QuestionTableFill';
 import QuestionAlternativeWithExcerpts from './QuestionAlternativeWithExcerpts';
 import QuestionOrdering from './QuestionOrdering';
+import QuestionMatching from './QuestionMatching';
 
 interface QuestionRendererProps {
   question: Question;
@@ -83,6 +84,15 @@ function QuestionRenderer({
     case 'ordering':
       return (
         <QuestionOrdering
+          question={question}
+          userAnswers={userAnswers}
+          onAnswerChange={onAnswerChange}
+          showResults={showResults}
+        />
+      );
+    case 'matching':
+      return (
+        <QuestionMatching
           question={question}
           userAnswers={userAnswers}
           onAnswerChange={onAnswerChange}

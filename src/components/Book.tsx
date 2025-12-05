@@ -587,97 +587,33 @@ function Book() {
                   <TeacherButton
                     content={
                       <>
-                        <p className="mb-3">
-                          Respostas:
-                        </p>
-                        {(() => {
-                          const question = chapterQuestions.chapter1.find(q => q.id === 'ch1_q9');
-                          if (question && question.type === 'text-input' && question.subQuestions) {
-                            return question.subQuestions.map((subQ) => (
-                              <p key={subQ.letter} className="mb-3">
-                                {question.number !== undefined && (
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                )}
-                                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                              </p>
-                            ));
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter1.find(q => q.id === 'ch1_q10');
-                          if (question && question.type === 'text-input' && question.subQuestions) {
-                            return question.subQuestions.map((subQ) => (
-                              <p key={subQ.letter} className="mb-3">
-                                {question.number !== undefined && (
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                )}
-                                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
-                                <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
-                              </p>
-                            ));
-                          }
-                          return null;
-                        })()}
-                        {(() => {
-                          const question = chapterQuestions.chapter1.find(q => q.id === 'ch1_q11');
-                          if (question && question.type === 'table-fill') {
-                            return (
-                              <>
-                                {/* Respostas da tabela */}
-                                {question.correctAnswer && (
-                                  <>
-                                    <p className="mb-2 font-semibold">
-                                      {question.number !== undefined && (
-                                        <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
-                                      )}
-                                      Tabela:
-                                    </p>
-                                    {question.rows.map((row) => {
-                                      const correctAnswers = question.correctAnswer!;
-                                      // Obtém o primeiro campo da row (primeira coluna)
-                                      const firstColumnKey = Object.keys(row).find(key => key !== 'id') || 'paragraph';
-                                      const firstColumnValue = row[firstColumnKey] || '';
 
-                                      // Gera os fieldIds para cada coluna (exceto a primeira)
-                                      const columnAnswers = question.columns.slice(1).map((columnName, colIndex) => {
-                                        const fieldId = `${question.id}_${row.id}_col${colIndex + 1}`;
-                                        return {
-                                          columnName,
-                                          answer: correctAnswers[fieldId] || ''
-                                        };
-                                      });
-
-                                      return (
-                                        <div key={row.id} className="mb-4">
-                                          <p className="mb-2 font-semibold" style={{ color: '#0E3B5D' }}>
-                                            {question.columns[0]} {firstColumnValue}:
-                                          </p>
-                                          {columnAnswers.map((colAnswer, idx) => (
-                                            <p key={idx} className="mb-1">
-                                              <strong>{colAnswer.columnName}:</strong> {colAnswer.answer}
-                                            </p>
-                                          ))}
-                                        </div>
-                                      );
-                                    })}
-                                  </>
-                                )}
-
-                              </>
-                            );
-                          }
-                          return null;
-                        })()}
+                        <TeacherAnswers
+                          questions={[
+                            chapterQuestions.chapter1.find(q => q.id === 'ch1_q8')!,
+                            chapterQuestions.chapter1.find(q => q.id === 'ch1_q9')!,
+                            chapterQuestions.chapter1.find(q => q.id === 'ch1_q10')!,
+                          ]}
+                        />
 
                       </>
                     }
                   />
                 </div>
                 <CaixaTexto title=''>
-                  <p className="mb-4 indent-6"></p>
-                  <p className="mb-4 indent-6"></p>
+                  <p className="mb-4 indent-6">
+                    Apesar de as formigas-cortadeiras usarem talos, sementes, folhas e flores para o cultivo de fungos, no final da história, as sementes espalhadas mato afora, o solo revolvido e o adubo resultante dessa atividade trazem benefício à vegetação. Inclusive, solos com um formigueiro da saúva-limão têm mais nutrientes e matéria orgânica do que quando não têm formigueiro. A terra que as saúvas escavam e depositam nas aberturas do formigueiro pode até mudar a paisagem. […]
+                  </p>
+                  <p className="mb-4 indent-6"><strong>Abelhas</strong></p>
+                  <p className="mb-4 indent-6">
+                    De cada 100 tipos de plantas que produzem frutos ou sementes para consumo humano no mundo, 75 dependem de abelhas ou de outros animais polinizadores. No Brasil, a produção de frutas como melancia, ameixa e maçã diminuiria muito sem as abelhas. Sem as mamangavas, por exemplo, quase não se produz maracujá!
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Jataí, uruçu, mandaçaia e jandaíra são algumas das cerca de 300 espécies de abelhas sociais encontradas no Brasil. Conhecidas por abelhas-sem-ferrão ou indígenas, algumas destas chegam a ter dez mil abelhas numa colmeia. Apenas uma colônia de jataí consegue polinizar 1.500 pés de morango.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Olhar para os valores dos pequenos seres pode ser a chave para entendermos o quanto somos importantes para eles e eles para nós. Olhar para os detalhes, para seu trabalho quase invisível que move o mundo, nos abre parte do universo da biodiversidade.
+                  </p>
                 </CaixaTexto>
                 <p
                   className="mt-2 mb-6"
@@ -687,9 +623,15 @@ function Book() {
                     fontSize: '10px',
                   }}
                 >
-                  OLIMPÍADAS de robôs humanoides na China. Publicado pelo canal Band Jornalismo. 1 vídeo (1 min 05 s). Disponível em:  <a href="https://www.youtube.com/shorts/UHpLpQPrkrw" target="_blank" rel="noopener noreferrer">https://www.youtube.com/shorts/UHpLpQPrkrw</a>. Acesso em: 24 set. 2025.
+                  SOUZA, Paulo R. de; ROQUE, Fábio de O.; DELABIE, Jacques. <em>Pequenos animais que movem o mundo</em> Disponível em:  <a href="https://chc.org.br/artigo/pequenos-animais-que-movem-o-mundo/" target="_blank" rel="noopener noreferrer">https://chc.org.br/artigo/pequenos-animais-que-movem-o-mundo/</a>. Acesso em: 26 set. 2025.
                 </p>
                 {/* Questão intercalada no conteúdo - Tabela comparativa */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter1[7]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
                 <QuestionRenderer
                   question={chapterQuestions.chapter1[8]}
                   userAnswers={userAnswers}
@@ -698,12 +640,6 @@ function Book() {
                 />
                 <QuestionRenderer
                   question={chapterQuestions.chapter1[9]}
-                  userAnswers={userAnswers}
-                  onAnswerChange={handleAnswerChange}
-                  showResults={showTeacherView}
-                />
-                <QuestionRenderer
-                  question={chapterQuestions.chapter1[10]}
                   userAnswers={userAnswers}
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}

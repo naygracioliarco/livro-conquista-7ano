@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import SublinharButton from './SublinharButton';
 
 interface SelectableTextProps {
@@ -20,18 +20,17 @@ function SelectableText({
 }: SelectableTextProps) {
   const textRef = useRef<HTMLDivElement>(null);
   const [isHighlightingActive, setIsHighlightingActive] = useState(false);
+  const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
+  const selectionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleClick = (e: React.MouseEvent) => {
-    if (disabled || showResults || !textRef.current || !isHighlightingActive) return;
+  // Função auxiliar para obter posição do clique/toque
+  const getClickPosition = (x: number, y: number): number | null => {
+    if (!textRef.current) return null;
 
-    // Obter a posição do clique no texto
-    const clickPoint = e.clientX;
-    const clickY = e.clientY;
-    
-    // Criar um range temporário para encontrar a posição do clique
-    const range = document.caretRangeFromPoint?.(clickPoint, clickY);
+    // Tentar usar caretRangeFromPoint (suportado na maioria dos navegadores)
+    const range = document.caretRangeFromPoint?.(x, y);
     if (!range || !textRef.current.contains(range.commonAncestorContainer)) {
-      return;
+      return null;
     }
 
     // Calcular posição do clique no texto plano
@@ -39,7 +38,14 @@ function SelectableText({
     preRange.selectNodeContents(textRef.current);
     preRange.setEnd(range.startContainer, range.startOffset);
     const clickText = preRange.toString();
-    const clickPosition = clickText.replace(/<[^>]*>/g, '').length;
+    return clickText.replace(/<[^>]*>/g, '').length;
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (disabled || showResults || !textRef.current || !isHighlightingActive) return;
+
+    const clickPosition = getClickPosition(e.clientX, e.clientY);
+    if (clickPosition === null) return;
 
     // Verificar se o clique foi em uma área já selecionada
     const clickedRange = selectedRanges.find(
@@ -55,11 +61,75 @@ function SelectableText({
     }
   };
 
-  const handleMouseUp = () => {
+  // Handler para touch (mobile)
+  const handleTouchStart = (e: React.TouchEvent) => {
     if (disabled || showResults || !isHighlightingActive) return;
+    
+    const touch = e.touches[0];
+    touchStartRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+      time: Date.now(),
+    };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (disabled || showResults || !isHighlightingActive || !touchStartRef.current) return;
+
+    const touch = e.changedTouches[0];
+    const touchEnd = {
+      x: touch.clientX,
+      y: touch.clientY,
+      time: Date.now(),
+    };
+
+    // Se foi um toque rápido (tap), tratar como clique para desselecionar
+    const timeDiff = touchEnd.time - touchStartRef.current.time;
+    const distance = Math.sqrt(
+      Math.pow(touchEnd.x - touchStartRef.current.x, 2) +
+      Math.pow(touchEnd.y - touchStartRef.current.y, 2)
+    );
+
+    // Se foi um tap (toque rápido e curto), verificar se clicou em uma seleção
+    if (timeDiff < 300 && distance < 10) {
+      const clickPosition = getClickPosition(touchEnd.x, touchEnd.y);
+      if (clickPosition !== null) {
+        const clickedRange = selectedRanges.find(
+          (r) => clickPosition >= r.start && clickPosition < r.end
+        );
+
+        if (clickedRange) {
+          const updatedRanges = selectedRanges.filter((r) => r !== clickedRange);
+          onSelectionChange(updatedRanges);
+          e.preventDefault();
+          e.stopPropagation();
+          touchStartRef.current = null;
+          return;
+        }
+      }
+    }
+
+    // Se foi uma seleção (arrastar), processar a seleção após um pequeno delay
+    // para garantir que o navegador tenha processado a seleção
+    setTimeout(() => {
+      handleSelection();
+    }, 200);
+    
+    touchStartRef.current = null;
+  };
+
+  // Handler adicional para capturar seleção em mobile após o usuário terminar de selecionar
+  const handleTouchMove = (e: React.TouchEvent) => {
+    // Não fazer nada durante o movimento, apenas permitir a seleção nativa
+    if (disabled || showResults || !isHighlightingActive) return;
+  };
+
+  // Função compartilhada para processar seleção (usada tanto em mouse quanto touch)
+  const handleSelection = useCallback(() => {
+    if (disabled || showResults || !isHighlightingActive || !textRef.current) return;
 
     const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0 || !textRef.current) {
+    if (!selection || selection.rangeCount === 0) {
       return;
     }
 
@@ -110,6 +180,37 @@ function SelectableText({
     }
 
     selection.removeAllRanges();
+  }, [disabled, showResults, isHighlightingActive, text, selectedRanges, onSelectionChange]);
+
+  // Listener para capturar mudanças na seleção (especialmente útil em mobile)
+  useEffect(() => {
+    if (disabled || showResults || !isHighlightingActive) return;
+
+    const handleSelectionChange = () => {
+      // Limpar timeout anterior
+      if (selectionTimeoutRef.current) {
+        clearTimeout(selectionTimeoutRef.current);
+      }
+
+      // Aguardar um pouco para garantir que a seleção foi finalizada
+      selectionTimeoutRef.current = setTimeout(() => {
+        handleSelection();
+      }, 150);
+    };
+
+    // Adicionar listener para mudanças na seleção
+    document.addEventListener('selectionchange', handleSelectionChange);
+
+    return () => {
+      document.removeEventListener('selectionchange', handleSelectionChange);
+      if (selectionTimeoutRef.current) {
+        clearTimeout(selectionTimeoutRef.current);
+      }
+    };
+  }, [disabled, showResults, isHighlightingActive, handleSelection]);
+
+  const handleMouseUp = () => {
+    handleSelection();
   };
 
   const renderText = () => {
@@ -206,12 +307,19 @@ function SelectableText({
         border: '1px solid #87CEEB',
         borderRadius: '4px',
         userSelect: disabled || !isHighlightingActive ? 'none' : 'text',
+        WebkitUserSelect: disabled || !isHighlightingActive ? 'none' : 'text',
         cursor: disabled || !isHighlightingActive ? 'default' : 'text',
         fontFamily: 'inherit',
         lineHeight: '1.6',
+        // Permitir seleção de texto em mobile quando ativo
+        touchAction: disabled || !isHighlightingActive ? 'none' : 'pan-y',
+        WebkitTouchCallout: disabled || !isHighlightingActive ? 'none' : 'default',
       }}
       onClick={handleClick}
       onMouseUp={handleMouseUp}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Botão Sublinhar dentro do bloco */}
       {!showResults && (

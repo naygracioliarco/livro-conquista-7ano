@@ -537,60 +537,23 @@ export const chapterQuestions: Record<string, Question[]> = {
     {
       id: 'ch2_q15',
       type: 'text-input',
-      number: 5,
-      question: 'Na situação apresentada, que atitude o corvo poderia ter tomado? Como essa atitude mudaria o desfecho da história? Escreva um final diferente para ela e explique qual seria a nova moral com base nas mudanças que você propôs.',
+      number: 1,
+      question: 'Para lidar com o resultado do jogo, o cronista inventa argumentos exagerados e bem-humorados. Cite duas dessas explicações imaginativas que ele cria para a derrota do Brasil.',
       placeholder: 'Digite sua resposta aqui...',
-      correctAnswer: 'Pessoal. Espera-se que os alunos apresentem uma reviravolta na narrativa e identifiquem o novo sentido gerado por essa mudança. Exemplos possíveis: o corvo percebe a intenção da raposa e permanece calado (nova moral: “Nem todo elogio deve ser levado a sério”); o corvo percebe a intenção da raposa, desce da árvore e divide o queijo com ela (nova moral: “Compartilhar é melhor do que competir”).',
+      correctAnswer: 'Sugestões: os zagueiros David Luiz e Dante não se conheciam e só foram se apresentar quando o jogo já estava 5 a 0; o técnico convocou o Fred errado para a partida; os quatro gols sofridos em seis minutos foram uma invasão do sobrenatural e não deveriam contar.',
     },
     {
       id: 'ch2_q16',
-      type: 'true-false',
-      number: 6,
-      question: 'Com base nas fábulas lidas ao longo do capítulo, analise as afirmativas a seguir e marque <strong>V</strong> para o que for verdadeiro e <strong>F</strong> para o que for falso.',
-      hasCorrectionBox: false,
-      correctionPlaceholder: 'Corrija as afirmações falsas aqui...',
-      statements: [
-        {
-          letter: 'a',
-          statement: ' Em <em>A lebre e a tartaruga</em> e em <em>O leão e o rato</em>, o personagem menos valorizado surpreende ao vencer com esforço ou dedicação.',
-          correctAnswer: true,
-        },
-        {
-          letter: 'b',
-          statement: 'Em <em>A raposa e o corvo</em>, o personagem mais sensato é quem sai prejudicado no final.',
-          correctAnswer: false,
-        },
-        {
-          letter: 'c',
-          statement: 'Em <em>A raposa e o corvo</em>, a vantagem é conquistada mais pela esperteza do que pelo esforço.',
-          correctAnswer: true,
-        },
-        {
-          letter: 'd',
-          statement: 'Nas três fábulas, os personagens atingem seus objetivos por meio da paciência e da humildade.',
-          correctAnswer: false,
-        },
-        {
-          letter: 'e',
-          statement: 'Em <em>O leão e o rato</em>, o personagem menor salva o maior e muda a expectativa da história.',
-          correctAnswer: true,
-        },
-        {
-          letter: 'f',
-          statement: 'Em <em>A lebre e a tartaruga</em>, o mais rápido perde por confiar demais em si mesmo.',
-          correctAnswer: true,
-        },
-        {
-          letter: 'g',
-          statement: 'Em <em>A raposa e o corvo</em>, quem manipula a situação consegue obter o que deseja.',
-          correctAnswer: true,
-        },
-        {
-          letter: 'h',
-          statement: 'As três fábulas mostram que quem subestima o outro sempre perde.',
-          correctAnswer: false,
-        },
+      type: 'alternative',
+      number: 2,
+      question: 'O autor afirma que uma derrota de 10 a 1 teria sido melhor, pois a única reação possível seria uma grande gargalhada. Essa afirmação é um recurso de estilo. Qual das alternativas a seguir descreve melhor a estratégia utilizada pelo autor e seu efeito de sentido?',
+      options: [
+        'O uso de linguagem literal e direta para criticar de modo objetivo o desempenho dos jogadores.',
+        'A utilização da hipérbole (exagero intencional) para criar um efeito de humor e absurdo diante da tragédia.',
+        'A criação de um tom sentimental e nostálgico para expressar a profunda tristeza causada pela derrota. ',
+        'O emprego de uma linguagem técnica e analítica para avaliar com precisão os erros táticos da partida.',
       ],
+      correctAnswer: 1,
     },
     {
       id: 'ch2_q17',

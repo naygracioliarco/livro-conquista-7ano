@@ -1338,7 +1338,7 @@ function Book() {
                   <strong>Texto III</strong>
                 </p>
                 <CaixaTexto title='Os seis minutos'>
-                <p
+                  <p
                     className="mb-2 indent-6"
                     style={{
                       fontSize: '15px',
@@ -1350,9 +1350,9 @@ function Book() {
                     10/07/2014
                   </p>
                   <p className="mb-4 indent-6">
-                  A primeira coisa a fazer, já que o Thiago Silva não poderia jogar, era apresentar o David Luiz ao Dante. Os dois conversariam, talvez num jantarzinho, trocariam confidências e fotos das crianças, e combinariam como jogar contra os alemães. Aparentemente, isto não aconteceu. Quando David Luiz e Dante finalmente se conheceram, se apertaram as mãos (“muito prazer”, “muito prazer”, “precisamos nos encontrar!”) já estava cinco a zero para a Alemanha.
+                    A primeira coisa a fazer, já que o Thiago Silva não poderia jogar, era apresentar o David Luiz ao Dante. Os dois conversariam, talvez num jantarzinho, trocariam confidências e fotos das crianças, e combinariam como jogar contra os alemães. Aparentemente, isto não aconteceu. Quando David Luiz e Dante finalmente se conheceram, se apertaram as mãos (“muito prazer”, “muito prazer”, “precisamos nos encontrar!”) já estava cinco a zero para a Alemanha.
                   </p>
-                 <ContinuaProximaPagina />
+                  <ContinuaProximaPagina />
                 </CaixaTexto>
                 <Pagination currentPage={28} />
                 {/* Conteúdo do botão do professor */}
@@ -1372,9 +1372,29 @@ function Book() {
                 </div>
                 <CaixaTexto title=''>
                   <p className="mb-4 indent-6">
-                    <strong>Semifinal de 2014: Brasil sofre 4 gols em menos de seis minutos</strong>
+                    Outra coisa: houve uma confusão nas convocações. O Felipão chamou o Fred do ano passado, um dos melhores jogadores da Copa das Confederações, e quem apareceu foi o Fred deste ano, claramente um impostor. Ninguém se lembrou de checar sua documentação. E o Felipão não poderia saber que tinha convocado o Fred errado.
                   </p>
-                  
+                  <p className="mb-4 indent-6">
+                    Outro azar: a partida ter terminado em 7 a 1. Até os 7 a 1 foi um desastre, um vexame, um escândalo – tudo que saiu nos jornais. Mas ainda estava dentro dos limites do concebível. Era cruel, era difícil de engolir, mas era um escore até com precedentes, inclusive na história das Copas. Mas se os alemães tivessem feito mais três gols, apenas mais três, entraríamos no terreno do fantástico, do inimaginável, da <span className="bg-[#fff225] px-1">galhofa</span> cósmica. A única reação possível a um 10 a 1 seria uma grande gargalhada, que nos salvaria do desespero terminal. Nada mais teria sentido no mundo, portanto nada mais nos afligiria, e todos estariam perdoados, inclusive o Felipão e a CBF, absolvidos pelo ridículo. Mas não tivemos nem a benção de perder de 10.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    Proponho o seguinte consolo: vamos descontar aqueles seis minutos em que os alemães fizeram quatro gols como uma invasão do sobrenatural. Uma espécie de <span className="bg-[#fff225] px-1">catatonia</span> coletiva, de origem desconhecida, que paralisou nosso time. Os quatro gols marcados durante os seis minutos de inconsciência só de um lado, portanto, não valeram. O escore real, livre de qualquer intervenção extrafutebol, foi 3 a 1. Um escore respeitável, com o qual todos poderemos viver.
+                  </p>
+                  <p className="mb-4 indent-6">
+                    <strong>Final</strong>
+                  </p>
+                  <p className="mb-4 indent-6">
+                  E Argentina e Alemanha farão a grande final, no domingo. Todos torcendo pela América contra a Europa, nossos irmãos continentais contra os nossos <span className="bg-[#fff225] px-1">algozes</span>, nossos co-colonizados contra os senhores do mundo etc. A esta altura, só nos resta a hipocrisia.
+                  </p>
+                  {/* Glossário */}
+                  <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p className="text-[13px] mb-4 indent-6"><strong>galhofa</strong>: zombaria, escárnio,  deboche. 
+                    </p>
+                    <p className="text-[13px] mb-4 indent-6"><strong>catatonia</strong>: alternância entre agitação intensa e passividade. 
+                    </p>
+                    <p className="text-[13px] mb-4 indent-6"><strong>algozes</strong>: indivíduos cruéis, insensíveis ao sofrimento alheio. 
+                    </p>
+                  </div>
                 </CaixaTexto>
                 <p
                   className="mt-2 mb-6"
@@ -1384,8 +1404,15 @@ function Book() {
                     fontSize: '10px',
                   }}
                 >
-                  EVARISTO, Beatriz <em>História hoje:</em> os dez anos do 7 a 1 da Alemanha sobre o Brasil. Disponível em: <a href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/esportes/audio/2024-07/historia-hoje-os-dez-anos-do-7-1-da-alemanha-sobre-o-brasil" target="_blank" rel="noopener noreferrer">https://agenciabrasil.ebc.com.br/radioagencia-nacional/esportes/audio/2024-07/historia-hoje-os-dez-anos-do-7-1-da-alemanha-sobre-o-brasil</a>. Acesso em: 1 out. 2025.
+                  VERISSIMO, Luis Fernando. <em>Os seis minutos.</em> Disponível em: <a href="https://oglobo.globo.com/cultura/noticia/2025/08/30/leia-10-cronicas-de-luis-fernando-verissimo-publicadas-no-globo.ghtml" target="_blank" rel="noopener noreferrer">https://oglobo.globo.com/cultura/noticia/2025/08/30/leia-10-cronicas-de-luis-fernando-verissimo-publicadas-no-globo.ghtml</a>. Acesso em: 1 out. 2025.
                 </p>
+                {/* Questão intercalada no conteúdo */}
+                <QuestionRenderer
+                  question={chapterQuestions.chapter2[14]}
+                  userAnswers={userAnswers}
+                  onAnswerChange={handleAnswerChange}
+                  showResults={showTeacherView}
+                />
                 {/* Questão intercalada no conteúdo */}
                 <QuestionRenderer
                   question={chapterQuestions.chapter2[15]}
@@ -1393,14 +1420,7 @@ function Book() {
                   onAnswerChange={handleAnswerChange}
                   showResults={showTeacherView}
                 />
-                {/* Questão intercalada no conteúdo */}
-                <QuestionRenderer
-                  question={chapterQuestions.chapter2[16]}
-                  userAnswers={userAnswers}
-                  onAnswerChange={handleAnswerChange}
-                  showResults={showTeacherView}
-                />
-                
+
                 {/* Botão de download das questões */}
                 <div className="my-6">
                   <DownloadQuestionsButton

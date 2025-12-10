@@ -52,7 +52,7 @@ function TableOfContents() {
                   Capítulo 1:
                 </span>{' '}
                 <span>
-                Artigos de divulgação científica
+                  Artigos de divulgação científica
                 </span>
               </button>
             </li>
@@ -77,7 +77,7 @@ function TableOfContents() {
                   Capítulo 2:
                 </span>{' '}
                 <span>
-                Crônicas
+                  Crônicas
                 </span>
               </button>
             </li>
@@ -102,7 +102,7 @@ function TableOfContents() {
               fontWeight: 700,
             }}
           >
-            ACESSE O TUTORIAL E APRENDA A MEXER NO LIVRO DIGITAL
+            ACESSE O TUTORIAL E APRENDA A USAR O LIVRO DIGITAL.
           </p>
           <a
             href="https://go.plataformaconx.com.br/ujBmfd"

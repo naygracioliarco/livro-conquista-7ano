@@ -81,8 +81,8 @@ function Book() {
                 </ul>
                 {/* Imagem */}
                 <div className="flex flex-col items-center my-6">
-                  <img src="images/borboletas.png" className="max-w-full" />
-                  <p className="text-[10px] text-slate-600 mt-2">Ruslan Gilmanshin/Stock.adobe.com
+                  <img src="images/borboletas.png" className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px] h-auto" />
+                  <p className="text-[10px] text-slate-600 mt-2" style={{fontSize: '10px'}}>Ruslan Gilmanshin/Stock.adobe.com
                   </p>
                 </div>
                 <Pagination currentPage={5} />
@@ -170,7 +170,7 @@ function Book() {
                   {/* Imagem */}
                   <div className="flex flex-col items-center my-6">
                     <img src="images/pag6_img1.png" className="max-w-[50%]" />
-                    <p className="text-[10px] text-slate-600 mt-2">David Arruda
+                    <p className="text-[10px] text-slate-600 mt-2" style={{fontSize: '10px'}}>David Arruda
                     </p>
                   </div>
                   <p className="mb-4 indent-6">
@@ -359,7 +359,7 @@ function Book() {
                   {/* Imagem */}
                   <div className="flex flex-col items-center my-6">
                     <img src="images/pag9_img1.png" className="max-w-[50%]" />
-                    <p className="text-[10px] text-slate-600 mt-2">Instituto Butantan
+                    <p className="text-[10px] text-slate-600 mt-2" style={{fontSize: '10px'}}>Instituto Butantan
                     </p>
                   </div>
                   <p className="mb-4 indent-6"><strong>Nem tudo são semelhanças</strong></p>
@@ -780,7 +780,7 @@ function Book() {
                 {/* Imagem */}
                 <div className="flex flex-col items-center my-6">
                   <img src="images/pag17_img1.png" className='max-w-[100%]' />
-                  <p className="text-[10px] text-slate-600 mt-2" >David Arruda; WinWin/stock.adobe.com
+                  <p className="text-[10px] text-slate-600 mt-2" style={{fontSize: '10px'}}>David Arruda; WinWin/stock.adobe.com
                   </p>
                 </div>
                 <Pagination currentPage={18} />
@@ -1662,7 +1662,7 @@ function Book() {
         <Footer />
       </div>
 
-      {currentPage >= 5 && (
+      {currentPage > 4 && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-16 right-4 z-40 p-3 hover:scale-110 transition-all"

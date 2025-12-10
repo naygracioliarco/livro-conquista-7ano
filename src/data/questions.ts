@@ -66,7 +66,6 @@ export const chapterQuestions: Record<string, Question[]> = {
     {
       id: 'ch1_q4',
       type: 'alternative-with-excerpts',
-      number: 3,
       question: '',
       subQuestions: [
         {
@@ -426,7 +425,6 @@ export const chapterQuestions: Record<string, Question[]> = {
     {
       id: 'ch2_q11',
       type: 'text-input',
-      number: 2,
       question: '',
       subQuestions: [
         {

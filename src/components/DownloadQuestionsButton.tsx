@@ -73,9 +73,13 @@ function DownloadQuestionsButton({
       const questionNumber = ('number' in question && question.number !== undefined) ? `${question.number}. ` : '';
       const questionText = stripHtml(question.question || '');
       const fullQuestionText = `${questionNumber}${questionText}`;
-      const wrappedQuestion = doc.splitTextToSize(fullQuestionText, maxWidth);
-      doc.text(wrappedQuestion, margin, yPosition);
-      yPosition += wrappedQuestion.length * 6 + 5;
+      
+      // Só renderiza se houver texto ou número (não renderiza fallback quando está vazio)
+      if (fullQuestionText.trim()) {
+        const wrappedQuestion = doc.splitTextToSize(fullQuestionText, maxWidth);
+        doc.text(wrappedQuestion, margin, yPosition);
+        yPosition += wrappedQuestion.length * 6 + 5;
+      }
 
       // Processa cada tipo de questão
       if (question.type === 'text-input' && question.subQuestions) {
@@ -133,7 +137,7 @@ function DownloadQuestionsButton({
           }
         });
       } else if (question.type === 'true-false' && question.statements) {
-        question.statements.forEach((stmt) => {
+        question.statements.forEach((stmt, stmtIndex) => {
           if (yPosition + 15 > pageHeight - margin) {
             doc.addPage();
             yPosition = margin;
@@ -141,14 +145,19 @@ function DownloadQuestionsButton({
 
           doc.setFontSize(11);
           doc.setFont('helvetica', 'bold');
-          const statementText = `${stmt.letter}) ${stripHtml(stmt.statement)}`;
+          // Só adiciona a letra se ela existir
+          const letterPrefix = stmt.letter ? `${stmt.letter}) ` : '';
+          const statementText = `${letterPrefix}${stripHtml(stmt.statement)}`;
           const wrappedStatement = doc.splitTextToSize(statementText, maxWidth - 5);
           doc.text(wrappedStatement, margin + 5, yPosition);
           yPosition += wrappedStatement.length * 5 + 3;
 
           doc.setFontSize(10);
           doc.setFont('helvetica', 'normal');
-          const statementId = `${question.id}_${stmt.letter}`;
+          // Usa a letra se existir, senão usa o índice
+          const statementId = stmt.letter 
+            ? `${question.id}_${stmt.letter}` 
+            : `${question.id}_stmt${stmtIndex}`;
           const userAnswer = userAnswers[statementId] as boolean | undefined;
           if (userAnswer !== undefined) {
             const answerText = userAnswer ? 'Verdadeiro (V)' : 'Falso (F)';
@@ -370,6 +379,107 @@ function DownloadQuestionsButton({
             }
           });
         }
+      } else if (question.type === 'alternative-with-excerpts') {
+        // Processa questões com trechos e subquestões
+        if (question.textExcerpts && question.textExcerpts.length > 0) {
+          if (yPosition + 15 > pageHeight - margin) {
+            doc.addPage();
+            yPosition = margin;
+          }
+
+          doc.setFontSize(10);
+          doc.setFont('helvetica', 'italic');
+          question.textExcerpts.forEach((excerpt) => {
+            const wrappedExcerpt = doc.splitTextToSize(stripHtml(excerpt), maxWidth - 10);
+            doc.text(wrappedExcerpt, margin + 5, yPosition);
+            yPosition += wrappedExcerpt.length * 5 + 3;
+          });
+        }
+
+        if (question.subQuestions) {
+          question.subQuestions.forEach((subQ) => {
+            if (yPosition + 15 > pageHeight - margin) {
+              doc.addPage();
+              yPosition = margin;
+            }
+
+            doc.setFontSize(11);
+            doc.setFont('helvetica', 'bold');
+            const subQuestionText = `${subQ.letter}) ${stripHtml(subQ.question)}`;
+            const wrappedSubQuestion = doc.splitTextToSize(subQuestionText, maxWidth - 10);
+            doc.text(wrappedSubQuestion, margin + 5, yPosition);
+            yPosition += wrappedSubQuestion.length * 6 + 2;
+
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            const answerId = `${question.id}_${subQ.letter}`;
+            const userAnswer = userAnswers[answerId];
+            
+            if (Array.isArray(userAnswer)) {
+              // Múltiplas seleções
+              const selectedOptions = userAnswer.map((idx: number) => {
+                if (subQ.options && subQ.options[idx] !== undefined) {
+                  return subQ.options[idx];
+                }
+                return '';
+              }).filter(Boolean);
+              
+              if (selectedOptions.length > 0) {
+                const answerText = `Resposta: ${selectedOptions.join(', ')}`;
+                const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+                doc.text(wrappedAnswer, margin + 10, yPosition);
+                yPosition += wrappedAnswer.length * 5 + 3;
+              } else {
+                doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                yPosition += 5;
+              }
+            } else if (typeof userAnswer === 'number' && subQ.options && subQ.options[userAnswer] !== undefined) {
+              const answerText = `Resposta: ${subQ.options[userAnswer]}`;
+              const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+              doc.text(wrappedAnswer, margin + 10, yPosition);
+              yPosition += wrappedAnswer.length * 5 + 3;
+            } else {
+              doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+              yPosition += 5;
+            }
+          });
+        }
+      } else if (question.type === 'ordering') {
+        // Processa questões de ordenação
+        if (yPosition + 20 > pageHeight - margin) {
+          doc.addPage();
+          yPosition = margin;
+        }
+
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        question.items.forEach((item) => {
+          const orderId = `${question.id}_${item.id}`;
+          const userOrder = userAnswers[orderId] as number | undefined;
+          const orderText = userOrder !== undefined ? `${userOrder}. ` : '';
+          const itemText = `${orderText}${stripHtml(item.text)}`;
+          const wrappedItem = doc.splitTextToSize(itemText, maxWidth - 10);
+          doc.text(wrappedItem, margin + 5, yPosition);
+          yPosition += wrappedItem.length * 5 + 3;
+        });
+      } else if (question.type === 'matching') {
+        // Processa questões de correspondência
+        if (yPosition + 20 > pageHeight - margin) {
+          doc.addPage();
+          yPosition = margin;
+        }
+
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        question.excerpts.forEach((excerpt) => {
+          const matchId = `${question.id}_${excerpt.id}`;
+          const userMatch = (userAnswers[matchId] as string) || '';
+          const matchText = userMatch ? `(${userMatch}) ` : '';
+          const excerptText = `${matchText}${stripHtml(excerpt.text)}`;
+          const wrappedExcerpt = doc.splitTextToSize(excerptText, maxWidth - 10);
+          doc.text(wrappedExcerpt, margin + 5, yPosition);
+          yPosition += wrappedExcerpt.length * 5 + 3;
+        });
       }
 
       yPosition += 8; // Espaço entre questões

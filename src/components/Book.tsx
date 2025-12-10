@@ -389,7 +389,9 @@ function Book() {
                                   {question.number !== undefined && (
                                     <span style={{ color: '#00776E', fontWeight: 'bold' }}>{question.number}. </span>
                                   )}
-                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+                                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>
+                                    {subQ.letter}{/^[a-z]$/.test(subQ.letter) ? ') ' : ' '}
+                                  </span>
                                   <span dangerouslySetInnerHTML={{ __html: subQ.correctAnswer || '' }} />
                                 </p>
                               ));
@@ -779,7 +781,7 @@ function Book() {
                 </ul>
                 {/* Imagem */}
                 <div className="flex flex-col items-center my-6">
-                  <img src="images/pag17_img1.png" className='max-w-[100%]' />
+                  <img src="images/pag17_img1.png" className='w-full max-w-[320px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[620px] h-auto' />
                   <p className="text-[10px] text-slate-600 mt-2" style={{fontSize: '10px'}}>David Arruda; WinWin/stock.adobe.com
                   </p>
                 </div>

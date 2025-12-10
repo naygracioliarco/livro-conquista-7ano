@@ -1,5 +1,11 @@
 import { TrueFalseQuestion, UserAnswers } from '../types/questions';
 
+// Função auxiliar para verificar se é letra do alfabeto (a-z) ou número romano (I, II, III, etc.)
+const isAlphabetLetter = (letter: string): boolean => {
+  // Verifica se é uma única letra minúscula do alfabeto (a-z)
+  return /^[a-z]$/.test(letter);
+};
+
 interface QuestionTrueFalseProps {
   question: TrueFalseQuestion;
   userAnswers: UserAnswers;
@@ -53,7 +59,9 @@ function QuestionTrueFalse({
               <div key={statementKey} className="space-y-2">
                 <div className="flex items-start gap-2">
                   {stmt.letter && (
-                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>{stmt.letter}) </span>
+                    <span style={{ color: '#00776E', fontWeight: 'bold' }}>
+                      {stmt.letter}{isAlphabetLetter(stmt.letter) ? ') ' : ' '}
+                    </span>
                   )}
                   <div className="flex gap-2 flex-shrink-0">
                     {[true, false].map((value) => {

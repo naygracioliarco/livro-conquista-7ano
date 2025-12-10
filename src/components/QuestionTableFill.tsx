@@ -146,7 +146,9 @@ function QuestionTableFill({
             return (
               <div key={subQ.letter} className="mb-4">
                 <p className="mb-2">
-                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+                  <span style={{ color: '#00776E', fontWeight: 'bold' }}>
+                    {subQ.letter}{isAlphabetLetter(subQ.letter) ? ') ' : ' '}
+                  </span>
                   <span style={{ color: 'black' }}>{subQ.question}</span>
                 </p>
                 <textarea

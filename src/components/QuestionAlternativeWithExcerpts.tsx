@@ -1,6 +1,12 @@
 import { AlternativeWithExcerptsQuestion, UserAnswers } from '../types/questions';
 import { COLORS, FONTS } from '../constants/colors';
 
+// Função auxiliar para verificar se é letra do alfabeto (a-z) ou número romano (I, II, III, etc.)
+const isAlphabetLetter = (letter: string): boolean => {
+  // Verifica se é uma única letra minúscula do alfabeto (a-z)
+  return /^[a-z]$/.test(letter);
+};
+
 interface QuestionAlternativeWithExcerptsProps {
   question: AlternativeWithExcerptsQuestion;
   userAnswers: UserAnswers;
@@ -86,7 +92,9 @@ function QuestionAlternativeWithExcerpts({
             <div key={subQ.letter} className="space-y-3">
               {/* Texto da subquestão */}
               <p className="mb-3">
-                <span style={{ color: '#00776E', fontWeight: 'bold' }}>{subQ.letter}) </span>
+                <span style={{ color: '#00776E', fontWeight: 'bold' }}>
+                  {subQ.letter}{isAlphabetLetter(subQ.letter) ? ') ' : ' '}
+                </span>
                 <span style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: subQ.question }} />
               </p>
 

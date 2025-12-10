@@ -184,9 +184,26 @@ function SelectableText({
 
   // Listener para capturar mudanças na seleção (especialmente útil em mobile)
   useEffect(() => {
-    if (disabled || showResults || !isHighlightingActive) return;
+    if (disabled || showResults || !isHighlightingActive || !textRef.current) return;
 
     const handleSelectionChange = () => {
+      // Verificar se há uma seleção ativa
+      const selection = window.getSelection();
+      if (!selection || selection.rangeCount === 0) return;
+
+      const range = selection.getRangeAt(0);
+      
+      // Verificar se a seleção está dentro de um textarea ou input (ignorar)
+      const activeElement = document.activeElement;
+      if (activeElement && (activeElement.tagName === 'TEXTAREA' || activeElement.tagName === 'INPUT')) {
+        return; // Usuário está digitando em um campo de texto, ignorar
+      }
+
+      // Verificar se a seleção está dentro do nosso componente
+      if (!textRef.current || !textRef.current.contains(range.commonAncestorContainer)) {
+        return; // Seleção está fora do nosso componente, ignorar
+      }
+
       // Limpar timeout anterior
       if (selectionTimeoutRef.current) {
         clearTimeout(selectionTimeoutRef.current);
@@ -209,7 +226,12 @@ function SelectableText({
     };
   }, [disabled, showResults, isHighlightingActive, handleSelection]);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e: React.MouseEvent) => {
+    // Não processar se o evento veio de um textarea ou input
+    const target = e.target as HTMLElement;
+    if (target && (target.tagName === 'TEXTAREA' || target.tagName === 'INPUT')) {
+      return;
+    }
     handleSelection();
   };
 

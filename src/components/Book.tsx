@@ -25,6 +25,10 @@ import { useScrollPosition } from '../hooks/useScrollPosition';
 import { TeacherAnswers } from './TeacherAnswers';
 import { UnlinkIcon } from 'lucide-react';
 
+// Controle de visibilidade do botão do professor
+// Altere para false para ocultar todos os botões "Para o Professor"
+const SHOW_TEACHER_BUTTON = true;
+
 function Book() {
   const { userAnswers, handleAnswerChange } = useUserAnswers();
   const { currentPage, scrollToTop } = usePagination();
@@ -46,6 +50,7 @@ function Book() {
           {/* Conteúdo do botão do professor */}
           <div className="my-6">
             <TeacherButton
+              visible={SHOW_TEACHER_BUTTON}
               content={
                 <>
                   <p className="mb-3" style={{ fontFamily: 'Ubuntu, sans-serif', color: '#000000', fontSize: '16px' }}>
@@ -88,6 +93,7 @@ function Book() {
                 <Pagination currentPage={5} />
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -140,6 +146,7 @@ function Book() {
                 <Pagination currentPage={6} />
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -204,6 +211,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <TeacherAnswers
                         questions={[
@@ -273,6 +281,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -321,6 +330,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -374,6 +384,7 @@ function Book() {
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -458,6 +469,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -541,6 +553,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -589,6 +602,7 @@ function Book() {
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
 
@@ -661,6 +675,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -747,6 +762,7 @@ function Book() {
           {/* Conteúdo do botão do professor */}
           <div className="my-6">
             <TeacherButton
+              visible={SHOW_TEACHER_BUTTON}
               content={
                 <>
                   <p className="mb-3">
@@ -788,6 +804,7 @@ function Book() {
                 <Pagination currentPage={18} />
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -841,6 +858,7 @@ function Book() {
                 <Pagination currentPage={19} />
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -904,6 +922,7 @@ function Book() {
                 {/* Conteúdo do botão do professor - Tabela comparativa */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -977,6 +996,7 @@ function Book() {
                 <Pagination currentPage={21} />
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -1036,6 +1056,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -1089,6 +1110,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -1156,6 +1178,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -1208,6 +1231,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -1290,6 +1314,7 @@ function Book() {
                 <Pagination currentPage={27} />
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">
@@ -1369,6 +1394,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -1446,6 +1472,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -1504,6 +1531,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <TeacherAnswers
@@ -1535,6 +1563,7 @@ function Book() {
                 {/* Conteúdo do botão do professor */}
                 <div className="my-6">
                   <TeacherButton
+                    visible={SHOW_TEACHER_BUTTON}
                     content={
                       <>
                         <p className="mb-3">

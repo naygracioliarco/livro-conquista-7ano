@@ -98,15 +98,67 @@ function DownloadQuestionsButton({
 
           doc.setFontSize(10);
           doc.setFont('helvetica', 'normal');
-          const answerId = `${question.id}_${subQ.letter}`;
-          const userAnswer = (userAnswers[answerId] as string) || '';
-          if (userAnswer) {
-            const wrappedAnswer = doc.splitTextToSize(`Resposta: ${userAnswer}`, maxWidth - 10);
-            doc.text(wrappedAnswer, margin + 10, yPosition);
-            yPosition += wrappedAnswer.length * 5 + 3;
+          
+          // Verifica se há seleções de texto na subquestão
+          if (subQ.requiresTextSelection && subQ.selectableText) {
+            const selectionId = `${question.id}_${subQ.letter}_selections`;
+            let savedSelections: Array<{ start: number; end: number }> = [];
+            try {
+              const saved = userAnswers[selectionId];
+              if (typeof saved === 'string') {
+                savedSelections = JSON.parse(saved);
+              } else if (Array.isArray(saved) && saved.length > 0) {
+                const firstItem = saved[0];
+                if (typeof firstItem === 'object' && firstItem !== null && 'start' in firstItem && 'end' in firstItem) {
+                  savedSelections = saved as unknown as Array<{ start: number; end: number }>;
+                }
+              }
+            } catch (e) {
+              savedSelections = [];
+            }
+
+            if (savedSelections.length > 0) {
+              // Remove formatação ** do texto para calcular índices corretos
+              const plainText = subQ.selectableText.replace(/\*\*/g, '');
+              const sortedRanges = [...savedSelections].sort((a, b) => a.start - b.start);
+              
+              // Extrai os trechos selecionados
+              const selectedTexts = sortedRanges.map(range => {
+                return plainText.substring(range.start, range.end);
+              }).filter(text => text.trim().length > 0);
+
+              if (selectedTexts.length > 0) {
+                // Mostra as seleções
+                selectedTexts.forEach((selectedText, idx) => {
+                  if (yPosition + 10 > pageHeight - margin) {
+                    doc.addPage();
+                    yPosition = margin;
+                  }
+                  const answerText = `Seleção ${idx + 1}: "${selectedText.trim()}"`;
+                  const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+                  doc.text(wrappedAnswer, margin + 10, yPosition);
+                  yPosition += wrappedAnswer.length * 5 + 3;
+                });
+              } else {
+                doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                yPosition += 5;
+              }
+            } else {
+              doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+              yPosition += 5;
+            }
           } else {
-            doc.text('Resposta: (não respondida)', margin + 10, yPosition);
-            yPosition += 5;
+            // Resposta de texto normal
+            const answerId = `${question.id}_${subQ.letter}`;
+            const userAnswer = (userAnswers[answerId] as string) || '';
+            if (userAnswer) {
+              const wrappedAnswer = doc.splitTextToSize(`Resposta: ${userAnswer}`, maxWidth - 10);
+              doc.text(wrappedAnswer, margin + 10, yPosition);
+              yPosition += wrappedAnswer.length * 5 + 3;
+            } else {
+              doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+              yPosition += 5;
+            }
           }
 
           // Se tiver subItems, processa também
@@ -219,14 +271,84 @@ function DownloadQuestionsButton({
 
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
-        const userAnswer = (userAnswers[question.id] as string) || '';
-        if (userAnswer) {
-          const wrappedAnswer = doc.splitTextToSize(`Resposta: ${userAnswer}`, maxWidth - 10);
-          doc.text(wrappedAnswer, margin + 5, yPosition);
-          yPosition += wrappedAnswer.length * 5 + 3;
+        
+        // Verifica se há seleções de texto
+        if (question.requiresTextSelection && question.selectableText && !question.subQuestions) {
+          const selectionId = `${question.id}_selections`;
+          let savedSelections: Array<{ start: number; end: number }> = [];
+          try {
+            const saved = userAnswers[selectionId];
+            if (typeof saved === 'string') {
+              savedSelections = JSON.parse(saved);
+            } else if (Array.isArray(saved) && saved.length > 0) {
+              const firstItem = saved[0];
+              if (typeof firstItem === 'object' && firstItem !== null && 'start' in firstItem && 'end' in firstItem) {
+                savedSelections = saved as unknown as Array<{ start: number; end: number }>;
+              }
+            }
+          } catch (e) {
+            savedSelections = [];
+          }
+
+          if (savedSelections.length > 0) {
+            // Remove formatação ** do texto para calcular índices corretos
+            const plainText = question.selectableText.replace(/\*\*/g, '');
+            const sortedRanges = [...savedSelections].sort((a, b) => a.start - b.start);
+            
+            // Extrai os trechos selecionados
+            const selectedTexts = sortedRanges.map(range => {
+              return plainText.substring(range.start, range.end);
+            }).filter(text => text.trim().length > 0);
+
+            if (selectedTexts.length > 0) {
+              // Mostra as instruções se houver
+              if (question.instructions && question.instructions.length > 0) {
+                question.instructions.forEach((instruction, idx) => {
+                  if (yPosition + 10 > pageHeight - margin) {
+                    doc.addPage();
+                    yPosition = margin;
+                  }
+                  const instructionText = `${idx + 1}. ${stripHtml(instruction)}`;
+                  const wrappedInstruction = doc.splitTextToSize(instructionText, maxWidth - 10);
+                  doc.text(wrappedInstruction, margin + 5, yPosition);
+                  yPosition += wrappedInstruction.length * 5 + 2;
+                });
+                yPosition += 3;
+              }
+
+              // Mostra as seleções
+              selectedTexts.forEach((selectedText, idx) => {
+                if (yPosition + 10 > pageHeight - margin) {
+                  doc.addPage();
+                  yPosition = margin;
+                }
+                const selectionLabel = question.instructions && question.instructions[idx] 
+                  ? `${stripHtml(question.instructions[idx])}:` 
+                  : `Seleção ${idx + 1}:`;
+                const answerText = `${selectionLabel} "${selectedText.trim()}"`;
+                const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+                doc.text(wrappedAnswer, margin + 5, yPosition);
+                yPosition += wrappedAnswer.length * 5 + 3;
+              });
+            } else {
+              doc.text('Resposta: (não respondida)', margin + 5, yPosition);
+              yPosition += 5;
+            }
+          } else {
+            doc.text('Resposta: (não respondida)', margin + 5, yPosition);
+            yPosition += 5;
+          }
         } else {
-          doc.text('Resposta: (não respondida)', margin + 5, yPosition);
-          yPosition += 5;
+          // Resposta de texto normal
+          const userAnswer = (userAnswers[question.id] as string) || '';
+          if (userAnswer) {
+            const wrappedAnswer = doc.splitTextToSize(`Resposta: ${userAnswer}`, maxWidth - 10);
+            doc.text(wrappedAnswer, margin + 5, yPosition);
+            yPosition += wrappedAnswer.length * 5 + 3;
+          } else {
+            doc.text('Resposta: (não respondida)', margin + 5, yPosition);
+            yPosition += 5;
+          }
         }
       } else if (question.type === 'multiple-choice') {
         if (yPosition + 15 > pageHeight - margin) {
@@ -367,15 +489,67 @@ function DownloadQuestionsButton({
 
             doc.setFontSize(10);
             doc.setFont('helvetica', 'normal');
-            const subAnswerId = `${question.id}_${subQ.letter}`;
-            const subAnswer = (userAnswers[subAnswerId] as string) || '';
-            if (subAnswer) {
-              const wrappedSubAnswer = doc.splitTextToSize(`Resposta: ${subAnswer}`, maxWidth - 10);
-              doc.text(wrappedSubAnswer, margin + 10, yPosition);
-              yPosition += wrappedSubAnswer.length * 5 + 3;
+            
+            // Verifica se há seleções de texto na subquestão
+            if (subQ.requiresTextSelection && subQ.selectableText) {
+              const selectionId = `${question.id}_${subQ.letter}_selections`;
+              let savedSelections: Array<{ start: number; end: number }> = [];
+              try {
+                const saved = userAnswers[selectionId];
+                if (typeof saved === 'string') {
+                  savedSelections = JSON.parse(saved);
+                } else if (Array.isArray(saved) && saved.length > 0) {
+                  const firstItem = saved[0];
+                  if (typeof firstItem === 'object' && firstItem !== null && 'start' in firstItem && 'end' in firstItem) {
+                    savedSelections = saved as unknown as Array<{ start: number; end: number }>;
+                  }
+                }
+              } catch (e) {
+                savedSelections = [];
+              }
+
+              if (savedSelections.length > 0) {
+                // Remove formatação ** do texto para calcular índices corretos
+                const plainText = subQ.selectableText.replace(/\*\*/g, '');
+                const sortedRanges = [...savedSelections].sort((a, b) => a.start - b.start);
+                
+                // Extrai os trechos selecionados
+                const selectedTexts = sortedRanges.map(range => {
+                  return plainText.substring(range.start, range.end);
+                }).filter(text => text.trim().length > 0);
+
+                if (selectedTexts.length > 0) {
+                  // Mostra as seleções
+                  selectedTexts.forEach((selectedText, idx) => {
+                    if (yPosition + 10 > pageHeight - margin) {
+                      doc.addPage();
+                      yPosition = margin;
+                    }
+                    const answerText = `Seleção ${idx + 1}: "${selectedText.trim()}"`;
+                    const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+                    doc.text(wrappedAnswer, margin + 10, yPosition);
+                    yPosition += wrappedAnswer.length * 5 + 3;
+                  });
+                } else {
+                  doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                  yPosition += 5;
+                }
+              } else {
+                doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                yPosition += 5;
+              }
             } else {
-              doc.text('Resposta: (não respondida)', margin + 10, yPosition);
-              yPosition += 5;
+              // Resposta de texto normal
+              const subAnswerId = `${question.id}_${subQ.letter}`;
+              const subAnswer = (userAnswers[subAnswerId] as string) || '';
+              if (subAnswer) {
+                const wrappedSubAnswer = doc.splitTextToSize(`Resposta: ${subAnswer}`, maxWidth - 10);
+                doc.text(wrappedSubAnswer, margin + 10, yPosition);
+                yPosition += wrappedSubAnswer.length * 5 + 3;
+              } else {
+                doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                yPosition += 5;
+              }
             }
           });
         }
@@ -412,35 +586,91 @@ function DownloadQuestionsButton({
 
             doc.setFontSize(10);
             doc.setFont('helvetica', 'normal');
-            const answerId = `${question.id}_${subQ.letter}`;
-            const userAnswer = userAnswers[answerId];
             
-            if (Array.isArray(userAnswer)) {
-              // Múltiplas seleções
-              const selectedOptions = userAnswer.map((idx: number) => {
-                if (subQ.options && subQ.options[idx] !== undefined) {
-                  return subQ.options[idx];
+            // Verifica se há seleções de texto na subquestão
+            if (subQ.requiresTextSelection && subQ.selectableText) {
+              const selectionId = `${question.id}_${subQ.letter}_selections`;
+              let savedSelections: Array<{ start: number; end: number }> = [];
+              try {
+                const saved = userAnswers[selectionId];
+                if (typeof saved === 'string') {
+                  savedSelections = JSON.parse(saved);
+                } else if (Array.isArray(saved) && saved.length > 0) {
+                  const firstItem = saved[0];
+                  if (typeof firstItem === 'object' && firstItem !== null && 'start' in firstItem && 'end' in firstItem) {
+                    savedSelections = saved as unknown as Array<{ start: number; end: number }>;
+                  }
                 }
-                return '';
-              }).filter(Boolean);
+              } catch (e) {
+                savedSelections = [];
+              }
+
+              if (savedSelections.length > 0) {
+                // Remove formatação ** do texto para calcular índices corretos
+                const plainText = subQ.selectableText.replace(/\*\*/g, '');
+                const sortedRanges = [...savedSelections].sort((a, b) => a.start - b.start);
+                
+                // Extrai os trechos selecionados
+                const selectedTexts = sortedRanges.map(range => {
+                  return plainText.substring(range.start, range.end);
+                }).filter(text => text.trim().length > 0);
+
+                if (selectedTexts.length > 0) {
+                  // Mostra as seleções
+                  selectedTexts.forEach((selectedText, idx) => {
+                    if (yPosition + 10 > pageHeight - margin) {
+                      doc.addPage();
+                      yPosition = margin;
+                    }
+                    const answerText = `Seleção ${idx + 1}: "${selectedText.trim()}"`;
+                    const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+                    doc.text(wrappedAnswer, margin + 10, yPosition);
+                    yPosition += wrappedAnswer.length * 5 + 3;
+                  });
+                } else {
+                  doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                  yPosition += 5;
+                }
+              } else {
+                doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                yPosition += 5;
+              }
+            } else {
+              // Resposta de múltipla escolha ou texto normal
+              const answerId = `${question.id}_${subQ.letter}`;
+              const userAnswer = userAnswers[answerId];
               
-              if (selectedOptions.length > 0) {
-                const answerText = `Resposta: ${selectedOptions.join(', ')}`;
+              if (Array.isArray(userAnswer)) {
+                // Múltiplas seleções
+                const selectedOptions = userAnswer.map((idx: number) => {
+                  if (subQ.options && subQ.options[idx] !== undefined) {
+                    return subQ.options[idx];
+                  }
+                  return '';
+                }).filter(Boolean);
+                
+                if (selectedOptions.length > 0) {
+                  const answerText = `Resposta: ${selectedOptions.join(', ')}`;
+                  const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+                  doc.text(wrappedAnswer, margin + 10, yPosition);
+                  yPosition += wrappedAnswer.length * 5 + 3;
+                } else {
+                  doc.text('Resposta: (não respondida)', margin + 10, yPosition);
+                  yPosition += 5;
+                }
+              } else if (typeof userAnswer === 'number' && subQ.options && subQ.options[userAnswer] !== undefined) {
+                const answerText = `Resposta: ${subQ.options[userAnswer]}`;
                 const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
+                doc.text(wrappedAnswer, margin + 10, yPosition);
+                yPosition += wrappedAnswer.length * 5 + 3;
+              } else if (typeof userAnswer === 'string' && userAnswer) {
+                const wrappedAnswer = doc.splitTextToSize(`Resposta: ${userAnswer}`, maxWidth - 10);
                 doc.text(wrappedAnswer, margin + 10, yPosition);
                 yPosition += wrappedAnswer.length * 5 + 3;
               } else {
                 doc.text('Resposta: (não respondida)', margin + 10, yPosition);
                 yPosition += 5;
               }
-            } else if (typeof userAnswer === 'number' && subQ.options && subQ.options[userAnswer] !== undefined) {
-              const answerText = `Resposta: ${subQ.options[userAnswer]}`;
-              const wrappedAnswer = doc.splitTextToSize(answerText, maxWidth - 10);
-              doc.text(wrappedAnswer, margin + 10, yPosition);
-              yPosition += wrappedAnswer.length * 5 + 3;
-            } else {
-              doc.text('Resposta: (não respondida)', margin + 10, yPosition);
-              yPosition += 5;
             }
           });
         }

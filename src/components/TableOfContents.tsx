@@ -48,7 +48,7 @@ function TableOfContents() {
                   alt="Union"
                   className="w-4 h-4 object-contain"
                 />
-                <span>
+                <span className="whitespace-nowrap">
                   Capítulo 1:
                 </span>{' '}
                 <span>
@@ -73,7 +73,7 @@ function TableOfContents() {
                   alt="Union"
                   className="w-4 h-4 object-contain"
                 />
-                <span>
+                <span className="whitespace-nowrap">
                   Capítulo 2:
                 </span>{' '}
                 <span>
